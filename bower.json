@@ -1,0 +1,52 @@
+{
+  "name": "paper-elements-dart",
+  "version": "0.0.0",
+  "homepage": "https://github.com/dart-lang/paper-elements",
+  "authors": [
+    "Justin Fagnani <justin@fagnani.com>"
+  ],
+  "license": "MIT",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "polymer": "Polymer/polymer#master",
+    "font-roboto": "https://github.com/Polymer/font-roboto.git",
+    "paper-button": "https://github.com/Polymer/paper-button.git",
+    "paper-checkbox": "https://github.com/Polymer/paper-checkbox.git",
+    "paper-dialog": "https://github.com/Polymer/paper-dialog.git",
+    "paper-fab": "https://github.com/Polymer/paper-fab.git",
+    "paper-icon-button": "https://github.com/Polymer/paper-icon-button.git",
+    "paper-input": "https://github.com/Polymer/paper-input.git",
+    "paper-progress": "https://github.com/Polymer/paper-progress.git",
+    "paper-radio-button": "https://github.com/Polymer/paper-radio-button.git",
+    "paper-radio-group": "https://github.com/Polymer/paper-radio-group.git",
+    "paper-ripple": "https://github.com/Polymer/paper-ripple.git",
+    "paper-shadow": "https://github.com/Polymer/paper-shadow.git",
+    "paper-slider": "https://github.com/Polymer/paper-slider.git",
+    "paper-tabs": "https://github.com/Polymer/paper-tabs.git",
+    "paper-toast": "https://github.com/Polymer/paper-toast.git",
+    "paper-toggle-button": "https://github.com/Polymer/paper-toggle-button.git",
+    "sampler-scaffold": "Polymer/sampler-scaffold#master"
+  },
+  "resolutions": {
+    "polymer": ">=0.3.0 <1.0.0",
+    "core-icon-button": ">=0.3.0 <1.0.0",
+    "core-toolbar": ">=0.3.0 <1.0.0",
+    "platform": ">=0.3.0 <1.0.0",
+    "core-component-page": ">=0.3.0 <1.0.0",
+    "core-selector": ">=0.3.0 <1.0.0",
+    "core-media-query": ">=0.3.0 <1.0.0",
+    "core-icon": ">=0.3.0 <1.0.0",
+    "core-icons": ">=0.3.0 <1.0.0",
+    "core-selection": ">=0.3.0 <1.0.0",
+    "core-iconset": ">=0.3.0 <1.0.0",
+    "core-iconset-svg": ">=0.3.0 <1.0.0",
+    "core-meta": ">=0.3.0 <1.0.0"
+  }
+}
