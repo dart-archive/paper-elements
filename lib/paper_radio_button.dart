@@ -61,6 +61,10 @@ class PaperRadioButton extends HtmlElement with DomProxyMixin {
   /// toggleable from checked to unchecked.
   bool get toggles => jsElement['toggles'];
   set toggles(bool value) { jsElement['toggles'] = value; }
+
+  /// If true, the user cannot interact with this element.
+  bool get disabled => jsElement['disabled'];
+  set disabled(bool value) { jsElement['disabled'] = value; }
 }
 @initMethod
 upgradePaperRadioButton() => registerDartType('paper-radio-button', PaperRadioButton);

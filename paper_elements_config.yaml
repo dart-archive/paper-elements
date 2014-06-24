@@ -13,6 +13,7 @@ files_to_generate:
 stubs_to_generate:
   core_elements:
     - core-collapse/core-collapse.html
+    - core-component-page/core-component-page.html
     - core-drawer-panel/core-drawer-panel.html
     - core-header-panel/core-header-panel.html
     - core-icon/core-icon.html
