@@ -1,0 +1,131 @@
+<!--
+Copyright (c) 2014 The Polymer Project Authors. All rights reserved.
+This code may only be used under the BSD style license found at http://polymer.github.io/LICENSE.txt
+The complete set of authors may be found at http://polymer.github.io/AUTHORS.txt
+The complete set of contributors may be found at http://polymer.github.io/CONTRIBUTORS.txt
+Code distributed by Google as part of the polymer project is also
+subject to an additional IP rights grant found at http://polymer.github.io/PATENTS.txt
+-->
+
+<!--
+`paper-ink` provides a visual effect that other quantum paper elements can
+use to simulate a rippling effect emanating from the point of contact.  The
+effect can be visualized as a concentric circle with motion.
+
+Example:
+
+    <paper-ink></paper-ink>
+
+@group Paper Elements
+@element paper-ink
+@homepage github.io
+-->
+
+<link rel="import" href="../polymer/polymer.html">
+
+<polymer-element name="paper-ink" attributes="color duration">
+<template>
+
+  <link rel="stylesheet" href="paper-ink.css">
+  
+  <div id="inkEffect" on-transitionend="{{inkTransitionEnd}}" on-webkittransitionend="{{inkTransitionEnd}}"></div>
+  
+</template>
+<script>
+
+  Polymer('paper-ink', {
+    
+    /**
+     * The color of the ink effect.
+     *
+     * @attribute color
+     * @type string
+     * @default ''
+     */
+    color: '',
+    
+    /**
+     * The ink effect duration in milliseconds.
+     *
+     * @attribute duration
+     * @type number
+     * @default 280
+     */
+    duration: 280,
+    
+    ready: function() {
+      this.durationChanged();
+    },
+    
+    durationChanged: function() {
+      this.$.inkEffect.style.transitionDuration = this.duration + 'ms';
+    },
+    
+    setup: function() {
+      if (!this.width || !this.fixedWidth) {
+        this.width = this.offsetWidth;
+      }
+      this.$.inkEffect.style.borderColor = this.color;
+      this.$.inkEffect.style.borderWidth = this.width / 2 + 'px';
+    },
+    
+    /**
+     * Start the ink spill animation effect.
+     *
+     * @method spill
+     */
+    spill: function() {
+      this.spillCompleted = false;
+      this.reset();
+      this.setup();
+      this.async(function() {
+        this.$.inkEffect.classList.add('spill');
+      });
+    },
+    
+    /**
+     * Start the ink evaporate animation effect.
+     *
+     * @method evaporate
+     */
+    evaporate: function() {
+      this.$.inkEffect.style.borderWidth = null;
+      this.$.inkEffect.classList.add('evaporate');
+    },
+    
+    /**
+     * Start the ink evaporate animation effect after ink spill effect is
+     * completed.
+     *
+     * @method evaporateAfterSpillCompleted
+     */
+    evaporateAfterSpillCompleted: function() {
+      this.async(function() {
+        this.evaporate();
+      }, null, (this.spillCompleted ? 0 : this.duration));
+    },
+    
+    /**
+     * Reset all the animation effects.
+     *
+     * @method reset
+     */
+    reset: function() {
+      this.$.inkEffect.className = '';
+    },
+    
+    inkTransitionEnd: function() {
+      var cl = this.$.inkEffect.classList;
+      if (cl.contains('evaporate')) {
+        this.fire('paper-ink-evaporate-complete');
+        this.reset();
+      } else {
+        this.spillCompleted = true;
+        this.fire('paper-ink-spill-complete');
+      }
+    }
+    
+  });
+  
+</script>
+</polymer-element>

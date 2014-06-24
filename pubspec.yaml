@@ -15,11 +15,13 @@ transformers:
       - example/paper_button.html
       - example/paper_checkbox.html
       - example/paper_icon_button.html
+      - example/paper_ink.html
       - example/paper_input.html
       - example/paper_item.html
       - example/paper_menu_button.html
       - example/paper_progress.html
       - example/paper_radio_button.html
+      - example/paper_radio_group.html
       - example/paper_ripple.html
       - example/paper_shadow.html
       - example/paper_slider.html

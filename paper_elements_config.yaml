@@ -9,12 +9,14 @@ files_to_generate:
   - paper-focusable/paper-focusable.html
   - paper-icon-button/paper-icon-button.html
   - paper-input/paper-input.html
+  - paper-ink/paper-ink.html
   - paper-item/paper-item.html
   - paper-menu-button/paper-menu-button.html
   - paper-menu-button/paper-menu-button-overlay.html
   - paper-menu-button/paper-menu-button-transition.html
   - paper-progress/paper-progress.html
   - paper-radio-button/paper-radio-button.html
+  - paper-radio-group/paper-radio-group.html
   - paper-ripple/paper-ripple.html
   - paper-shadow/paper-shadow.html
   - paper-slider/paper-slider.html
@@ -22,6 +24,8 @@ files_to_generate:
   - paper-tabs/paper-tabs.html
   - paper-toast/paper-toast.html
   - paper-toggle-button/paper-toggle-button.html
+  # Skip this for now, it doesn't have APIs and is generated incorrectly.
+  #- paper-transition/paper-transition-dialog.html
 stubs_to_generate:
   core_elements:
     - core-animation/core-animation.html

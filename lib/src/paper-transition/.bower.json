@@ -1,0 +1,18 @@
+{
+  "name": "paper-transition",
+  "private": true,
+  "dependencies": {
+    "polymer": "Polymer/polymer#master",
+    "core-transition": "Polymer/core-transition#master"
+  },
+  "homepage": "https://github.com/Polymer/paper-transition",
+  "_release": "bb33121375",
+  "_resolution": {
+    "type": "branch",
+    "branch": "master",
+    "commit": "bb33121375406143000581def0f148ca71603969"
+  },
+  "_source": "git://github.com/Polymer/paper-transition.git",
+  "_target": "master",
+  "_originalSource": "Polymer/paper-transition"
+}
