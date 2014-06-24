@@ -22,5 +22,8 @@ transformers:
       - example/paper_radio_button.html
       - example/paper_ripple.html
       - example/paper_shadow.html
+      - example/paper_slider.html
+      - example/paper_tabs.html
+      - example/paper_toast.html
       - example/paper_toggle_button.html
     lint: false

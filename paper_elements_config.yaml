@@ -16,6 +16,10 @@ files_to_generate:
   - paper-radio-button/paper-radio-button.html
   - paper-ripple/paper-ripple.html
   - paper-shadow/paper-shadow.html
+  - paper-slider/paper-slider.html
+  - paper-tabs/paper-tab.html
+  - paper-tabs/paper-tabs.html
+  - paper-toast/paper-toast.html
   - paper-toggle-button/paper-toggle-button.html
 stubs_to_generate:
   core_elements:
