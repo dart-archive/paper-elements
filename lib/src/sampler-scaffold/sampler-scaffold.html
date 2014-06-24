@@ -73,8 +73,10 @@ sampler-scaffold
   Polymer('sampler-scaffold', {
     
     responsiveWidth: '860px',
+    frameBottomPadding: 32,
     
     ready: function() {
+      this.boundResizeFrame = this.resizeFrame.bind(this);
       window.addEventListener('resize', this.updateFrameHeight.bind(this));
       window.addEventListener('hashchange', this.parseLocationHash.bind(this));
     },
@@ -150,7 +152,15 @@ sampler-scaffold
       }
       this.$.frame.contentWindow.addEventListener('polymer-ready', function() {
         setTimeout(this.updateFrameHeight.bind(this), 100);
+        this.$.frame.contentWindow.addEventListener('core-resize',
+          this.boundResizeFrame, false);
       }.bind(this));
+    },
+
+    resizeFrame: function() {
+      this.job('resizeFrame', function() {
+        this.updateFrameHeight();
+      });
     },
     
     updateFrameHeight: function() {
@@ -158,8 +168,10 @@ sampler-scaffold
       var doc = frame.contentDocument;
       if (doc) {
         var docElt = doc.documentElement;
+        // TODO(ffu); expose scroll info from header-panel
+        var pos = this.$.mainHeaderPanel.$.mainContainer.scrollTop;
         frame.style.height = 'auto';
-        frame.style.height = docElt.scrollHeight + 'px';
+        frame.style.height = docElt.scrollHeight + this.frameBottomPadding + 'px';
         if (doc.body) {
           var s = doc.body.style;
           s.overflow = 'hidden';
@@ -167,6 +179,7 @@ sampler-scaffold
           // https://code.google.com/p/chromium/issues/detail?id=332024
           s.webkitTransform = s.transform = 'translateZ(0)';
         }
+        this.$.mainHeaderPanel.$.mainContainer.scrollTop = pos;
       }
     },
     

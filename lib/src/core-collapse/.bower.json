@@ -5,11 +5,11 @@
     "polymer": "Polymer/polymer#master"
   },
   "homepage": "https://github.com/Polymer/core-collapse",
-  "_release": "0cf929e679",
+  "_release": "c3b16742ff",
   "_resolution": {
     "type": "branch",
     "branch": "master",
-    "commit": "0cf929e6796461e212a0d31c895ef2682c072e24"
+    "commit": "c3b16742ff3ec36748c45eac926c063952238b02"
   },
   "_source": "git://github.com/Polymer/core-collapse.git",
   "_target": "master",
