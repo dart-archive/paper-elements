@@ -6,6 +6,9 @@ files_to_generate:
   - font-roboto/roboto.html
   - paper-button/paper-button.html
   - paper-checkbox/paper-checkbox.html
+  - paper-dialog/paper-dialog.html
+  - paper-dialog/paper-dialog-transition.html
+  - paper-fab/paper-fab.html
   - paper-focusable/paper-focusable.html
   - paper-icon-button/paper-icon-button.html
   - paper-input/paper-input.html
