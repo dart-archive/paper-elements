@@ -5,6 +5,7 @@ files_to_generate:
   - paper-button/paper-button.html
   - paper-checkbox/paper-checkbox.html
   - paper-focusable/paper-focusable.html
+  - paper-input/paper-input.html
   - paper-radio-button/paper-radio-button.html
   - paper-ripple/paper-ripple.html
   - paper-shadow/paper-shadow.html
