@@ -10,5 +10,9 @@ packages
 *.js.map
 *.sw?
 
+# Bower checks this out but we don't want it in the repo or package because
+# packages/core_elements already has it.
+lib/src/web-animations-js
+
 # Include when developing application packages.
 pubspec.lock
