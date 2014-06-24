@@ -1,13 +1,13 @@
 // DO NOT EDIT: auto-generated with core_elements/tool/generate_dart_api.dart
 
-/// Dart API for the polymer element `paper-button`.
+/// Dart API for the polymer element `paper_button`.
 library core_elements.paper_button;
 
 import 'dart:html';
 import 'dart:js' show JsArray;
 import 'package:web_components/interop.dart' show registerDartType;
 import 'package:polymer/polymer.dart' show initMethod;
-import 'package:core_elements/paper_focusable.dart';
+import 'paper_focusable.dart';
 
 /// `paper-button` is a button containing text or an image. When the user touches
 /// the button, a ripple effect emanates from the point of contact.
