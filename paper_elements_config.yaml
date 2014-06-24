@@ -1,0 +1,8 @@
+# Configuration for running tool/generate_dart_api.dart
+package_mappings:
+  - core-: core_elements
+files_to_generate:
+  - paper-button/paper-button.html
+  - paper-focusable/paper-focusable.html
+  - paper-ripple/paper-ripple.html
+  - paper-shadow/paper-shadow.html
