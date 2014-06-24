@@ -14,5 +14,9 @@ packages
 # packages/core_elements already has it.
 lib/src/web-animations-js
 
+# More things we don't need from Bower
+lib/src/core-*/demo.html
+lib/src/core-*/index.html
+
 # Include when developing application packages.
 pubspec.lock
