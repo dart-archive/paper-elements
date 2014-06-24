@@ -15,6 +15,7 @@ transformers:
       - example/paper_button.html
       - example/paper_checkbox.html
       - example/paper_input.html
+      - example/paper_progress.html
       - example/paper_radio_button.html
       - example/paper_ripple.html
       - example/paper_shadow.html
