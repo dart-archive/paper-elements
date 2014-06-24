@@ -1,17 +1,27 @@
 # Configuration for running tool/generate_dart_api.dart
 package_mappings:
   - core-: core_elements
+  - web-animations: core_elements
 files_to_generate:
   - paper-button/paper-button.html
   - paper-checkbox/paper-checkbox.html
   - paper-focusable/paper-focusable.html
+  - paper-icon-button/paper-icon-button.html
   - paper-input/paper-input.html
+  - paper-item/paper-item.html
+  - paper-menu-button/paper-menu-button.html
+  - paper-menu-button/paper-menu-button-overlay.html
+  - paper-menu-button/paper-menu-button-transition.html
   - paper-progress/paper-progress.html
   - paper-radio-button/paper-radio-button.html
   - paper-ripple/paper-ripple.html
   - paper-shadow/paper-shadow.html
+  - paper-toggle-button/paper-toggle-button.html
 stubs_to_generate:
   core_elements:
+    - core-animation/core-animation.html
+    - core-animation/core-animation-group.html
+    - core-animation/web-animations.html
     - core-collapse/core-collapse.html
     - core-component-page/core-component-page.html
     - core-drawer-panel/core-drawer-panel.html
@@ -34,5 +44,5 @@ stubs_to_generate:
     - core-selection/core-selection.html
     - core-selector/core-selector.html
     - core-toolbar/core-toolbar.html
-    - core-transition/core-transition-css.html
     - core-transition/core-transition.html
+    - core-transition/core-transition-css.html

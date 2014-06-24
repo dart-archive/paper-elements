@@ -1,0 +1,27 @@
+{
+  "name": "paper-menu-button",
+  "private": true,
+  "dependencies": {
+    "polymer": "Polymer/polymer#master",
+    "core-animation": "Polymer/core-animation#master",
+    "core-icon": "Polymer/core-icon#master",
+    "core-icons": "Polymer/core-icons#master",
+    "core-menu": "Polymer/core-menu#master",
+    "core-overlay": "Polymer/core-overlay#master",
+    "core-transition": "Polymer/core-transition#master",
+    "paper-focusable": "Polymer/paper-focusable#master",
+    "paper-icon-button": "Polymer/paper-icon-button#master",
+    "paper-item": "Polymer/paper-item#master",
+    "paper-shadow": "Polymer/paper-shadow#master"
+  },
+  "homepage": "https://github.com/Polymer/paper-menu-button",
+  "_release": "a6721762b8",
+  "_resolution": {
+    "type": "branch",
+    "branch": "master",
+    "commit": "a6721762b8ce54aaa565ac1b31590f00a28c6a74"
+  },
+  "_source": "git://github.com/Polymer/paper-menu-button.git",
+  "_target": "master",
+  "_originalSource": "Polymer/paper-menu-button"
+}

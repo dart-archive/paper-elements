@@ -14,9 +14,13 @@ transformers:
     entry_points:
       - example/paper_button.html
       - example/paper_checkbox.html
+      - example/paper_icon_button.html
       - example/paper_input.html
+      - example/paper_item.html
+      - example/paper_menu_button.html
       - example/paper_progress.html
       - example/paper_radio_button.html
       - example/paper_ripple.html
       - example/paper_shadow.html
+      - example/paper_toggle_button.html
     lint: false
