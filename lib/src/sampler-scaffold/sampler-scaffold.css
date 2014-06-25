@@ -7,12 +7,13 @@ Code distributed by Google as part of the polymer project is also
 subject to an additional IP rights grant found at http://polymer.github.io/PATENTS.txt
 */
 
-#drawerPanel {
-  background-color: #fafafa;
+#drawerPanel, [drawer] {
+  background-color: #eee;
 }
 
 [drawer] {
-  background-color: #fff;
+  -webkit-transform: translateZ(0);
+  transform: translateZ(0);
 }
 
 [main] {
@@ -52,8 +53,6 @@ core-toolbar::shadow #bottomBar {
 core-menu#menu {
   padding: 8px 0;
   margin: 0;
-  -webkit-transform: translateZ(0);
-  transform: translateZ(0);
 }
 
 /* menu item */
@@ -160,7 +159,7 @@ polyfill-next-selector { content: '#drawerPanel:not([narrow]) .menuButton';}
 
 #drawerPanel[narrow] #frameContainer {
   position: absolute;
-  top: 80px;
+  top: 0;
   right: 0;
   bottom: 0;
   left: 0;

@@ -29,12 +29,13 @@ sampler-scaffold
 
   <core-drawer-panel id="drawerPanel" narrow="{{narrow}}" responsiveWidth="{{responsiveWidth}}">
 
-    <core-header-panel id="mainHeaderPanel" main mode="{{narrow ? 'waterfall' : 'cover'}}">
+    <core-header-panel id="mainHeaderPanel" main mode="{{narrow ? 'waterfall' : 'cover'}}" shadow>
 
       <core-toolbar class="{{ {'medium-tall' : !narrow} | tokenList }}">
         <content select=".menuButton" on-tap="{{togglePanel}}">
           <core-icon-button class="menuButton fallback" icon="menu"></core-icon-button>
         </content>
+        <div hidden?="{{!narrow}}">{{item.label}}</div>
         <content select=".sourceButton" on-tap="{{viewSourceAction}}">
           <core-icon-button class="sourceButton fallback" icon="launch"></core-icon-button>
         </content>
@@ -43,7 +44,7 @@ sampler-scaffold
       
       <div id="card" on-transitionend="{{cardTransitionDone}}" hidden?="{{!item}}">
 
-        <div class="element-label">{{item.label}}</div>
+        <div class="element-label" hidden?="{{narrow}}">{{item.label}}</div>
 
         <div id="frameContainer">
           <iframe id="frame" on-load="{{frameLoaded}}"></iframe>
@@ -53,7 +54,7 @@ sampler-scaffold
       
     </core-header-panel>
 
-    <core-header-panel drawer mode="seamed">
+    <core-header-panel drawer>
 
       <core-toolbar class="{{ {'medium-tall' : !narrow} | tokenList }}">
         <div class="bottom main-label fit">{{label}}</div>
@@ -73,7 +74,6 @@ sampler-scaffold
   Polymer('sampler-scaffold', {
     
     responsiveWidth: '860px',
-    frameBottomPadding: 32,
     
     ready: function() {
       this.boundResizeFrame = this.resizeFrame.bind(this);
@@ -171,7 +171,7 @@ sampler-scaffold
         // TODO(ffu); expose scroll info from header-panel
         var pos = this.$.mainHeaderPanel.$.mainContainer.scrollTop;
         frame.style.height = 'auto';
-        frame.style.height = docElt.scrollHeight + this.frameBottomPadding + 'px';
+        frame.style.height = docElt.scrollHeight + 'px';
         if (doc.body) {
           var s = doc.body.style;
           s.overflow = 'hidden';

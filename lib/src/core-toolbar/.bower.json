@@ -5,11 +5,11 @@
     "core-icon-button": "Polymer/core-icon-button#master"
   },
   "homepage": "https://github.com/Polymer/core-toolbar",
-  "_release": "33dd98b0ad",
+  "_release": "992cc755f6",
   "_resolution": {
     "type": "branch",
     "branch": "master",
-    "commit": "33dd98b0ad4894611b4f9518f4117d006b3b4fb0"
+    "commit": "992cc755f6738885752bbbf39d21f39610fad176"
   },
   "_source": "git://github.com/Polymer/core-toolbar.git",
   "_target": "master",

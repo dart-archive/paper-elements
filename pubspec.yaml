@@ -4,7 +4,7 @@ author: Polymer.dart Authors <web-ui-dev@dartlang.org>
 description: Paper elements for Dart
 dependencies:
   core_elements: '>=0.0.4-dev.8 <0.0.5'
-  polymer: ">=0.11.0+1 <0.12.0"
+  polymer: ">=0.11.0+2 <0.12.0"
 dev_dependencies:
   html5lib: ">=0.11.0 <0.12.0"
   path: ">=1.0.0 <2.0.0"
@@ -12,6 +12,15 @@ dev_dependencies:
 transformers:
 - polymer:
     entry_points:
+      - example/core_animated_pages/grid.html
+      - example/core_animated_pages/list.html
+      - example/core_animated_pages/music.html
+      - example/core_animated_pages/nested.html
+      - example/core_animated_pages/nested_animated_pages.html
+      - example/core_animated_pages/news.html
+      - example/core_animated_pages/quiz1.html
+      - example/core_animated_pages/shadow.html
+      - example/core_animated_pages/simple.html
       - example/paper_button.html
       - example/paper_button2.html
       - example/paper_checkbox.html
