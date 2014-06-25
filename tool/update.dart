@@ -29,4 +29,5 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
 
 <!-- Dart note: load polymer for Dart and JS from the same place -->
 <link rel="import" href="../../../../packages/polymer/polymer.html">
+${generator.EMPTY_SCRIPT_WORKAROUND_ISSUE_11}
 ''';

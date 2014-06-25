@@ -3,8 +3,8 @@ name: paper_elements
 author: Polymer.dart Authors <web-ui-dev@dartlang.org>
 description: Paper elements for Dart
 dependencies:
-  core_elements: '>=0.0.4-dev.7 <0.0.5'
-  polymer: ">=0.11.0-dev.8 <0.12.0"
+  core_elements: '>=0.0.4-dev.8 <0.0.5'
+  polymer: ">=0.11.0+1 <0.12.0"
 dev_dependencies:
   html5lib: ">=0.11.0 <0.12.0"
   path: ">=1.0.0 <2.0.0"
