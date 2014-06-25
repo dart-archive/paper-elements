@@ -7,11 +7,11 @@
     "paper-progress": "Polymer/paper-progress#master"
   },
   "homepage": "https://github.com/Polymer/paper-slider",
-  "_release": "0dccca49cf",
+  "_release": "60168d29bd",
   "_resolution": {
     "type": "branch",
     "branch": "master",
-    "commit": "0dccca49cf454a8513879119eeb92464888e5d45"
+    "commit": "60168d29bd6091f2eb32ee23fba6494b67d333b0"
   },
   "_source": "git://github.com/Polymer/paper-slider.git",
   "_target": "master",

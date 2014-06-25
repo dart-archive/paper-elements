@@ -1,0 +1,101 @@
+<!doctype html>
+<html>
+<head>
+
+  <script src="packages/web_components/platform.js"></script>
+  <script src="packages/web_components/dart_support.js"></script>
+  <link href="packages/paper_elements/core_animated_pages.html" rel="import">
+  <link href="packages/paper_elements/src/core-animated-pages/transitions/cross-fade.html" rel="import">
+  <link href="packages/paper_elements/src/core-animated-pages/transitions/slide-from-right.html" rel="import">
+
+  <style>
+    body {
+      font-family: Roboto, 'Helvetica Neue', Helvetica, Arial, sans-serif;
+      margin: 0;
+    }
+
+    core-animated-pages {
+      position: absolute;
+      top: 50px;
+      right: 0;
+      bottom: 0;
+      left: 0;
+      font-size: 72px;
+      overflow: hidden;
+    }
+
+    section > div {
+      height: 100%;
+      color: white;
+    }
+
+  </style>
+
+</head>
+<body unresolved>
+  <select>
+    <option value="cross-fade-all" selected>cross-fade-all</option>
+    <option value="slide-from-right">slide-from-right</option>
+  </select>
+
+  <core-animated-pages transitions="cross-fade-all">
+    <section>
+      <div layout vertical center center-justified style="background:red;">
+        <div>1</div>
+      </div>
+    </section>
+    <section>
+      <div layout vertical center center-justified style="background:blue;">
+        <div>2</div>
+      </div>
+    </section>
+    <section>
+      <div layout vertical center center-justified style="background:purple;">
+        <div>3</div>
+      </div>
+    </section>
+    <section>
+      <div layout vertical center center-justified style="background:orange;">
+        <div>4</div>
+      </div>
+    </section>
+    <section>
+      <div layout vertical center center-justified style="background:green;">
+        <div>5</div>
+      </div>
+    </section>
+  </core-animated-pages>
+
+  <script type="application/dart">
+    import 'dart:html';
+    import 'package:polymer/polymer.dart';
+    
+    main() => initPolymer();
+
+    @initMethod
+    init() => Polymer.onReady.then((_) {
+      final pages = querySelector('core-animated-pages');
+      final select = querySelector('select');
+
+      var up = true;
+      var max = 4;
+      
+      pages.onClick.listen((_) {
+        var p = pages;
+        if (up && p.selected == max || !up && p.selected == 0) {
+          up = !up;
+        }
+        if (up) {
+          p.selected += 1;
+        } else {
+          p.selected -= 1;
+        }
+      });
+
+      select.onChange.listen((_) {
+        pages.transitions = select.options[select.selectedIndex].value;
+      });
+    });
+  </script>
+</body>
+</html>

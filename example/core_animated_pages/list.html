@@ -1,0 +1,129 @@
+<!doctype html>
+<html>
+<head>
+
+  <script src="packages/web_components/platform.js"></script>
+  <script src="packages/web_components/dart_support.js"></script>
+  <link href="packages/paper_elements/core_animated_pages.html" rel="import">
+
+  <style>
+    body {
+      font-family: Roboto, 'Helvetica Neue', Helvetica, Arial, sans-serif;
+      margin: 0;
+    }
+
+  </style>
+
+</head>
+<body unresolved>
+
+  <polymer-element name="list-demo">
+  <template>
+
+    <style>
+      p {
+        margin: 8px;
+      }
+
+      .item {
+        background: #e7e7e7;
+        padding: 16px;
+        margin: 8px;
+        border-radius: 3px;
+        box-sizing: border-box;
+        position: relative;
+      }
+    </style>
+
+    <p>Tap to move to top</p>
+
+    <core-animated-pages id="pages" on-tap="{{reorder}}" selected="{{selected}}" on-core-animated-pages-transition-end="{{done}}" transitions="hero-transition">
+
+      <section>
+        <template repeat="{{items}}">
+          <div hero-id="{{h}}" hero class="item">{{v}}</div>
+        </template>
+      </section>
+
+      <section>
+        <template repeat="{{items2}}">
+          <div hero-id="{{h}}" hero class="item">{{v}}</div>
+        </template>
+      </section>
+
+    </core-animated-pages>
+
+  </template>
+
+  <script type="application/dart">
+
+  import 'package:polymer/polymer.dart';
+  export 'package:polymer/init.dart';
+  import 'package:template_binding/template_binding.dart';
+
+  class Person {
+    final String h;
+    final String v;
+    Person({this.h, this.v});
+  }
+
+  @CustomTag('list-demo')
+  class ListDemo extends PolymerElement {
+    ListDemo.created() : super.created();
+
+    @observable int selected = 0;
+    var lastMoved;
+    int lastIndex = 0;
+
+    var items = new ObservableList.from([
+      new Person(h: 'matt', v: 'Matt McNulty'),
+      new Person(h: 'scott', v: 'Scott Miles'),
+      new Person(h: 'steve', v: 'Steve Orvell'),
+      new Person(h: 'frankie', v: 'Frankie Fu'),
+      new Person(h: 'daniel', v: 'Daniel Freedman'),
+      new Person(h: 'yvonne', v: 'Yvonne Yip'),
+    ]);
+
+    var items2 = new ObservableList.from([
+      new Person(h: 'matt', v: 'Matt McNulty'),
+      new Person(h: 'scott', v: 'Scott Miles'),
+      new Person(h: 'steve', v: 'Steve Orvell'),
+      new Person(h: 'frankie', v: 'Frankie Fu'),
+      new Person(h: 'daniel', v: 'Daniel Freedman'),
+      new Person(h: 'yvonne', v: 'Yvonne Yip'),
+    ]);
+
+    reorder(e) {
+      if ($['pages'].jsElement['transitioning']['length'] > 0) return;
+
+      this.lastMoved = e.target;
+      this.lastMoved.style.zIndex = '10005';
+      var item = nodeBind(e.target).templateInstance.model.model;
+      var items = this.selected > 0 ? this.items : this.items2;
+      var i = this.selected > 0 ? this.items2.indexOf(item) : this.items.indexOf(item);
+      if (i != 0) {
+        items.insert(0, item);
+        items.removeAt(i + 1);
+      }
+
+      this.lastIndex = i;
+      this.selected = this.selected > 0 ? 0 : 1;
+    }
+
+    done() {
+      var i = this.lastIndex;
+      var items = this.selected > 0 ? this.items : this.items2;
+      var item = items[i];
+      items.insert(0, item);
+      items.removeAt(i + 1);
+      this.lastMoved.style.zIndex = null;
+    }
+  }
+  </script>
+
+  </polymer-element>
+
+  <list-demo></list-demo>
+
+</body>
+</html>

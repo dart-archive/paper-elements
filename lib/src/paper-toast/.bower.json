@@ -8,11 +8,11 @@
     "paper-button": "Polymer/paper-button#master"
   },
   "homepage": "https://github.com/Polymer/paper-toast",
-  "_release": "c1b67516b2",
+  "_release": "05cca05f96",
   "_resolution": {
     "type": "branch",
     "branch": "master",
-    "commit": "c1b67516b285e01769234d8fe9393b70686acce1"
+    "commit": "05cca05f96bd9b9a523054d045754c38caf0129c"
   },
   "_source": "git://github.com/Polymer/paper-toast.git",
   "_target": "master",

@@ -7,11 +7,11 @@
     "paper-button": "Polymer/paper-button#master"
   },
   "homepage": "https://github.com/Polymer/paper-icon-button",
-  "_release": "97a2516c14",
+  "_release": "b54dcb7dbd",
   "_resolution": {
     "type": "branch",
     "branch": "master",
-    "commit": "97a2516c14b55fbd703c9b5fd7c3c631d2644cc5"
+    "commit": "b54dcb7dbd9da14770e158b7f3a1f07e309a7f2a"
   },
   "_source": "git://github.com/Polymer/paper-icon-button.git",
   "_target": "master",
