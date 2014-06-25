@@ -11,6 +11,11 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
   background-color: #eee;
 }
 
+[drawer] {
+  -webkit-transform: translateZ(0);
+  transform: translateZ(0);
+}
+
 [main] {
   height: 100%;
 }
@@ -42,8 +47,6 @@ core-toolbar::shadow #bottomBar {
 
 #drawerPanel::shadow #main {
   left: 320px;
-  -webkit-transform: translateZ(0);
-  transform: translateZ(0);
 }
 
 /* menu */
@@ -156,7 +159,7 @@ polyfill-next-selector { content: '#drawerPanel:not([narrow]) .menuButton';}
 
 #drawerPanel[narrow] #frameContainer {
   position: absolute;
-  top: 80px;
+  top: 0;
   right: 0;
   bottom: 0;
   left: 0;

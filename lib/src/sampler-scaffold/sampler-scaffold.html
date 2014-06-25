@@ -35,6 +35,7 @@ sampler-scaffold
         <content select=".menuButton" on-tap="{{togglePanel}}">
           <core-icon-button class="menuButton fallback" icon="menu"></core-icon-button>
         </content>
+        <div hidden?="{{!narrow}}">{{item.label}}</div>
         <content select=".sourceButton" on-tap="{{viewSourceAction}}">
           <core-icon-button class="sourceButton fallback" icon="launch"></core-icon-button>
         </content>
@@ -43,7 +44,7 @@ sampler-scaffold
       
       <div id="card" on-transitionend="{{cardTransitionDone}}" hidden?="{{!item}}">
 
-        <div class="element-label">{{item.label}}</div>
+        <div class="element-label" hidden?="{{narrow}}">{{item.label}}</div>
 
         <div id="frameContainer">
           <iframe id="frame" on-load="{{frameLoaded}}"></iframe>
