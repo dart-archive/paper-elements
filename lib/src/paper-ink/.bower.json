@@ -1,0 +1,17 @@
+{
+  "name": "paper-ink",
+  "private": true,
+  "dependencies": {
+    "polymer": "Polymer/polymer#master"
+  },
+  "homepage": "https://github.com/Polymer/paper-ink",
+  "_release": "46e3c1ec9b",
+  "_resolution": {
+    "type": "branch",
+    "branch": "master",
+    "commit": "46e3c1ec9be999919503e9c224fc77d3b069f147"
+  },
+  "_source": "git://github.com/Polymer/paper-ink.git",
+  "_target": "master",
+  "_originalSource": "Polymer/paper-ink"
+}

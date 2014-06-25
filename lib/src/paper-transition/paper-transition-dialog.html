@@ -1,0 +1,41 @@
+<!--
+Copyright (c) 2014 The Polymer Project Authors. All rights reserved.
+This code may only be used under the BSD style license found at http://polymer.github.io/LICENSE.txt
+The complete set of authors may be found at http://polymer.github.io/AUTHORS.txt
+The complete set of contributors may be found at http://polymer.github.io/CONTRIBUTORS.txt
+Code distributed by Google as part of the polymer project is also
+subject to an additional IP rights grant found at http://polymer.github.io/PATENTS.txt
+-->
+
+<!--
+`paper-transition-dialog`
+
+@group Paper Elements
+@element paper-toggle-button
+@extends core-transition-css
+@homepage github.io
+-->
+
+<link rel="import" href="../core-transition/core-transition-css.html">
+
+<polymer-element name="paper-transition-dialog" extends="core-transition-css">
+
+  <template>
+    <link no-shim href="paper-transition-dialog.css" rel="stylesheet">
+  </template>
+
+  <script>
+
+    Polymer('paper-transition-dialog', {
+      baseClass: 'paper-transition',
+      revealedClass: 'paper-revealed',
+      openedClass: 'paper-opened',
+      closedClass: 'paper-closed'
+    });
+
+  </script>
+
+</polymer-element>
+
+<paper-transition-dialog id="paper-transition-bottom" transitionType="bottom"></paper-transition-dialog>
+<paper-transition-dialog id="paper-transition-center" transitionType="center"></paper-transition-dialog>

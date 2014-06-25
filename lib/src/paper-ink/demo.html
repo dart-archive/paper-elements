@@ -1,0 +1,80 @@
+<!doctype html>
+<html>
+<head>
+  <title>paper-ink</title>
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+  <meta name="mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+
+  <script src="../platform/platform.js"></script>
+
+  <link rel="import" href="paper-ink.html">
+
+  <style>
+
+    body {
+      font-family: Roboto, 'Helvetica Neue', Helvetica, Arial;
+      -webkit-user-select: none;
+      -moz-user-select: none;
+      -ms-user-select: none;
+      user-select: none;
+      -webkit-tap-highlight-color: rgba(0,0,0,0);
+      -webkit-touch-callout: none;
+    }
+
+    paper-ink {
+      position: absolute;
+    }
+
+  </style>
+
+</head>
+<body unresolved>
+
+  Click anywhere on the page to see random ink effect!
+
+  <script>
+    var sizes = [40, 50, 60, 70, 80];
+    var colors = ['red', 'lightgrey', 'blue', 'green', 'purple', 'grey'];
+    var durations = [300, 500, 600, 700, 1000, 1500];
+
+    var pm;
+    document.addEventListener('polymer-ready', function() {
+      pm = new PolymerGestures.PointerMap();
+    });
+    
+    document.addEventListener('up', function(e) {
+      var ink = pm.get(e.pointerId);
+      if (ink) {
+        ink.evaporateAfterSpillCompleted();
+      }
+    });
+    
+    document.addEventListener('down', function(e) {
+      var ink = document.createElement('paper-ink');
+      pm.set(e.pointerId, ink);
+      document.body.appendChild(ink);
+
+      ink.addEventListener('paper-ink-evaporate-complete', function(e) {
+        e.target.remove();
+      });
+
+      var s = sizes[Math.floor(Math.random() * sizes.length)];
+
+      ink.style.top = e.pageY - s + 'px';
+      ink.style.left = e.pageX - s + 'px';
+      ink.style.width = ink.style.height = s * 2 + 'px';
+      ink.color = colors[Math.floor(Math.random() * colors.length)];
+      ink.duration = durations[Math.floor(Math.random() * durations.length)];
+
+      setTimeout(function() {
+        ink.spill();
+      }, 100);
+
+    });
+
+  </script>
+
+</body>
+</html>
