@@ -13,6 +13,7 @@ transformers:
 - polymer:
     entry_points:
       - example/paper_button.html
+      - example/paper_button2.html
       - example/paper_checkbox.html
       - example/paper_dialog.html
       - example/paper_fab.html
