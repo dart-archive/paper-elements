@@ -69,6 +69,7 @@
 
     import 'dart:html';
     import 'package:polymer/polymer.dart';
+    import 'package:paper_elements/paper_dialog.dart';
 
     @initMethod
     init() {
@@ -80,11 +81,12 @@
     }
 
     toggleDialog(transition) =>
-        querySelector('paper-dialog[transition=$transition]').toggle();
+        (querySelector('paper-dialog[transition=$transition]') as PaperDialog)
+            .toggle();
 
     main() => initPolymer();
 
   </script>
-  
+
 </body>
 </html>

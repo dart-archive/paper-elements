@@ -17,7 +17,7 @@ main(args) {
   generator.main(args);
 }
 
-const String _POLYMER_HTML_FORWARD = '''
+final String _POLYMER_HTML_FORWARD = '''
 <!--
 Copyright (c) 2014 The Polymer Project Authors. All rights reserved.
 This code may only be used under the BSD style license found at http://polymer.github.io/LICENSE.txt
