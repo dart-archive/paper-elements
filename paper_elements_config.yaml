@@ -1,4 +1,4 @@
-# Configuration for running tool/generate_dart_api.dart
+# Configuration for running tool/update.dart
 package_mappings:
   - core-: core_elements
   - web-animations: core_elements
@@ -32,6 +32,7 @@ files_to_generate:
   - paper-tabs/paper-tabs.html
   - paper-toast/paper-toast.html
   - paper-toggle-button/paper-toggle-button.html
+  - sampler-scaffold/sampler-scaffold.html
   # Skip this for now, it doesn't have APIs and is generated incorrectly.
   #- paper-transition/paper-transition-dialog.html
 stubs_to_generate:
