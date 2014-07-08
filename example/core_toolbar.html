@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<!--
+Copyright 2013 The Polymer Authors. All rights reserved.
+Use of this source code is governed by a BSD-style
+license that can be found in the LICENSE file.
+-->
+<html>
+<head>
+
+  <title>core-toolbar</title>
+
+  <script src="packages/web_components/platform.js"></script>
+  <script src="packages/web_components/dart_support.js"></script>
+        
+  <link rel="import" href="packages/paper_elements/roboto.html">
+  <link rel="import" href="packages/core_elements/core_icons.html">
+  <link rel="import" href="packages/core_elements/core_toolbar.html">
+  <link rel="import" href="packages/paper_elements/paper_icon_button.html">
+
+  <style>
+
+    body {
+      font-family: RobotoDraft, 'Helvetica Neue', Helvetica, Arial;
+      margin: 0;
+      padding: 24px;
+    }
+
+    core-toolbar {
+      color: #f1f1f1;
+      fill: #f1f1f1;
+    }
+    
+  </style>
+
+</head>
+<body unresolved>
+
+  <core-toolbar style="background: #4285f4;">
+    <paper-icon-button icon="menu"></paper-icon-button>
+    <span flex>Title</span>
+    <paper-icon-button icon="refresh"></paper-icon-button>
+    <paper-icon-button icon="more-vert"></paper-icon-button>
+  </core-toolbar>
+
+  <br>
+
+  <core-toolbar style="background: #3f51b5;">
+    <paper-icon-button icon="menu"></paper-icon-button>
+    <span flex>Title</span>
+    <paper-icon-button icon="refresh"></paper-icon-button>
+    <paper-icon-button icon="more-vert"></paper-icon-button>
+  </core-toolbar>
+
+  <br>
+
+  <core-toolbar class="tall" style="background: #0f9d58;">
+    <paper-icon-button icon="menu"></paper-icon-button>
+    <span flex>Title</span>
+    <paper-icon-button icon="refresh"></paper-icon-button>
+    <paper-icon-button icon="more-vert"></paper-icon-button>
+  </core-toolbar>
+
+  <br>
+
+  <core-toolbar class="tall" style="background: #ffeb3b; color: #333; fill: #333;">
+    <paper-icon-button icon="menu" class="bottom"></paper-icon-button>
+    <span flex class="bottom">Title</span>
+    <paper-icon-button icon="refresh" class="bottom"></paper-icon-button>
+    <paper-icon-button icon="more-vert" class="bottom"></paper-icon-button>
+  </core-toolbar>
+  
+  <br>
+  
+  <core-toolbar class="medium-tall" style="background: #ff5722;">
+    <paper-icon-button icon="menu"></paper-icon-button>
+    <span flex></span>
+    <paper-icon-button icon="refresh"></paper-icon-button>
+    <paper-icon-button icon="more-vert"></paper-icon-button>
+    <span class="bottom indent">Title</span>
+  </core-toolbar>
+
+  <br>
+  
+  <core-toolbar class="tall" style="background: #9c27b0;">
+    <paper-icon-button icon="menu"></paper-icon-button>
+    <div flex></div>
+    <paper-icon-button icon="refresh"></paper-icon-button>
+    <paper-icon-button icon="more-vert"></paper-icon-button>
+    <div flex class="middle indent">Title</div>
+    <div flex class="bottom indent" style="font-size: 18px;">Title2</div>
+  </core-toolbar>
+  
+</body>
+</html>

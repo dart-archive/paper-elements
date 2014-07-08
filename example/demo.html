@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<!--
+Copyright 2013 The Polymer Authors. All rights reserved.
+Use of this source code is governed by a BSD-style
+license that can be found in the LICENSE file.
+-->
+<html>
+  <head>
+    <title>Paper Elements Sampler</title>
+    
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    
+    <script src="packages/web_components/platform.js"></script>
+    <script src="packages/web_components/dart_support.js"></script>
+        
+    <link rel="shortcut icon" href="http://www.polymer-project.org/images/logos/p-logo-16.png">
+    
+    <link rel="import" href="packages/core_elements/core_icons.html">
+    <link rel="import" href="packages/paper_elements/sampler_scaffold.html">
+    <link rel="import" href="packages/paper_elements/roboto.html">
+    <link rel="import" href="packages/core_elements/core_item.html">
+    <link rel="import" href="packages/core_elements/core_submenu.html">
+    <link rel="import" href="packages/paper_elements/paper_icon_button.html">
+    <link rel="import" href="packages/paper_elements/paper_fab.html">
+    
+    <style>
+
+      body {
+        font-family: RobotoDraft, sans-serif;
+        color: #333;
+        margin: 0;
+        -webkit-user-select: none;
+        -moz-user-select: none;
+        -ms-user-select: none;
+        user-select: none;
+        -webkit-tap-highlight-color: rgba(0,0,0,0);
+        -webkit-touch-callout: none;
+      }
+      
+    </style>    
+  </head>
+ 
+  <body unresolved>   
+    <sampler-scaffold label="Paper Elements" fit touch-action="auto">
+      <paper-icon-button class="menuButton" icon="menu" ></paper-icon-button>
+      
+      <paper-fab class="sourceButton bottom" icon="launch"></paper-fab>
+    
+      <core-item label="Checkbox" tag="paper-checkbox" url="paper_checkbox.html"></core-item>
+
+      <core-item label="Radio Button" tag="paper-radio-button" url="paper_radio_group.html"></core-item>
+
+      <core-item label="Toggle Button" tag="paper-toggle-button" url="paper_toggle_button.html"></core-item>
+      
+      <core-item label="Input" tag="paper-input" url="paper_input.html"></core-item>
+      
+      <!-- <core-item label="Ripple Effect" tag="paper-ripple" url="../paper-ripple/demo.html"></core-item> -->
+      
+      <core-item label="Toolbar" tag="core-toolbar" url="core_toolbar.html"></core-item>
+      
+      <core-item label="Scroll Header Panel" tag="core-scroll-header-panel" url="core_scroll_header_panel.html"></core-item>
+      
+      <core-item label="Progress Bar" tag="paper-progress" url="paper_progress.html"></core-item>
+      
+      <core-item label="Slider" tag="paper-slider" url="paper_slider.html"></core-item>
+      
+      <core-item label="Tabs" tag="paper-tabs" url="paper_tabs.html"></core-item>
+      
+      <core-item label="Button" tag="paper-button" url="paper_button.html"></core-item>
+
+      <core-item label="Icon Button" tag="paper-icon-button" url="paper_icon_button.html"></core-item>
+
+      <core-item label="Floating Action Button" tag="paper-fab" url="paper_fab.html"></core-item>
+      
+      <core-item label="Dialog" tag="paper-dialog" url="paper_dialog.html"></core-item>
+      
+      <core-item label="Shadow" tag="paper-shadow" url="paper_shadow.html"></core-item>
+      
+      <core-item label="Toast" tag="paper-toast" url="paper_toast.html"></core-item>      
+    </sampler-scaffold>
+  </body>
+</html>
