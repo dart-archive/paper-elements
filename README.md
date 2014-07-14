@@ -1,5 +1,3 @@
-# Dart wrappers for Polymer paper elements
-
 This repo defines a convenience package, called paper_elements, to help Dart
 developers use the Polymer project's paper elements. The paper elements
 collection is the Polymer implementation of Google's material design UI widgets.
