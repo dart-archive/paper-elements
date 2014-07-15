@@ -33,7 +33,8 @@ Import into Dart:
 
 ## Running demos
 
-If you download or fork the repo from github.com/dart-lang/paper-elements,
+If you download or fork the repo from
+https://github.com/dart-lang/paper-elements,
 then you can use the `pub` command to run any single demo or the sampler,
 which contains all the demos.
 
@@ -45,7 +46,7 @@ To run the paper element sampler:
 1. From the top directory, use the `pub serve` command, specifying the
    `example` directory:
 
-       pub serve example
+        pub serve example
 
 2. In a browser, visit [http://localhost:8080/demo.html](http://localhost:8080/demo.html).
 
@@ -54,7 +55,7 @@ To create a deployable build of a demo or the paper element sampler, use
 
     pub build example
 
-Copy the files in the resulting `build` directory to where you want to
+Copy the files from the resulting `build` directory to where you want to
 serve the files.
 
 **Note:** Building the sampler takes a few minutes.
