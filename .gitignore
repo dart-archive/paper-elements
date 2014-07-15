@@ -9,6 +9,7 @@ packages
 *.js.deps
 *.js.map
 *.sw?
+.idea/
 
 # Bower checks this out but we don't want it in the repo or package because
 # packages/core_elements already has it.
