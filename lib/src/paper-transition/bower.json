@@ -1,8 +1,0 @@
-{
-  "name": "paper-transition",
-  "private": true,
-  "dependencies": {
-    "polymer": "Polymer/polymer#master",
-    "core-transition": "Polymer/core-transition#master"
-  }
-}

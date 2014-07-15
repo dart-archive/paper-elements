@@ -12,7 +12,6 @@ files_to_generate:
   - paper-focusable/paper-focusable.html
   - paper-icon-button/paper-icon-button.html
   - paper-input/paper-input.html
-  - paper-ink/paper-ink.html
   - paper-item/paper-item.html
   - paper-menu-button/paper-menu-button.html
   - paper-menu-button/paper-menu-button-overlay.html
@@ -28,8 +27,6 @@ files_to_generate:
   - paper-toast/paper-toast.html
   - paper-toggle-button/paper-toggle-button.html
   - sampler-scaffold/sampler-scaffold.html
-  # Skip this for now, it doesn't have APIs and is generated incorrectly.
-  #- paper-transition/paper-transition-dialog.html
 stubs_to_generate:
   core_elements:
     - core-animation/core-animation.html
