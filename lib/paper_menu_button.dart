@@ -7,7 +7,17 @@ import 'dart:html';
 import 'dart:js' show JsArray;
 import 'package:web_components/interop.dart' show registerDartType;
 import 'package:polymer/polymer.dart' show initMethod;
+import 'package:core_elements/src/common.dart' show DomProxyMixin;
 import 'paper_focusable.dart';
+
+
+class PaperMenuButtonOverlayContainer extends HtmlElement with DomProxyMixin {
+  PaperMenuButtonOverlayContainer.created() : super.created();
+}
+@initMethod
+upgradePaperMenuButtonOverlayContainer() => registerDartType('paper-menu-button-overlay-container', PaperMenuButtonOverlayContainer);
+
+
 
 /// A `paper-menu-button` is a `paper-icon-button` that opens a drop down menu when tapped.
 ///
@@ -39,6 +49,10 @@ class PaperMenuButton extends PaperFocusable {
   /// The horizontal alignment of the pulldown menu relative to the button.
   get halign => jsElement['halign'];
   set halign(value) { jsElement['halign'] = value; }
+
+  /// The vertical alignment of the pulldown menu relative to the button.
+  get valign => jsElement['valign'];
+  set valign(value) { jsElement['valign'] = value; }
 
   get slow => jsElement['slow'];
   set slow(value) { jsElement['slow'] = value; }

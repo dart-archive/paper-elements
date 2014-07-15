@@ -23,7 +23,7 @@ import 'package:core_elements/core_selector.dart';
 ///       <paper-tab>TAB 3</paper-tab>
 ///     </paper-tabs>
 ///
-/// See <a href="../paper-tab/">paper-tab</a> for more information about
+/// See <a href="#paper-tab">paper-tab</a> for more information about
 /// `paper-tab`.
 ///
 /// Styling tabs:

@@ -22,6 +22,9 @@ class PaperMenuButtonOverlay extends CoreOverlay {
   /// The horizontal alignment of the overlay relative to the `relatedTarget`.
   get halign => jsElement['halign'];
   set halign(value) { jsElement['halign'] = value; }
+
+  get valign => jsElement['valign'];
+  set valign(value) { jsElement['valign'] = value; }
 }
 @initMethod
 upgradePaperMenuButtonOverlay() => registerDartType('paper-menu-button-overlay', PaperMenuButtonOverlay);
