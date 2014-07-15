@@ -6,11 +6,11 @@
     "paper-radio-button": "Polymer/paper-radio-button#master"
   },
   "homepage": "https://github.com/Polymer/paper-checkbox",
-  "_release": "1713ac15f6",
+  "_release": "82b4a8834b",
   "_resolution": {
     "type": "branch",
     "branch": "master",
-    "commit": "1713ac15f621c39a048d17a0bd90374abf210e4b"
+    "commit": "82b4a8834b9602d3d15b200bd89fc8a37e459f52"
   },
   "_source": "git://github.com/Polymer/paper-checkbox.git",
   "_target": "master",

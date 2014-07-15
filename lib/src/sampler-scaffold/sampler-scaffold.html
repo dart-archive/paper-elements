@@ -8,7 +8,22 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
 -->
 
 <!--
-sampler-scaffold
+`sampler-scaffold` provides a responsive layout for elements sampler.
+
+Exampler:
+
+    <sampler-scaffold label="HTML Input Elements">
+
+      <core-item label="String" url="demos/string.html"></core-item>
+      <core-item label="Checkbox" url="demos/checkbox.html"></core-item>
+      <core-item label="Radio" url="demos/radio.html"></core-item>
+      <core-item label="Range" url="demos/range.html"></core-item>
+      <core-item label="Color" url="demos/color.html"></core-item>
+    
+    </sampler-scaffold>
+
+Use `label` to set the sampler label and `responsiveWidth` to change the layout 
+of the scaffold.
 
 @element sampler-scaffold
 @homepage github.io
@@ -73,7 +88,22 @@ sampler-scaffold
 
   Polymer('sampler-scaffold', {
     
+    /**
+     * When the browser window size is smaller than the `responsiveWidth`, 
+     * `sampler-scaffold` changes to a narrow layout. In narrow layout, 
+     * the drawer will be stacked on top of the main panel.
+     *
+     * @attribute responsiveWidth
+     * @type string
+     */
     responsiveWidth: '860px',
+    
+    /**
+     * Sampler label.
+     *
+     * @attribute label
+     * @type string
+     */
     
     ready: function() {
       this.boundResizeFrame = this.resizeFrame.bind(this);
@@ -132,7 +162,7 @@ sampler-scaffold
     moveCard: function(y) {
       var s = this.$.card.style;
       s.webkitTransform = s.transform = 
-          y ? 'translate3d(0, ' + y + 'px,0)' : null;
+          y ? 'translate3d(0, ' + y + 'px,0)' : '';
     },
     
     cardTransitionDone: function() {

@@ -1,10 +1,10 @@
 <!--
 Copyright (c) 2014 The Polymer Project Authors. All rights reserved.
-This code may only be used under the BSD style license found at http://polymer.github.io/LICENSE
-The complete set of authors may be found at http://polymer.github.io/AUTHORS
-The complete set of contributors may be found at http://polymer.github.io/CONTRIBUTORS
+This code may only be used under the BSD style license found at http://polymer.github.io/LICENSE.txt
+The complete set of authors may be found at http://polymer.github.io/AUTHORS.txt
+The complete set of contributors may be found at http://polymer.github.io/CONTRIBUTORS.txt
 Code distributed by Google as part of the polymer project is also
-subject to an additional IP rights grant found at http://polymer.github.io/PATENTS
+subject to an additional IP rights grant found at http://polymer.github.io/PATENTS.txt
 -->
 
 <!--
@@ -41,6 +41,12 @@ To change the slider pin color:
 
     paper-slider::shadow #sliderKnobInner::before {
       background-color: #0f9d58;
+    }
+
+To change the slider pin's value:
+
+    paper-slider::shadow #sliderKnobInner::after {
+      color: #0f9d58
     }
 
 To change the slider secondary progress bar color:
@@ -193,8 +199,10 @@ To change the slider secondary progress bar color:
     positionKnob: function(ratio) {
       this._ratio = ratio;
       this.immediateValue = this.calcStep(this.calcKnobPosition()) || 0;
-      this.$.sliderKnob.style.left = 
-        (this.snaps ? this.calcRatio(this.immediateValue) : this._ratio) * 100 + '%';
+      if (this.snaps) {
+        this._ratio = this.calcRatio(this.immediateValue);
+      }
+      this.$.sliderKnob.style.left = this._ratio * 100 + '%';
     },
     
     immediateValueChanged: function() {
@@ -235,7 +243,7 @@ To change the slider secondary progress bar color:
     
     trackEnd: function() {
       var s =  this.$.sliderKnob.style;
-      s.transform = s.webkitTransform = null;
+      s.transform = s.webkitTransform = '';
       this.$.sliderKnob.classList.remove('dragging');
       this.resetKnob();
       this.value = this.immediateValue;

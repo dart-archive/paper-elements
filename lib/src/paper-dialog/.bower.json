@@ -8,11 +8,11 @@
     "paper-shadow": "Polymer/paper-shadow#master"
   },
   "homepage": "https://github.com/Polymer/paper-dialog",
-  "_release": "9a7553731b",
+  "_release": "2d272a2d69",
   "_resolution": {
     "type": "branch",
     "branch": "master",
-    "commit": "9a7553731b8a5192fe4a9f948a848abee29d28a6"
+    "commit": "2d272a2d69e1bca0918878266bbecaa459f35226"
   },
   "_source": "git://github.com/Polymer/paper-dialog.git",
   "_target": "master",

@@ -21,7 +21,7 @@ element, e.g. the button with a pulldown menu.
 @homepage github.io
 -->
 
-<polymer-element name="paper-menu-button-overlay" extends="core-overlay" attributes="relatedTarget halign">
+<polymer-element name="paper-menu-button-overlay" extends="core-overlay" attributes="relatedTarget halign valign">
   <script>
     Polymer('paper-menu-button-overlay', {
 
@@ -67,7 +67,15 @@ element, e.g. the button with a pulldown menu.
             this.target.style.left = (rect.left - (rect.width - this.target.cachedSize.width) / 2) + 'px';
           }
 
-          this.target.style.top = rect.top + 'px';
+          if (this.valign === 'top') {
+            this.target.style.top = rect.top + 'px';
+          } else if (this.valign === 'bottom') {
+            this.target.style.top = rect.bottom + 'px';
+          } else {
+            this.target.style.top = rect.top + 'px';
+          }
+
+          // this.target.style.top = rect.top + 'px';
 
         } else {
           this.super();

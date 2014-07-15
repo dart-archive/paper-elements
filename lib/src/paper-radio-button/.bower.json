@@ -5,11 +5,11 @@
     "paper-ripple": "Polymer/paper-ripple#master"
   },
   "homepage": "https://github.com/Polymer/paper-radio-button",
-  "_release": "0f43b4b2bf",
+  "_release": "218f45dada",
   "_resolution": {
     "type": "branch",
     "branch": "master",
-    "commit": "0f43b4b2bfec5d4eda2e39cde7ebbea6eee6daab"
+    "commit": "218f45dada466a272baf0745ab339e7fee3c0fc6"
   },
   "_source": "git://github.com/Polymer/paper-radio-button.git",
   "_target": "master",

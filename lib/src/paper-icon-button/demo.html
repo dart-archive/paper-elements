@@ -11,8 +11,8 @@ license that can be found in the LICENSE file.
     <script src="../platform/platform.js"></script>
     
     <link rel="import" href="../core-icons/core-icons.html">
-    <link rel="import" href="../core-icons/iconsets/maps-icons.html">
-    <link rel="import" href="../core-icons/iconsets/social-icons.html">
+    <link rel="import" href="../core-icons/maps-icons.html">
+    <link rel="import" href="../core-icons/social-icons.html">
     <link rel="import" href="../core-selector/core-selector.html">
     <link rel="import" href="paper-icon-button.html">
 
@@ -73,15 +73,15 @@ license that can be found in the LICENSE file.
         <span>styled</span>
         <paper-icon-button icon="favorite"></paper-icon-button>
         <paper-icon-button class="red" icon="favorite"></paper-icon-button>
-        <paper-icon-button disabled icon="favorite"></paper-icon-button>
+        <paper-icon-button disabled onclick="alert('should not be clickable');" icon="favorite"></paper-icon-button>
       </section>
   
-      <section>
+<!--       <section>
         <span>focused</span>
         <paper-icon-button focused icon="social:cake"></paper-icon-button>
         <paper-icon-button focused icon="social:plus-one"></paper-icon-button>
       </section>
-  
+ -->  
       <section>
         <span>segmented</span>
         <core-selector selected="1">
@@ -92,6 +92,10 @@ license that can be found in the LICENSE file.
         </core-selector>
       </section>
 
+      <section>
+        <span>custom img</span>
+        <paper-icon-button iconSrc="https://assets-cdn.github.com/images/modules/logos_page/Octocat.png"></paper-icon-button>
+      </section>
     </column>
     
   </body>

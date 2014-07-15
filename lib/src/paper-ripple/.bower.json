@@ -7,11 +7,11 @@
     "font-roboto": "Polymer/font-roboto#master"
   },
   "homepage": "https://github.com/Polymer/paper-ripple",
-  "_release": "cc33a97834",
+  "_release": "705d386cbc",
   "_resolution": {
     "type": "branch",
     "branch": "master",
-    "commit": "cc33a9783498a1dc86b13bb30b04234014f82345"
+    "commit": "705d386cbc742b54edeea9d8041b205ec3fa58e7"
   },
   "_source": "git://github.com/Polymer/paper-ripple.git",
   "_target": "master",

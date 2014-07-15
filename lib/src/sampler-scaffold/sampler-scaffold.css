@@ -23,7 +23,6 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
 core-toolbar {
   background-color: #5264ae;
   color: #fff;
-  fill: #fff;
   font-size: 20px;
   font-weight: 400;
 }
@@ -85,8 +84,8 @@ polyfill-next-selector { content: 'core-menu#menu core-item.core-selected'; }
 }
 
 #card.move-up {
-  transition: -webkit-transform 0.38s ease-out;
-  transition: transform 0.38s ease-out;
+  transition: -webkit-transform 0.38s cubic-bezier(0.4, 0.0, 0.2, 1);
+  transition: transform 0.38s cubic-bezier(0.4, 0.0, 0.2, 1);
 }
 
 polyfill-next-selector { content: '.sourceButton';}
@@ -98,7 +97,7 @@ polyfill-next-selector { content: '.sourceButton';}
 polyfill-next-selector { content: '.sourceButton:not(.fallback)';}
 ::content .sourceButton:not(.fallback) {
   background-color: #fcfcfc;
-  fill: #666464;
+  color: #666464;
   bottom: -28px;
   right: 24px;
 }
