@@ -1,5 +1,5 @@
 name: paper_elements
-version: 0.0.1
+version: 0.1.0-dev
 author: Polymer.dart Authors <web-ui-dev@dartlang.org>
 description: Paper elements for Dart
 homepage: https://www.dartlang.org/polymer-dart/
@@ -13,15 +13,6 @@ dev_dependencies:
 transformers:
 - polymer:
     entry_points:
-      - example/core_animated_pages/grid.html
-      - example/core_animated_pages/list.html
-      - example/core_animated_pages/music.html
-      - example/core_animated_pages/nested.html
-      - example/core_animated_pages/nested_animated_pages.html
-      - example/core_animated_pages/news.html
-      - example/core_animated_pages/quiz1.html
-      - example/core_animated_pages/shadow.html
-      - example/core_animated_pages/simple.html
       - example/core_scroll_header_panel.html
       - example/paper_button.html
       - example/paper_button2.html

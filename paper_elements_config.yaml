@@ -3,11 +3,6 @@ package_mappings:
   - core-: core_elements
   - web-animations: core_elements
 files_to_generate:
-  - core-animated-pages/core-animated-pages.html:
-      # subdirs don't work
-      omit_imports:
-        - transitions/hero-transition.html
-        - transitions/cross-fade.html
   - font-roboto/roboto.html
   - paper-button/paper-button.html
   - paper-checkbox/paper-checkbox.html

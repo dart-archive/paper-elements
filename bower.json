@@ -17,8 +17,6 @@
   "dependencies": {
     "polymer": "Polymer/polymer#master",
     "font-roboto": "Polymer/font-roboto#master",
-    "core-animated-pages": "Polymer/core-animated-pages#master",
-    "core-style": "Polymer/core-style#master",
     "paper-button": "Polymer/paper-button#master",
     "paper-checkbox": "Polymer/paper-checkbox#master",
     "paper-dialog": "Polymer/paper-dialog#master",
