@@ -6,11 +6,11 @@
     "paper-button": "Polymer/paper-button#master"
   },
   "homepage": "https://github.com/Polymer/paper-progress",
-  "_release": "b093bbc1d4",
+  "_release": "6982e05ad7",
   "_resolution": {
     "type": "branch",
     "branch": "master",
-    "commit": "b093bbc1d41afa1a0d13a9f4d4ce9f42067c8c42"
+    "commit": "6982e05ad757b46b7921a50184fe3a0551a63b12"
   },
   "_source": "git://github.com/Polymer/paper-progress.git",
   "_target": "master",

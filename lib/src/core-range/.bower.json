@@ -5,11 +5,11 @@
     "polymer": "Polymer/polymer#master"
   },
   "homepage": "https://github.com/Polymer/core-range",
-  "_release": "cd1747c383",
+  "_release": "0d1e196be7",
   "_resolution": {
     "type": "branch",
     "branch": "master",
-    "commit": "cd1747c38382d8219186bf3ebc79c9b141fe528c"
+    "commit": "0d1e196be70bc4021215c815e1e5b019e2d6bf1d"
   },
   "_source": "git://github.com/Polymer/core-range.git",
   "_target": "master",
