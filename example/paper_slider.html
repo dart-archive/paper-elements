@@ -134,12 +134,14 @@
     import 'dart:html';
     import 'package:polymer/polymer.dart';
 
-    main() => initPolymer();
-
-    @initMethod init() {
-      var ratings = querySelector('#ratings');
-      ratings.onChange.listen((_) {
-        querySelector('#ratingsLabel').text = '${ratings.value}';
+    main() {
+      initPolymer().run(() {
+        Polymer.onReady.then((_) {
+          var ratings = querySelector('#ratings');
+          ratings.onChange.listen((_) {
+            querySelector('#ratingsLabel').text = '${ratings.value}';
+          });
+        });
       });
     }
   </script>

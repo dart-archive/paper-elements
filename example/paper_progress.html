@@ -42,7 +42,7 @@
 
   <paper-progress></paper-progress>
 
-  <paper-button raisedButton>Start</paper-button>
+  <paper-button raisedButton label="Start"></paper-button>
   
   <br><br><br>
   
@@ -61,22 +61,27 @@
   <script type="application/dart">
     import 'dart:html';
     import 'package:polymer/polymer.dart';
-    
+
     var progress = querySelector('paper-progress');
     var button = querySelector('paper-button');
     
-    var repeat, maxRepeat = 5;
+    var repeat, maxRepeat = 5, animating = false;
     
     nextProgress(_) {
+      animating = true;
       if (progress.value < progress.max) {
         progress.value += (progress.step != 0 ? progress.step : 1);
       } else {
         if (++repeat >= maxRepeat) {
+          animating = false;
           button.disabled = false;
           return;
         }
         progress.value = progress.min;
       }
+      // TODO(jakemac53): replace this with progress.async(nextProgress) once
+      // we update polymer. Additionally nextProgress will need to change its
+      // signature to take 0 arguments.
       window.animationFrame.then(nextProgress);
     }
     
@@ -84,7 +89,9 @@
       repeat = 0;
       progress.value = progress.min;
       button.disabled = true;
-      nextProgress(0);
+      if (!animating) {
+          nextProgress(0);
+      }
     }
 
     @initMethod init() {

@@ -12,8 +12,8 @@ license that can be found in the LICENSE file.
     <script src="packages/web_components/dart_support.js"></script>
     
     <link rel="import" href="packages/core_elements/core_icons.html">
-    <link rel="import" href="packages/core_elements/src/core-icons/iconsets/maps-icons.html">
-    <link rel="import" href="packages/core_elements/src/core-icons/iconsets/social-icons.html">
+    <link rel="import" href="packages/core_elements/src/core-icons/maps-icons.html">
+    <link rel="import" href="packages/core_elements/src/core-icons/social-icons.html">
     <link rel="import" href="packages/core_elements/core_selector.html">
     <link rel="import" href="packages/paper_elements/paper_icon_button.html">
 
@@ -74,14 +74,16 @@ license that can be found in the LICENSE file.
         <span>styled</span>
         <paper-icon-button icon="favorite"></paper-icon-button>
         <paper-icon-button class="red" icon="favorite"></paper-icon-button>
-        <paper-icon-button disabled icon="favorite"></paper-icon-button>
+        <paper-icon-button disabled onclick="alert('should not be clickable');" icon="favorite"></paper-icon-button>
       </section>
-  
+
+  <!--
       <section>
         <span>focused</span>
         <paper-icon-button focused icon="social:cake"></paper-icon-button>
         <paper-icon-button focused icon="social:plus-one"></paper-icon-button>
       </section>
+  -->
   
       <section>
         <span>segmented</span>
@@ -91,6 +93,11 @@ license that can be found in the LICENSE file.
           <paper-icon-button fill isToggle icon="maps:directions-transit"></paper-icon-button>
           <paper-icon-button fill isToggle icon="maps:directions-car"></paper-icon-button>
         </core-selector>
+      </section>
+
+      <section>
+        <span>custom img</span>
+        <paper-icon-button iconSrc="https://assets-cdn.github.com/images/modules/logos_page/Octocat.png"></paper-icon-button>
       </section>
 
     </column>
