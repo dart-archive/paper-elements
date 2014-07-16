@@ -59,3 +59,23 @@ Copy the files from the resulting `build` directory to where you want to
 serve the files.
 
 **Note:** Building the sampler takes a few minutes.
+
+
+## Updating Elements
+
+We try to keep these elements in sync with Polymer/paper-elements as much as
+possible. These are the steps for rolling new versions of the elements:
+
+1. Run `bower update` to grab the new versions of the javacript elements.
+
+2. Check if any new elements were added by looking for new folders following the
+pattern `lib/src/paper-*`. For each one of these elements, update the
+`files_to_generate` section of `paper_elements_config.yaml` to make it generate
+new stubs for that element.
+
+3. Run `dart tool/update.dart paper_elements_config.yaml`.
+
+4. Update the `example/` folder by hand. Find all files with the name 
+`lib/src/paper-*/demo.html` that were modified and update the corresponding 
+`example/paper-*.html` file. If a new demo file was added then create a new 
+one and migrate it over.
