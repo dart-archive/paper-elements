@@ -80,8 +80,7 @@
         progress.value = progress.min;
       }
       // TODO(jakemac53): replace this with progress.async(nextProgress) once
-      // we update polymer. Additionally nextProgress will need to change its
-      // signature to take 0 arguments.
+      // https://github.com/dart-lang/core-elements/issues/45 is fixed.
       window.animationFrame.then(nextProgress);
     }
     
