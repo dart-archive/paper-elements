@@ -9,11 +9,11 @@
     "paper-shadow": "Polymer/paper-shadow#master"
   },
   "homepage": "https://github.com/Polymer/paper-button",
-  "_release": "d9d6be7a82",
+  "_release": "dbc763c30b",
   "_resolution": {
     "type": "branch",
     "branch": "master",
-    "commit": "d9d6be7a827647a4f6f9ede6958f1ac3f08e8924"
+    "commit": "dbc763c30b06410bc26b7b5a03d425a80bb8e883"
   },
   "_source": "git://github.com/Polymer/paper-button.git",
   "_target": "master",

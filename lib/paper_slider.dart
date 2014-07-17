@@ -44,6 +44,12 @@ import 'package:core_elements/core_range.dart';
 ///       background-color: #0f9d58;
 ///     }
 ///
+/// To change the slider pin's value:
+///
+///     paper-slider::shadow #sliderKnobInner::after {
+///       color: #0f9d58
+///     }
+///
 /// To change the slider secondary progress bar color:
 ///
 ///     paper-slider::shadow #sliderBar::shadow #secondaryProgress {

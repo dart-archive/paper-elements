@@ -3,14 +3,15 @@
   "private": true,
   "dependencies": {
     "polymer": "Polymer/polymer#master",
-    "core-input": "Polymer/core-input#master"
+    "core-input": "Polymer/core-input#master",
+    "core-style": "Polymer/core-style#master"
   },
   "homepage": "https://github.com/Polymer/paper-input",
-  "_release": "cc6b74edd4",
+  "_release": "ff2cf40bbb",
   "_resolution": {
     "type": "branch",
     "branch": "master",
-    "commit": "cc6b74edd48771707d0621343daa6309c1970068"
+    "commit": "ff2cf40bbb6521a35b49f566535b58f30881b925"
   },
   "_source": "git://github.com/Polymer/paper-input.git",
   "_target": "master",

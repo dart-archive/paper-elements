@@ -21,7 +21,6 @@ transformers:
       - example/paper_fab.html
       - example/paper_fab2.html
       - example/paper_icon_button.html
-      - example/paper_ink.html
       - example/paper_input.html
       - example/paper_input2.html
       - example/paper_item.html

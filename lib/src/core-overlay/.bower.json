@@ -6,11 +6,11 @@
     "core-transition": "Polymer/core-transition#master"
   },
   "homepage": "https://github.com/Polymer/core-overlay",
-  "_release": "50aaa0f6ab",
+  "_release": "5df22df41c",
   "_resolution": {
     "type": "branch",
     "branch": "master",
-    "commit": "50aaa0f6ab8e3b57835f543bee52b62345c3f69e"
+    "commit": "5df22df41cd11783be5e84bc34ef7b1b7e0aff64"
   },
   "_source": "git://github.com/Polymer/core-overlay.git",
   "_target": "master",

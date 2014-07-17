@@ -9,8 +9,7 @@ import 'package:web_components/interop.dart' show registerDartType;
 import 'package:polymer/polymer.dart' show initMethod;
 import 'package:core_elements/src/common.dart' show DomProxyMixin;
 
-/// paper-focusable is a base class for Quantum Paper elements that can be
-/// focused.
+/// paper-focusable is a base class for paper elements that can be focused.
 class PaperFocusable extends HtmlElement with DomProxyMixin {
   PaperFocusable.created() : super.created();
 

@@ -9,7 +9,7 @@ import 'package:web_components/interop.dart' show registerDartType;
 import 'package:polymer/polymer.dart' show initMethod;
 import 'package:core_elements/src/common.dart' show DomProxyMixin;
 
-/// `paper-ripple` provides a visual effect that other quantum paper elements can
+/// `paper-ripple` provides a visual effect that other paper elements can
 /// use to simulate a rippling effect emanating from the point of contact.  The
 /// effect can be visualized as a concentric circle with motion.
 ///
@@ -28,7 +28,7 @@ import 'package:core_elements/src/common.dart' show DomProxyMixin;
 ///     <paper-ripple id="ripple" style="pointer-events: none;"></paper-ripple>
 ///     ...
 ///     downAction: function(e) {
-///       this.$.ripple.downActon({x: e.x, y: e.y});
+///       this.$.ripple.downAction({x: e.x, y: e.y});
 ///     },
 ///     upAction: function(e) {
 ///       this.$.ripple.upAction();

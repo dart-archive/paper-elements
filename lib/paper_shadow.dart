@@ -10,7 +10,7 @@ import 'package:polymer/polymer.dart' show initMethod;
 import 'package:core_elements/src/common.dart' show DomProxyMixin;
 
 /// The `paper-shadow` element is a helper to add shadows to elements.
-/// Quantum paper shadows are composed of two shadows on top of each other. We
+/// Paper shadows are composed of two shadows on top of each other. We
 /// mimic this effect by using two elements on top of each other, each with a
 /// different drop shadow. You can apply the shadow to an element by assigning
 /// it as the target. If you do not specify a target, the shadow is applied to

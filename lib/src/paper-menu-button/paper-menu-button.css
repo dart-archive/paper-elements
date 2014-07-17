@@ -46,6 +46,7 @@ core-icon::shadow svg {
 }
 
 #overlay {
+  display: block;
 	position: fixed;
   border-radius: 3px;
 }

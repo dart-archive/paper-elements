@@ -13,7 +13,7 @@ import 'paper_button.dart';
 ///
 /// Example:
 ///
-///     <paper-icon-button src="star.png"></paper-icon-button>
+///     <paper-icon-button iconSrc="star.png"></paper-icon-button>
 ///
 /// `paper-icon-button` includes a default icon set.  Use `icon` to specify
 /// which icon from the icon set to use.
@@ -22,12 +22,17 @@ import 'paper_button.dart';
 ///
 ///     <paper-icon-button icon="menu"></paper-icon-button>
 ///
-/// See <a href="core-iconset.html">core-iconset</a> for more information about
-/// how to use a custom icon set.
+/// The icons provided by `core-icons` are SVG, and you can style them with CSS.
+///
+/// Example:
+///
+///     <paper-icon-button icon="favorite" style="fill:red;"></paper-icon-button>
+///
+/// See `core-iconset` for more information about how to use a custom icon set.
 class PaperIconButton extends PaperButton {
   PaperIconButton.created() : super.created();
 
-  /// If true, the ripple expands to a square fill the containing box.
+  /// If true, the ripple expands to a square to fill the containing box.
   bool get fill => jsElement['fill'];
   set fill(bool value) { jsElement['fill'] = value; }
 }

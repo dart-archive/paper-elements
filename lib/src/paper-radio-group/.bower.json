@@ -7,11 +7,11 @@
     "paper-radio-button": "Polymer/paper-radio-button#master"
   },
   "homepage": "https://github.com/Polymer/paper-radio-group",
-  "_release": "2cc718285f",
+  "_release": "820bb1efab",
   "_resolution": {
     "type": "branch",
     "branch": "master",
-    "commit": "2cc718285f31da1ccd88612940fb1bb4e282062f"
+    "commit": "820bb1efab5a0cbf62014cd24123de6bec2b76b8"
   },
   "_source": "git://github.com/Polymer/paper-radio-group.git",
   "_target": "master",

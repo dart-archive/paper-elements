@@ -9,22 +9,13 @@ import 'package:web_components/interop.dart' show registerDartType;
 import 'package:polymer/polymer.dart' show initMethod;
 import 'paper_icon_button.dart';
 
-/// `<paper-fab>` provides the Quantum Paper floating action bar.
-///
-/// It extends from [`<paper-icon-button>`](../paper-icon-button), which allows
-/// you to set a icon from an icon set.
+/// `<paper-fab>` is a floating action button with an icon. It comes in two sizes: regular
+/// size and a smaller size by applying the class `mini`.
 ///
 /// Example:
 ///
-///     <paper-fab icon="social:favorite"></paper-fab>
-///
-/// Example:
-///
-///     <paper-fab raisedButton></paper-fab>
-///
-/// The FAB also supports rendering a smaller version of itself using the `mini` class:
-///
-///      <paper-fab class="mini"></paper-fab>
+///     <paper-fab icon="favorite"></paper-fab>
+///     <paper-fab class="mini"></paper-fab>
 class PaperFab extends PaperIconButton {
   PaperFab.created() : super.created();
 

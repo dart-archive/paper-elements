@@ -1,7 +1,0 @@
-{
-  "name": "paper-ink",
-  "private": true,
-  "dependencies": {
-    "polymer": "Polymer/polymer#master"
-  }
-}
