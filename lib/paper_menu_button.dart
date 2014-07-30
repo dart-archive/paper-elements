@@ -1,10 +1,10 @@
-// DO NOT EDIT: auto-generated with core_elements/tool/generate_dart_api.dart
+// DO NOT EDIT: auto-generated with core_elements/src/codegen.dart
 
 /// Dart API for the polymer element `paper_menu_button`.
 library core_elements.paper_menu_button;
 
 import 'dart:html';
-import 'dart:js' show JsArray;
+import 'dart:js' show JsArray, JsObject;
 import 'package:web_components/interop.dart' show registerDartType;
 import 'package:polymer/polymer.dart' show initMethod;
 import 'package:core_elements/src/common.dart' show DomProxyMixin;
@@ -48,14 +48,14 @@ class PaperMenuButton extends PaperFocusable {
 
   /// The horizontal alignment of the pulldown menu relative to the button.
   get halign => jsElement['halign'];
-  set halign(value) { jsElement['halign'] = value; }
+  set halign(value) { jsElement['halign'] = (value is Map || value is Iterable) ? new JsObject.jsify(value) : value;}
 
   /// The vertical alignment of the pulldown menu relative to the button.
   get valign => jsElement['valign'];
-  set valign(value) { jsElement['valign'] = value; }
+  set valign(value) { jsElement['valign'] = (value is Map || value is Iterable) ? new JsObject.jsify(value) : value;}
 
   get slow => jsElement['slow'];
-  set slow(value) { jsElement['slow'] = value; }
+  set slow(value) { jsElement['slow'] = (value is Map || value is Iterable) ? new JsObject.jsify(value) : value;}
 
   /// Toggle the opened state of the menu.
   void toggle() =>
