@@ -16,12 +16,6 @@ Example:
     <paper-input label="Your Name"></paper-input>
     <paper-input multiline label="Enter multiple lines here"></paper-input>
 
-Theming
---------
-
-Set `CoreStyle.g.paperInput.focusedColor` and `CoreStyle.g.paperInput.invalidColor` to theme
-the focused and invalid states.
-
 @group Paper Elements
 @element paper-input
 @extends core-input
@@ -29,39 +23,12 @@ the focused and invalid states.
 -->
 <link href="../polymer/polymer.html" rel="import">
 <link href="../core-input/core-input.html" rel="import">
-<link href="../core-style/core-style.html" rel="import">
 
-<core-style id="paper-input">
-
-#label.focused,
-#floatedLabel.focused {
-  color: {{g.paperInput.focusedColor}};
-}
-
-#underlineHighlight.focused,
-#caretInner {
-  background-color: {{g.paperInput.focusedColor}};
-}
-
-#error,
-:host(.invalid) #label.focused,
-:host(.invalid) #floatedLabel.focused {
-  color: {{g.paperInput.invalidColor}};
-}
-:host(.invalid) #underlineHighlight.focused,
-:host(.invalid) #caretInner {
-  background-color: {{g.paperInput.invalidColor}};
-}
-
-</core-style>
-
-<polymer-element name="paper-input" extends="core-input" attributes="label floatingLabel maxRows error" on-down="{{downAction}}" on-up="{{upAction}}" on-focus="{{focusAction}}" on-blur="{{blurAction}}">
+<polymer-element name="paper-input" extends="core-input" attributes="label floatingLabel maxRows error" on-down="{{downAction}}" on-up="{{upAction}}">
 
   <template>
 
     <link href="paper-input.css" rel="stylesheet">
-
-    <core-style ref="paper-input"></core-style>
 
     <div id="floatedLabel" class="hidden" hidden?="{{!floatingLabel}}"><span id="floatedLabelSpan">{{label}}</span></div>
 
@@ -103,12 +70,6 @@ the focused and invalid states.
   </template>
 
   <script>
-
-  (function() {
-
-    var paperInput = CoreStyle.g.paperInput = CoreStyle.g.paperInput || {};
-    paperInput.focusedColor = '#4059a9';
-    paperInput.invalidColor = '#d34336';
 
     Polymer('paper-input', {
 
@@ -168,15 +129,6 @@ the focused and invalid states.
         this.$.underlineContainer.style.top = height + 'px';
       },
 
-      prepareLabelTransform: function() {
-        var toRect = this.$.floatedLabelSpan.getBoundingClientRect();
-        var fromRect = this.$.labelSpan.getBoundingClientRect();
-        if (toRect.width !== 0) {
-          this.$.label.cachedTransform = 'scale(' + (toRect.width / fromRect.width) + ') ' +
-            'translateY(' + (toRect.bottom - fromRect.bottom) + 'px)';
-        }
-      },
-
       rowsChanged: function() {
         if (this.multiline && !isNaN(parseInt(this.rows))) {
           this.$.minInputHeight.innerHTML = '';
@@ -221,11 +173,10 @@ the focused and invalid states.
 
       labelChanged: function() {
         if (this.floatingLabel && this.$.floatedLabel && this.$.label) {
-          // If the element is created programmatically, labelChanged is called before
-          // binding. Run the measuring code in async so the DOM is ready.
-          this.async(function() {
-            this.prepareLabelTransform();
-          });
+          var toRect = this.$.floatedLabelSpan.getBoundingClientRect();
+          var fromRect = this.$.labelSpan.getBoundingClientRect();
+          this.$.label.cachedTransform = 'scale(' + (toRect.width / fromRect.width) + ') ' +
+            'translateY(' + (toRect.bottom - fromRect.bottom) + 'px)'
         }
       },
 
@@ -340,9 +291,6 @@ the focused and invalid states.
         if (this.floatingLabel) {
           this.$.label.classList.add('focusedColor');
           this.$.label.classList.add('animating');
-          if (!this.$.label.cachedTransform) {
-            this.prepareLabelTransform();
-          }
           this.$.label.style.webkitTransform = this.$.label.cachedTransform;
           this.$.label.style.transform = this.$.label.cachedTransform;
         }
@@ -387,8 +335,6 @@ the focused and invalid states.
       }
 
     });
-
-  }());
 
   </script>
 

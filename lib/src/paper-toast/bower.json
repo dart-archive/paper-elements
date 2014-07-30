@@ -2,9 +2,9 @@
   "name": "paper-toast",
   "private": true,
   "dependencies": {
-    "core-media-query": "Polymer/core-media-query#master",
-    "core-overlay": "Polymer/core-overlay#master",
-    "font-roboto": "Polymer/font-roboto#master",
-    "paper-button": "Polymer/paper-button#master"
+    "core-media-query": "Polymer/core-media-query#>=0.3.0 <1.0.0",
+    "core-overlay": "Polymer/core-overlay#>=0.3.0 <1.0.0",
+    "font-roboto": "Polymer/font-roboto#>=0.3.0 <1.0.0",
+    "paper-button": "Polymer/paper-button#>=0.3.0 <1.0.0"
   }
 }
