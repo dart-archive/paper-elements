@@ -16,12 +16,6 @@ import 'package:core_elements/core_input.dart';
 ///
 ///     <paper-input label="Your Name"></paper-input>
 ///     <paper-input multiline label="Enter multiple lines here"></paper-input>
-///
-/// Theming
-/// --------
-///
-/// Set `CoreStyle.g.paperInput.focusedColor` and `CoreStyle.g.paperInput.invalidColor` to theme
-/// the focused and invalid states.
 class PaperInput extends CoreInput {
   PaperInput.created() : super.created();
 
