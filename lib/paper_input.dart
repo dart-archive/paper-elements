@@ -1,10 +1,10 @@
-// DO NOT EDIT: auto-generated with core_elements/tool/generate_dart_api.dart
+// DO NOT EDIT: auto-generated with core_elements/src/codegen.dart
 
 /// Dart API for the polymer element `paper_input`.
 library core_elements.paper_input;
 
 import 'dart:html';
-import 'dart:js' show JsArray;
+import 'dart:js' show JsArray, JsObject;
 import 'package:web_components/interop.dart' show registerDartType;
 import 'package:polymer/polymer.dart' show initMethod;
 import 'package:core_elements/core_input.dart';
@@ -43,7 +43,7 @@ class PaperInput extends CoreInput {
   set maxRows(num value) { jsElement['maxRows'] = value; }
 
   get error => jsElement['error'];
-  set error(value) { jsElement['error'] = value; }
+  set error(value) { jsElement['error'] = (value is Map || value is Iterable) ? new JsObject.jsify(value) : value;}
 }
 @initMethod
 upgradePaperInput() => registerDartType('paper-input', PaperInput);
