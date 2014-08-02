@@ -43,7 +43,16 @@ element, e.g. the button with a pulldown menu.
          * @type 'left'|'right'|'center'
          * @default 'left'
          */
-        halign: 'left'
+        halign: 'left',
+
+        /**
+         * The vertical alignment of the overlay relative to the `relatedTarget`.
+         *
+         * @attribute halign
+         * @type 'top'|'bottom'
+         * @default 'top'
+         */
+        valign: 'top',
 
       },
 
@@ -64,6 +73,8 @@ element, e.g. the button with a pulldown menu.
           } else if (this.halign === 'right') {
             this.target.style.right = (window.innerWidth - rect.right) + 'px';
           } else {
+            if(! this.target.cachedSize)
+              this.target.cachedSize = this.target.getBoundingClientRect();
             this.target.style.left = (rect.left - (rect.width - this.target.cachedSize.width) / 2) + 'px';
           }
 
