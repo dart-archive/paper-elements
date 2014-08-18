@@ -46,10 +46,11 @@ class PaperMenuButton extends PaperFocusable {
   bool get opened => jsElement['opened'];
   set opened(bool value) { jsElement['opened'] = value; }
 
-  /// The vertical alignment of the pulldown menu relative to the button.
+  /// The horizontal alignment of the pulldown menu relative to the button.
   get halign => jsElement['halign'];
   set halign(value) { jsElement['halign'] = (value is Map || value is Iterable) ? new JsObject.jsify(value) : value;}
 
+  /// The vertical alignment of the pulldown menu relative to the button.
   get valign => jsElement['valign'];
   set valign(value) { jsElement['valign'] = (value is Map || value is Iterable) ? new JsObject.jsify(value) : value;}
 

@@ -1,4 +1,4 @@
-:host {
+html /deep/ paper-item {
   display: block;
   position: relative;
   -webkit-user-select: none;
@@ -6,20 +6,26 @@
   cursor: pointer;
   height: 36px;
   padding: 0 12px;
+  white-space: nowrap;
 }
 
-#ripple {
+html /deep/ paper-item::shadow #ripple {
   position: absolute;
   top: 0;
   left: 0;
   bottom: 0;
   right: 0;
+  pointer-events: none;
 }
 
-#icon {
+html /deep/ paper-item::shadow #icon {
   margin-right: 8px;
 }
 
-#icon[hidden] {
-  display: none;
+html /deep/ paper-item::shadow ::content > a {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
 }

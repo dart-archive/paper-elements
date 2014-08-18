@@ -28,9 +28,15 @@ import 'package:core_elements/src/common.dart' show DomProxyMixin;
 ///       <paper-button label="Accept" affirmative autofocus></paper-button>
 ///     </paper-dialog>
 ///
+/// #### Transitions
+///
 /// `<paper-dialog>` can be used with `<paper-transition>` to transition the overlay open and close.
 ///
-/// Transition examples:
+/// To use a transition, import `paper-dialog-transition.html` alongside paper-dialog:
+///
+///     <link rel="import" href="paper-dialog/paper-dialog-transition.html">
+///
+/// Then set the `transition` attribute:
 ///
 ///     <paper-dialog heading="Title for dialog" transition="paper-transition-center">
 ///

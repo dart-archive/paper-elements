@@ -3,14 +3,13 @@
   width: 56px;
   height: 56px;
   background: #d23f31;
-  border-radius: 28px;
+  border-radius: 50%;
   fill: #fff;
 }
 
 :host(.mini) {
   width: 40px;
   height: 40px;
-  border-radius: 20px;
 }
 
 :host /deep/ #focusBg {

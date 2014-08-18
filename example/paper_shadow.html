@@ -150,6 +150,10 @@ license that can be found in the LICENSE file.
   <polymer-element name="x-shadow" attributes="z" on-tap="{{tapAction}}">
     <template>
       <style>
+        :host {
+          position: relative;
+        }
+
         :host,
         .paper-shadow-bottom {
           display: block;
@@ -201,17 +205,18 @@ license that can be found in the LICENSE file.
       @CustomTag('x-card')
       class XCard extends PolymerElement {
         XCard.created() : super.created();
-        @PublishedProperty(reflect: true)
-        @published int z = 1;
+        @PublishedProperty(reflect: true) int z = 1;
       }
 
       @CustomTag('x-shadow')
       class XShadow extends PolymerElement {
         XShadow.created() : super.created();
-        @PublishedProperty(reflect: true)
-        @published int z = 0;
+        @PublishedProperty(reflect: true) int z = 0;
         bool up = true;
-        zChanged() => fire('shadow-z-changed');
+
+        zChanged(oldValue, newValue) {
+          fire('shadow-z-changed');
+        }
 
         tapAction() {
           if (up) {

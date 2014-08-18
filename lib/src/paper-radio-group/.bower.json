@@ -7,12 +7,12 @@
     "paper-radio-button": "Polymer/paper-radio-button#>=0.3.0 <1.0.0"
   },
   "homepage": "https://github.com/Polymer/paper-radio-group",
-  "version": "0.3.4",
-  "_release": "0.3.4",
+  "version": "0.3.5",
+  "_release": "0.3.5",
   "_resolution": {
     "type": "version",
-    "tag": "0.3.4",
-    "commit": "a7e9f2597457740059f7ed33521093911dbcc6e2"
+    "tag": "0.3.5",
+    "commit": "a825edbfcd397ea04b4921eb4636f8e697b8cb4b"
   },
   "_source": "git://github.com/Polymer/paper-radio-group.git",
   "_target": ">=0.3.0 <1.0.0",

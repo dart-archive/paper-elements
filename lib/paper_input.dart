@@ -16,6 +16,12 @@ import 'package:core_elements/core_input.dart';
 ///
 ///     <paper-input label="Your Name"></paper-input>
 ///     <paper-input multiline label="Enter multiple lines here"></paper-input>
+///
+/// Theming
+/// --------
+///
+/// Set `CoreStyle.g.paperInput.focusedColor` and `CoreStyle.g.paperInput.invalidColor` to theme
+/// the focused and invalid states.
 class PaperInput extends CoreInput {
   PaperInput.created() : super.created();
 
@@ -36,8 +42,11 @@ class PaperInput extends CoreInput {
   num get maxRows => jsElement['maxRows'];
   set maxRows(num value) { jsElement['maxRows'] = value; }
 
-  get error => jsElement['error'];
-  set error(value) { jsElement['error'] = (value is Map || value is Iterable) ? new JsObject.jsify(value) : value;}
+  /// The message to display if the input value fails validation. If this
+  /// is unset or the empty string, a default message is displayed depending
+  /// on the type of validation error.
+  String get error => jsElement['error'];
+  set error(String value) { jsElement['error'] = value; }
 }
 @initMethod
 upgradePaperInput() => registerDartType('paper-input', PaperInput);

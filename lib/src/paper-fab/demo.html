@@ -35,18 +35,38 @@ license that can be found in the LICENSE file.
       -webkit-transform: translateZ(0);
     }
 
+    paper-fab {
+      color: #FFF;
+      margin-right:2em;
+    }
+
+    paper-fab.blue {
+      background: #5677fc;
+    }
+
+    paper-fab.green {
+      background: #259b24;
+    }
+
+    paper-fab.yellow {
+      background: #ffeb3b;
+      color: #000;
+    }
+
   </style>
 
 </head>
 <body unresolved>
 
+  <h3>Regular</h3>
+
   <paper-fab icon="arrow-forward"></paper-fab>
+  <paper-fab icon="create" class="blue"></paper-fab>
 
-  <br>
-  <br>
-  <br>
+  <h3>Mini</h3>
 
-  <paper-fab class="mini" icon="arrow-forward"></paper-fab>
+  <paper-fab icon="done" class="mini green"></paper-fab>
+  <paper-fab icon="reply" class="mini yellow"></paper-fab>
 
 </body>
 </html>

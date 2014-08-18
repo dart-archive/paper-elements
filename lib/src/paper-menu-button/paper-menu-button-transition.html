@@ -80,7 +80,7 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
             return n.nodeType === Node.ELEMENT_NODE;
           });
           var itemDelay = offset + (1 - offset) / 2;
-          var itemDuration = this.duration * (1 - itemDelay) / (items.length - 1);
+          var itemDuration = this.duration * (1 - itemDelay) / items.length;
           items.forEach(function(item, i) {
             anims.push(new Animation(item, [{
               'opacity': 0

@@ -15,10 +15,18 @@ import 'package:core_elements/src/common.dart' show DomProxyMixin;
 /// Example:
 ///
 ///     <core-menu>
-///         <paper-item icon="refresh">Refresh</paper-item>
-///         <paper-item>Help</paper-item>
-///         <paper-item>Sign Out</paper-item>
+///         <paper-item icon="refresh" label="Refresh"></paper-item>
+///         <paper-item label="Help"></paper-item>
+///         <paper-item label="Sign Out"></paper-item>
 ///     </core-menu>
+///
+/// To use as a link, put an `&lt;a&gt;` element in the item.
+///
+/// Example:
+///
+///     <paper-item icon="home" label="Home">
+///         <a href="http://www.polymer-project.org"></a>
+///     </paper-item>
 class PaperItem extends HtmlElement with DomProxyMixin {
   PaperItem.created() : super.created();
 

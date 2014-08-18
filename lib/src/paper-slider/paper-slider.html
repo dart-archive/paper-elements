@@ -1,10 +1,10 @@
 <!--
 Copyright (c) 2014 The Polymer Project Authors. All rights reserved.
-This code may only be used under the BSD style license found at http://polymer.github.io/LICENSE
-The complete set of authors may be found at http://polymer.github.io/AUTHORS
-The complete set of contributors may be found at http://polymer.github.io/CONTRIBUTORS
+This code may only be used under the BSD style license found at http://polymer.github.io/LICENSE.txt
+The complete set of authors may be found at http://polymer.github.io/AUTHORS.txt
+The complete set of contributors may be found at http://polymer.github.io/CONTRIBUTORS.txt
 Code distributed by Google as part of the polymer project is also
-subject to an additional IP rights grant found at http://polymer.github.io/PATENTS
+subject to an additional IP rights grant found at http://polymer.github.io/PATENTS.txt
 -->
 
 <!--
@@ -43,6 +43,12 @@ To change the slider pin color:
       background-color: #0f9d58;
     }
 
+To change the slider pin's value:
+
+    paper-slider::shadow #sliderKnobInner::after {
+      color: #0f9d58
+    }
+
 To change the slider secondary progress bar color:
 
     paper-slider::shadow #sliderBar::shadow #secondaryProgress {
@@ -63,11 +69,11 @@ To change the slider secondary progress bar color:
 
   <link rel="stylesheet" href="paper-slider.css">
 
-  <div id="sliderContainer" touch-action="pan-y" on-keydown="{{keydown}}">
+  <div id="sliderContainer" on-keydown="{{keydown}}">
   
     <paper-progress id="sliderBar" aria-hidden="true" min="{{min}}" max="{{max}}" value="{{immediateValue}}" secondaryProgress="{{secondaryProgress}}"
         on-down="{{bardown}}" on-up="{{resetKnob}}" 
-        on-trackstart="{{trackStart}}" on-track="{{track}}" on-trackend="{{trackEnd}}"></paper-progress>
+        on-trackstart="{{trackStart}}" on-trackx="{{trackx}}" on-trackend="{{trackEnd}}"></paper-progress>
     
     <template if="{{snaps && !disabled}}">
       <div class="slider-markers" horizontal layout>
@@ -78,10 +84,11 @@ To change the slider secondary progress bar color:
     </template>
     
     <div id="sliderKnob" class="{{ {pin : pin, snaps : snaps} | tokenList }}"
-        touch-action="none" on-down="{{expandKnob}}" on-up="{{resetKnob}}" 
-        on-trackstart="{{trackStart}}" on-track="{{track}}" on-trackend="{{trackEnd}}"
+        on-down="{{expandKnob}}" on-up="{{resetKnob}}" 
+        on-trackstart="{{trackStart}}" on-trackx="{{trackx}}" on-trackend="{{trackEnd}}"
         on-transitionend="{{knobTransitionEnd}}"
-        role="slider" aria-valuenow="{{value}}" aria-valuemin="{{min}}" aria-valuemax="{{max}}" tabindex="0"
+        role="slider" aria-valuenow="{{value}}" aria-valuemin="{{min}}" aria-valuemax="{{max}}"
+        aria-valuetext="{{value}}" tabindex="0"
         center-justified center horizontal layout>
         
       <div id="sliderKnobInner" value="{{immediateValue}}"></div>
@@ -103,6 +110,15 @@ To change the slider secondary progress bar color:
      * Fired when the slider's value changes.
      *
      * @event change
+     */
+
+    /**
+     * Fired when the slider's value changes due to manual interaction.
+     *
+     * Changes to the slider's value due to changes in an underlying
+     * bound variable will not trigger this event.
+     *
+     * @event manual-change
      */
      
     /**
@@ -193,8 +209,10 @@ To change the slider secondary progress bar color:
     positionKnob: function(ratio) {
       this._ratio = ratio;
       this.immediateValue = this.calcStep(this.calcKnobPosition()) || 0;
-      this.$.sliderKnob.style.left = 
-        (this.snaps ? this.calcRatio(this.immediateValue) : this._ratio) * 100 + '%';
+      if (this.snaps) {
+        this._ratio = this.calcRatio(this.immediateValue);
+      }
+      this.$.sliderKnob.style.left = this._ratio * 100 + '%';
     },
     
     immediateValueChanged: function() {
@@ -203,6 +221,7 @@ To change the slider secondary progress bar color:
     
     inputChange: function() {
       this.value = this.$.input.value;
+      this.fire('manual-change');
     },
     
     calcKnobPosition: function() {
@@ -223,7 +242,7 @@ To change the slider secondary progress bar color:
       e.preventTap();
     },
 
-    track: function(e) {
+    trackx: function(e) {
       var x = Math.min(this._maxx, Math.max(this._minx, e.dx));
       this._x = this._startx + x;
       this._ratio = this._x / this._w;
@@ -239,6 +258,7 @@ To change the slider secondary progress bar color:
       this.$.sliderKnob.classList.remove('dragging');
       this.resetKnob();
       this.value = this.immediateValue;
+      this.fire('manual-change');
     },
     
     bardown: function(e) {
@@ -248,6 +268,7 @@ To change the slider secondary progress bar color:
       this.positionKnob((e.x - rect.left) / this._w);
       this.value = this.calcStep(this.calcKnobPosition());
       this.expandJob = this.job(this.expandJob, this.expandKnob, 60);
+      this.fire('manual-change');
     },
     
     knobTransitionEnd: function() {
@@ -276,8 +297,10 @@ To change the slider secondary progress bar color:
       var c = e.keyCode;
       if (c === 37) {
         this.decrement();
+        this.fire('manual-change');
       } else if (c === 39) {
         this.increment();
+        this.fire('manual-change');
       }
     }
 
