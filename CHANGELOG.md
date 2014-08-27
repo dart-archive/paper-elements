@@ -1,3 +1,8 @@
+## 0.1.1+2
+
+* Upgraded polymer version constraint to >=0.13.0.
+* Upgraded core elements constraint to >=0.2.0+1.
+
 ## 0.1.1+1
 
 * Expanded polymer version constraint to <0.14.0.

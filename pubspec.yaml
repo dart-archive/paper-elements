@@ -1,10 +1,10 @@
 name: paper_elements
-version: 0.1.1+1
+version: 0.1.1+2
 author: Polymer.dart Authors <web-ui-dev@dartlang.org>
 description: Paper elements for Dart
 homepage: https://www.dartlang.org/polymer-dart/
 dependencies:
-  core_elements: '>=0.2.0 <0.3.0'
+  core_elements: '>=0.2.0+1 <0.3.0'
   polymer: ">=0.13.0 <0.14.0"
 dev_dependencies:
   path: ">=1.0.0 <2.0.0"
