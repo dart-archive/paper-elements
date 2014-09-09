@@ -26,6 +26,7 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
       revealedClass: 'paper-menu-button-revealed',
       openedClass: 'paper-menu-button-opened',
       closedClass: 'paper-menu-button-closed',
+      completeEventName: null,
 
       duration: 500,
 
@@ -47,8 +48,10 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
 
           var anims = [];
 
+          var size = node.getBoundingClientRect();
+
           var ink = node.querySelector('.paper-menu-button-overlay-ink');
-          var offset = 40 / Math.max(node.cachedSize.width, node.cachedSize.height);
+          var offset = 40 / Math.max(size.width, size.height);
           anims.push(new Animation(ink, [{
             'opacity': 0.9,
             'transform': 'scale(0)',
@@ -62,7 +65,7 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
           var bg = node.querySelector('.paper-menu-button-overlay-bg');
           anims.push(new Animation(bg, [{
             'opacity': 0.9,
-            'transform': 'scale(' + 40 / node.cachedSize.width + ',' + 40 / node.cachedSize.height + ')',
+            'transform': 'scale(' + 40 / size.width + ',' + 40 / size.height + ')',
           }, {
             'opacity': 1,
             'transform': 'scale(0.95, 0.5)'
@@ -75,37 +78,38 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
             fill: 'forwards'
           }));
 
-          var nodes = window.ShadowDOMPolyfill ? Platform.queryAllShadows(node.querySelector('core-menu'), 'content').getDistributedNodes() : node.querySelector('core-menu::shadow content').getDistributedNodes().array();
+          var nodes = window.ShadowDOMPolyfill ? Platform.queryAllShadows(node.querySelector('core-menu'), 'content').getDistributedNodes() : node.shadowRoot.querySelector('core-menu::shadow content').getDistributedNodes().array();
           var items = nodes.filter(function(n) {
             return n.nodeType === Node.ELEMENT_NODE;
           });
           var itemDelay = offset + (1 - offset) / 2;
           var itemDuration = this.duration * (1 - itemDelay) / items.length;
           items.forEach(function(item, i) {
-            anims.push(new Animation(item, [{
-              'opacity': 0
-            }, {
-              'opacity': 1
-            }], {
-              delay: this.duration * itemDelay + itemDuration * i,
-              duration: itemDuration,
-              fill: 'both'
-            }));
-          }.bind(this));
-
-          var shadow = node.querySelector('paper-shadow');
-          anims.push(new Animation(shadow, function(t, target) {
-            if (t > offset * 2 && shadow.z === 0) {
-              shadow.z = 1
+            if (!item.classList.contains('paper-menu-button-overlay-bg') && !item.classList.contains('paper-menu-button-overlay-ink')) {
+              anims.push(new Animation(item, [{
+                'opacity': 0
+              }, {
+                'opacity': 1
+              }], {
+                delay: this.duration * itemDelay + itemDuration * (i - 2),
+                duration: itemDuration,
+                fill: 'both'
+              }));
             }
-          }, {
-            duration: this.duration
-          }));
+          }.bind(this));
 
           var group = new AnimationGroup(anims, {
             easing: 'cubic-bezier(0.4, 0, 0.2, 1)'
           });
           this.player = document.timeline.play(group);
+          this.player.onfinish = function() {
+            this.fire('core-transitionend', this, node);
+          }.bind(this);
+
+        } else {
+          this.listenOnce(node, 'transitionend', function() {
+            this.fire('core-transitionend', this, node);
+          }.bind(this));
         }
       },
 
@@ -116,3 +120,4 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
 <paper-menu-button-transition id="paper-menu-button-transition-top-left" transformOrigin="0% 0%"></paper-menu-button-transition>
 <paper-menu-button-transition id="paper-menu-button-transition-top-right" transformOrigin="100% 0%"></paper-menu-button-transition>
 <paper-menu-button-transition id="paper-menu-button-transition-top-right-slow" transformOrigin="100% 0%" duration="10000"></paper-menu-button-transition>
+<paper-menu-button-transition id="paper-menu-button-transition-top-auto" transformOrigin="0% 0%"></paper-menu-button-transition>
