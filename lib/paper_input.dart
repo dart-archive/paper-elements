@@ -47,6 +47,10 @@ class PaperInput extends CoreInput {
   /// on the type of validation error.
   String get error => jsElement['error'];
   set error(String value) { jsElement['error'] = value; }
+
+  get inputValueForMirror => jsElement['inputValueForMirror'];
+
+  get inputHasValue => jsElement['inputHasValue'];
 }
 @initMethod
 upgradePaperInput() => registerDartType('paper-input', PaperInput);
