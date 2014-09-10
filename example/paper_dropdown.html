@@ -1,0 +1,98 @@
+<!doctype html>
+<!--
+Copyright 2013 The Polymer Authors. All rights reserved.
+Use of this source code is governed by a BSD-style
+license that can be found in the LICENSE file.
+-->
+<html>
+<head>
+
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <meta name="viewport" content="width=device-width, minimum-scale=1.0, initial-scale=1.0, user-scalable=yes">
+
+  <title>paper-dropdown</title>
+
+  <script src="packages/web_components/dart_support.js"></script>
+
+  <link href="packages/paper_elements/roboto.html" rel="import">
+  <link href="packages/paper_elements/paper_item.html" rel="import">
+  <link href="packages/paper_elements/paper_dropdown.html" rel="import">
+
+  <style shim-shadowdom>
+    html, body {
+      font-family: Roboto, 'Helvetica Neue', Helvetica, Arial;
+      height: 100%;
+      margin: 0;
+    }
+
+    dropdown-demo {
+      display: block;
+    }
+
+    dropdown-demo::shadow > section {
+      padding: 12px;
+    }
+
+    body /deep/ paper-dropdown.narrow {
+      max-width: 100px;
+    }
+  </style>
+
+</head>
+<body unresolved>
+
+<polymer-element name="dropdown-demo">
+<template>
+  <section layout vertical fit>
+    <section layout horizontal>
+
+      <paper-dropdown>
+        <template repeat="{{countries}}">
+          <paper-item label="{{name}}"></paper-item>
+        </template>
+      </paper-dropdown>
+
+      <!--         <div style="margin:0 12px;">
+                narrow:
+                <paper-dropdown class="narrow">
+                  <template repeat="{{countries}}">
+                    <paper-item label="{{name}}"></paper-item>
+                  </template>
+                </paper-dropdown>
+              </div>
+      -->
+
+      <div flex></div>
+
+      <paper-dropdown halign="right">
+        <template repeat="{{countries}}">
+          <paper-item label="{{name}}"></paper-item>
+        </template>
+      </paper-dropdown>
+    </section>
+
+    <div flex center>
+    </div>
+
+    <section>
+      drop-up:
+      <paper-dropdown valign="top" valueattr="label" label="Favorite pastry" selected="Donut">
+        <paper-item label="Croissant"></paper-item>
+        <paper-item label="Donut"></paper-item>
+        <paper-item label="Financier"></paper-item>
+        <paper-item label="Madeleine"></paper-item>
+      </paper-dropdown>
+    </section>
+
+  </section>
+
+</template>
+</polymer-element>
+
+<dropdown-demo fit></dropdown-demo>
+
+<script type="application/dart" src="paper_dropdown.dart"></script>
+
+</body>
+</html>
