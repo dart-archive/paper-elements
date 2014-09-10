@@ -1,3 +1,10 @@
+## 0.2.0
+
+* Update all elements to the 0.4.0 js version.
+  * **NEW** Added paper_dropdown element.
+  * Removed paper_menu_button_overlay.
+* Upgraded polymer version constraint to >=0.14.0.
+
 ## 0.1.1+2
 
 * Upgraded polymer version constraint to >=0.13.0.
