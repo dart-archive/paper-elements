@@ -37,9 +37,9 @@ To use a transition, import `paper-dialog-transition.html` alongside paper-dialo
 
 Then set the `transition` attribute:
 
-    <paper-dialog heading="Title for dialog" transition="paper-transition-center">
+    <paper-dialog heading="Title for dialog" transition="paper-dialog-transition-center">
 
-    <paper-dialog heading="Title for dialog" transition="paper-transition-bottom">
+    <paper-dialog heading="Title for dialog" transition="paper-dialog-transition-bottom">
 
 @group Paper Elements
 @element paper-dialog
@@ -148,7 +148,7 @@ Fired when the dialog's `opened` property changes.
       heading: '',
 
       /**
-       * Set this property to the id of a <core-transition> element to specify
+       * Set this property to the id of a `core-transition` element to specify
        * the transition to use when opening/closing this dialog.
        *
        * @attribute transition

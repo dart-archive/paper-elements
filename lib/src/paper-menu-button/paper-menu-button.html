@@ -17,27 +17,42 @@ Example:
       <div>Menu Item 3</div>
     </paper-menu-button>
 
- @group Paper Elements
- @element paper-menu-button
- @extends paper-focusable
+Theming
+=======
+
+To change the text color in the menu:
+
+paper-menu-button::shadow #menu {
+  color: white;
+}
+
+To change the overlay background color:
+
+paper-menu-button::shadow .paper-menu-button-overlay-bg {
+  background: green;
+}
+
+To change the color of the ripple effect:
+
+paper-menu-button:shadow .paper-menu-button-overlay-ink {
+ background: red;
+}
+
+@group Paper Elements
+@element paper-menu-button
+@extends paper-focusable
 -->
 <link href="../polymer/polymer.html" rel="import">
 <link href="../core-icon/core-icon.html" rel="import">
-<link href="../core-menu/core-menu.html" rel="import">
+<link href="../core-popup-menu/core-popup-menu.html" rel="import">
 <link href="../paper-focusable/paper-focusable.html" rel="import">
 <link href="../paper-shadow/paper-shadow.html" rel="import">
-<link href="paper-menu-button-overlay.html" rel="import">
 <link href="paper-menu-button-transition.html" rel="import">
-
-<polymer-element name="paper-menu-button-overlay-container" noscript>
-<template>
-  <content></content>
-</template>
-</polymer-element>
 
 <polymer-element name="paper-menu-button" extends="paper-focusable" attributes="src icon opened halign valign slow" on-tap="{{tapAction}}">
   <template>
     <link rel="stylesheet" href="paper-menu-button.css">
+    <!--
     <paper-menu-button-overlay target="{{$.overlay}}" relatedTarget="{{}}" halign="{{halign}}" valign="{{valign}}" opened="{{opened}}" transition="paper-menu-button-transition-top-{{halign}}{{slow ? '-slow' : ''}}"></paper-menu-button-overlay>
     <paper-menu-button-overlay-container id="overlay">
       <paper-shadow target="{{$.overlayBg}}" z="0" hasPosition></paper-shadow>
@@ -47,7 +62,17 @@ Example:
         <content></content>
       </core-menu>
     </paper-menu-button-overlay-container>
+    -->
+
     <core-icon src="{{src}}" icon="{{icon}}"></core-icon>
+
+    <core-popup-menu id="menu" relatedTarget="{{}}" opened="{{opened}}" halign="{{halign}}" valign="{{valign}}" transition="paper-menu-button-transition-top-{{halign}}{{slow ? '-slow' : ''}}" selected="{{selected}}" selectedItem="{{selectedItem}}" selectedClass="{{selectedClass}}" valueattr="{{valueattr}}" selectedProperty="{{selectedProperty}}" selectedAttribute="{{selectedAttribute}}" on-core-select="{{selectAction}}" on-core-transitionend="{{transitionEndAction}}">
+      <paper-shadow id="shadow" z="0" target="{{$.menu}}"></paper-shadow>
+      <div class="paper-menu-button-overlay-ink"></div>
+      <div id="overlayBg" class="paper-menu-button-overlay-bg"></div>
+      <content select="*"></content>
+    </core-popup-menu>
+
   </template>
   <script>
     Polymer('paper-menu-button', {
@@ -61,7 +86,7 @@ Example:
          * @type boolean
          * @default false
          */
-        opened: { value: false, reflect: true },
+        opened: false,
 
         /**
          * The horizontal alignment of the pulldown menu relative to the button.
@@ -70,7 +95,7 @@ Example:
          * @type 'left' | 'right'
          * @default 'left'
          */
-        halign: { value: 'left', reflect: true },
+        halign: { value: 'auto', reflect: true },
 
         /**
          * The vertical alignment of the pulldown menu relative to the button.
@@ -79,7 +104,7 @@ Example:
          * @type 'bottom' | 'top'
          * @default 'top'
          */
-        valign: {value: 'top', reflect: true}
+        valign: {value: 'auto', reflect: true}
       },
 
       /**
@@ -112,6 +137,13 @@ Example:
 
         this.super();
         this.toggle();
+        if (this.opened) {
+          this.$.shadow.z = 0;
+        }
+      },
+
+      transitionEndAction: function() {
+        this.$.shadow.z = 1;
       },
 
       /**

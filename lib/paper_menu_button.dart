@@ -7,17 +7,7 @@ import 'dart:html';
 import 'dart:js' show JsArray, JsObject;
 import 'package:web_components/interop.dart' show registerDartType;
 import 'package:polymer/polymer.dart' show initMethod;
-import 'package:core_elements/src/common.dart' show DomProxyMixin;
 import 'paper_focusable.dart';
-
-
-class PaperMenuButtonOverlayContainer extends HtmlElement with DomProxyMixin {
-  PaperMenuButtonOverlayContainer.created() : super.created();
-}
-@initMethod
-upgradePaperMenuButtonOverlayContainer() => registerDartType('paper-menu-button-overlay-container', PaperMenuButtonOverlayContainer);
-
-
 
 /// A `paper-menu-button` is a `paper-icon-button` that opens a drop down menu when tapped.
 ///
@@ -28,6 +18,27 @@ upgradePaperMenuButtonOverlayContainer() => registerDartType('paper-menu-button-
 ///       <div>Menu Item 2</div>
 ///       <div>Menu Item 3</div>
 ///     </paper-menu-button>
+///
+/// Theming
+/// =======
+///
+/// To change the text color in the menu:
+///
+/// paper-menu-button::shadow #menu {
+///   color: white;
+/// }
+///
+/// To change the overlay background color:
+///
+/// paper-menu-button::shadow .paper-menu-button-overlay-bg {
+///   background: green;
+/// }
+///
+/// To change the color of the ripple effect:
+///
+/// paper-menu-button:shadow .paper-menu-button-overlay-ink {
+///  background: red;
+/// }
 class PaperMenuButton extends PaperFocusable {
   PaperMenuButton.created() : super.created();
 

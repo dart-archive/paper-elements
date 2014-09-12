@@ -38,9 +38,9 @@ import 'package:core_elements/src/common.dart' show DomProxyMixin;
 ///
 /// Then set the `transition` attribute:
 ///
-///     <paper-dialog heading="Title for dialog" transition="paper-transition-center">
+///     <paper-dialog heading="Title for dialog" transition="paper-dialog-transition-center">
 ///
-///     <paper-dialog heading="Title for dialog" transition="paper-transition-bottom">
+///     <paper-dialog heading="Title for dialog" transition="paper-dialog-transition-bottom">
 class PaperDialog extends HtmlElement with DomProxyMixin {
   PaperDialog.created() : super.created();
 
@@ -52,7 +52,7 @@ class PaperDialog extends HtmlElement with DomProxyMixin {
   String get heading => jsElement['heading'];
   set heading(String value) { jsElement['heading'] = value; }
 
-  /// Set this property to the id of a <core-transition> element to specify
+  /// Set this property to the id of a `core-transition` element to specify
   /// the transition to use when opening/closing this dialog.
   String get transition => jsElement['transition'];
   set transition(String value) { jsElement['transition'] = value; }

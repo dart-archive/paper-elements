@@ -8,13 +8,13 @@ files_to_generate:
   - paper-checkbox/paper-checkbox.html
   - paper-dialog/paper-dialog.html
   - paper-dialog/paper-dialog-transition.html
+  - paper-dropdown/paper-dropdown.html
   - paper-fab/paper-fab.html
   - paper-focusable/paper-focusable.html
   - paper-icon-button/paper-icon-button.html
   - paper-input/paper-input.html
   - paper-item/paper-item.html
   - paper-menu-button/paper-menu-button.html
-  - paper-menu-button/paper-menu-button-overlay.html
   - paper-menu-button/paper-menu-button-transition.html
   - paper-progress/paper-progress.html
   - paper-radio-button/paper-radio-button.html
@@ -51,6 +51,8 @@ stubs_to_generate:
     - core-overlay/core-key-helper.html
     - core-overlay/core-overlay.html
     - core-overlay/core-overlay-layer.html
+    - core-popup-menu/core-popup-menu.html
+    - core-popup-menu/core-popup-overlay.html
     - core-range/core-range.html
     - core-scroll-header-panel/core-scroll-header-panel.html
     - core-selection/core-selection.html
