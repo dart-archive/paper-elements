@@ -1,3 +1,8 @@
+## 0.3.0-dev
+
+* Updated library name on each element to say `paper_elements` instead of
+* `core_elements`.
+
 ## 0.2.0
 
 * Update all elements to the 0.4.0 js version.

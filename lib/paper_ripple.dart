@@ -1,13 +1,13 @@
-// DO NOT EDIT: auto-generated with core_elements/src/codegen.dart
+// DO NOT EDIT: auto-generated with `pub run custom_element_apigen:update`
 
 /// Dart API for the polymer element `paper_ripple`.
-library core_elements.paper_ripple;
+library paper_elements.paper_ripple;
 
 import 'dart:html';
 import 'dart:js' show JsArray, JsObject;
 import 'package:web_components/interop.dart' show registerDartType;
 import 'package:polymer/polymer.dart' show initMethod;
-import 'package:core_elements/src/common.dart' show DomProxyMixin;
+import 'package:custom_element_apigen/src/common.dart' show DomProxyMixin;
 
 /// `paper-ripple` provides a visual effect that other paper elements can
 /// use to simulate a rippling effect emanating from the point of contact.  The

@@ -1,7 +1,7 @@
-// DO NOT EDIT: auto-generated with core_elements/src/codegen.dart
+// DO NOT EDIT: auto-generated with `pub run custom_element_apigen:update`
 
 /// Dart API for the polymer element `paper_button`.
-library core_elements.paper_button;
+library paper_elements.paper_button;
 
 import 'dart:html';
 import 'dart:js' show JsArray, JsObject;
