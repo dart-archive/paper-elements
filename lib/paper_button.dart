@@ -43,6 +43,7 @@ import 'paper_focusable.dart';
 ///     }
 class PaperButton extends PaperFocusable {
   PaperButton.created() : super.created();
+  factory PaperButton() => new Element.tag('paper-button');
 
   /// The label of the button.
   String get label => jsElement['label'];

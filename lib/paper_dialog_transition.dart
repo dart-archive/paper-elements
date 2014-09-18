@@ -12,6 +12,7 @@ import 'package:core_elements/core_transition_css.dart';
 
 class PaperDialogTransition extends CoreTransitionCss {
   PaperDialogTransition.created() : super.created();
+  factory PaperDialogTransition() => new Element.tag('paper-dialog-transition');
 }
 @initMethod
 upgradePaperDialogTransition() => registerDartType('paper-dialog-transition', PaperDialogTransition);

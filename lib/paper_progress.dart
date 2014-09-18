@@ -45,6 +45,7 @@ import 'package:core_elements/core_range.dart';
 ///     }
 class PaperProgress extends CoreRange {
   PaperProgress.created() : super.created();
+  factory PaperProgress() => new Element.tag('paper-progress');
 
   /// The number that represents the current secondary progress.
   num get secondaryProgress => jsElement['secondaryProgress'];

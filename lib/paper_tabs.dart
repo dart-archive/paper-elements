@@ -35,6 +35,7 @@ import 'package:core_elements/core_selector.dart';
 ///     }
 class PaperTabs extends CoreSelector {
   PaperTabs.created() : super.created();
+  factory PaperTabs() => new Element.tag('paper-tabs');
 
   /// If true, ink effect is disabled.
   bool get noink => jsElement['noink'];

@@ -31,6 +31,7 @@ import 'paper_button.dart';
 /// See `core-iconset` for more information about how to use a custom icon set.
 class PaperIconButton extends PaperButton {
   PaperIconButton.created() : super.created();
+  factory PaperIconButton() => new Element.tag('paper-icon-button');
 
   /// If true, the ripple expands to a square to fill the containing box.
   bool get fill => jsElement['fill'];

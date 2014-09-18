@@ -29,6 +29,7 @@ import 'package:custom_element_apigen/src/common.dart' show DomProxyMixin;
 ///     </paper-item>
 class PaperItem extends HtmlElement with DomProxyMixin {
   PaperItem.created() : super.created();
+  factory PaperItem() => new Element.tag('paper-item');
 
   /// The label for the item.
   String get label => jsElement['label'];

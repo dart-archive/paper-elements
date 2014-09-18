@@ -54,6 +54,7 @@ import 'package:custom_element_apigen/src/common.dart' show DomProxyMixin;
 ///     <paper-ripple class="circle"></paper-ripple>
 class PaperRipple extends HtmlElement with DomProxyMixin {
   PaperRipple.created() : super.created();
+  factory PaperRipple() => new Element.tag('paper-ripple');
 
   /// The initial opacity set on the wave.
   num get initialOpacity => jsElement['initialOpacity'];

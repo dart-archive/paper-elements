@@ -24,6 +24,7 @@ import 'package:core_elements/core_input.dart';
 /// the focused and invalid states.
 class PaperInput extends CoreInput {
   PaperInput.created() : super.created();
+  factory PaperInput() => new Element.tag('paper-input');
 
   /// The label for this input. It normally appears as grey text inside
   /// the text input and disappears once the user enters text.

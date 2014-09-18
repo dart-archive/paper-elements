@@ -47,6 +47,7 @@ import 'package:custom_element_apigen/src/common.dart' show DomProxyMixin;
 ///     }
 class PaperRadioButton extends HtmlElement with DomProxyMixin {
   PaperRadioButton.created() : super.created();
+  factory PaperRadioButton() => new Element.tag('paper-radio-button');
 
   /// Gets or sets the state, `true` is checked and `false` is unchecked.
   bool get checked => jsElement['checked'];
