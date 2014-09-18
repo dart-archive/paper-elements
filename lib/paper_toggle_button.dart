@@ -1,13 +1,13 @@
-// DO NOT EDIT: auto-generated with core_elements/src/codegen.dart
+// DO NOT EDIT: auto-generated with `pub run custom_element_apigen:update`
 
 /// Dart API for the polymer element `paper_toggle_button`.
-library core_elements.paper_toggle_button;
+library paper_elements.paper_toggle_button;
 
 import 'dart:html';
 import 'dart:js' show JsArray, JsObject;
 import 'package:web_components/interop.dart' show registerDartType;
 import 'package:polymer/polymer.dart' show initMethod;
-import 'package:core_elements/src/common.dart' show DomProxyMixin;
+import 'package:custom_element_apigen/src/common.dart' show DomProxyMixin;
 
 /// `paper-toggle-button` provides a ON/OFF switch that user can toggle the state
 /// by tapping or by dragging the swtich.
