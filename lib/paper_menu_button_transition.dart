@@ -12,6 +12,7 @@ import 'package:core_elements/core_transition_css.dart';
 
 class PaperMenuButtonTransition extends CoreTransitionCss {
   PaperMenuButtonTransition.created() : super.created();
+  factory PaperMenuButtonTransition() => new Element.tag('paper-menu-button-transition');
 
   get duration => jsElement['duration'];
   set duration(value) { jsElement['duration'] = (value is Map || value is Iterable) ? new JsObject.jsify(value) : value;}

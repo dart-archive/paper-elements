@@ -41,6 +41,7 @@ import 'paper_focusable.dart';
 /// }
 class PaperMenuButton extends PaperFocusable {
   PaperMenuButton.created() : super.created();
+  factory PaperMenuButton() => new Element.tag('paper-menu-button');
 
   /// The URL of an image for the icon.  Should not use `icon` property
   /// if you are using this property.

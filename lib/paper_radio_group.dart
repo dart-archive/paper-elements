@@ -26,6 +26,7 @@ import 'package:core_elements/core_selector.dart';
 /// information about `paper-radio-button`.
 class PaperRadioGroup extends CoreSelector {
   PaperRadioGroup.created() : super.created();
+  factory PaperRadioGroup() => new Element.tag('paper-radio-group');
 }
 @initMethod
 upgradePaperRadioGroup() => registerDartType('paper-radio-group', PaperRadioGroup);

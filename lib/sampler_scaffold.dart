@@ -27,6 +27,7 @@ import 'package:custom_element_apigen/src/common.dart' show DomProxyMixin;
 /// of the scaffold.
 class SamplerScaffold extends HtmlElement with DomProxyMixin {
   SamplerScaffold.created() : super.created();
+  factory SamplerScaffold() => new Element.tag('sampler-scaffold');
 
   /// Sampler label.
   String get label => jsElement['label'];

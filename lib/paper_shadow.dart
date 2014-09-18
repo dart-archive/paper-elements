@@ -49,6 +49,7 @@ import 'package:custom_element_apigen/src/common.dart' show DomProxyMixin;
 ///      separate layer and use a different child element for clipping if needed.
 class PaperShadow extends HtmlElement with DomProxyMixin {
   PaperShadow.created() : super.created();
+  factory PaperShadow() => new Element.tag('paper-shadow');
 
   /// If set, the shadow is applied to this node.
   get target => jsElement['target'];

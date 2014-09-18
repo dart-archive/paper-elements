@@ -38,6 +38,7 @@ import 'package:custom_element_apigen/src/common.dart' show DomProxyMixin;
 ///     }
 class PaperDropdown extends HtmlElement with DomProxyMixin {
   PaperDropdown.created() : super.created();
+  factory PaperDropdown() => new Element.tag('paper-dropdown');
 
   /// True if the menu is open.
   bool get opened => jsElement['opened'];

@@ -57,6 +57,7 @@ import 'package:core_elements/core_range.dart';
 ///     }
 class PaperSlider extends CoreRange {
   PaperSlider.created() : super.created();
+  factory PaperSlider() => new Element.tag('paper-slider');
 
   /// If true, the slider thumb snaps to tick marks evenly spaced based
   /// on the `step` property value.

@@ -18,6 +18,7 @@ import 'paper_icon_button.dart';
 ///     <paper-fab class="mini"></paper-fab>
 class PaperFab extends PaperIconButton {
   PaperFab.created() : super.created();
+  factory PaperFab() => new Element.tag('paper-fab');
 
   /// See [`<paper-button>`](../paper-button).
   bool get raisedButton => jsElement['raisedButton'];

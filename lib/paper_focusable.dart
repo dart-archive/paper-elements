@@ -12,6 +12,7 @@ import 'package:custom_element_apigen/src/common.dart' show DomProxyMixin;
 /// paper-focusable is a base class for paper elements that can be focused.
 class PaperFocusable extends HtmlElement with DomProxyMixin {
   PaperFocusable.created() : super.created();
+  factory PaperFocusable() => new Element.tag('paper-focusable');
 
   /// If true, the button is currently active either because the
   /// user is holding down the button, or the button is a toggle

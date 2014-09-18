@@ -57,6 +57,7 @@ import 'package:custom_element_apigen/src/common.dart' show DomProxyMixin;
 /// the toast will automatically fits at the bottom of the screen.
 class PaperToast extends HtmlElement with DomProxyMixin {
   PaperToast.created() : super.created();
+  factory PaperToast() => new Element.tag('paper-toast');
 
   /// The text shows in a toast.
   String get text => jsElement['text'];

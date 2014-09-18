@@ -29,6 +29,7 @@ import 'package:custom_element_apigen/src/common.dart' show DomProxyMixin;
 ///     }
 class PaperTab extends HtmlElement with DomProxyMixin {
   PaperTab.created() : super.created();
+  factory PaperTab() => new Element.tag('paper-tab');
 
   /// If true, ink ripple effect is disabled.
   bool get noink => jsElement['noink'];

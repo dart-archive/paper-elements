@@ -55,6 +55,7 @@ import 'package:custom_element_apigen/src/common.dart' show DomProxyMixin;
 ///     }
 class PaperToggleButton extends HtmlElement with DomProxyMixin {
   PaperToggleButton.created() : super.created();
+  factory PaperToggleButton() => new Element.tag('paper-toggle-button');
 
   /// Gets or sets the state, `true` is checked and `false` is unchecked.
   bool get checked => jsElement['checked'];

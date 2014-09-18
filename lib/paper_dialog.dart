@@ -43,6 +43,7 @@ import 'package:custom_element_apigen/src/common.dart' show DomProxyMixin;
 ///     <paper-dialog heading="Title for dialog" transition="paper-dialog-transition-bottom">
 class PaperDialog extends HtmlElement with DomProxyMixin {
   PaperDialog.created() : super.created();
+  factory PaperDialog() => new Element.tag('paper-dialog');
 
   /// Set opened to true to show the dialog and to false to hide it.
   /// A dialog may be made intially opened by setting its opened attribute.

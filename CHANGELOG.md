@@ -1,7 +1,10 @@
-## 0.3.0-dev
+## 0.3.0
 
+* Update all elements so they can be built from code using a normal factory
+  constructor, such as `new PaperInput()`. It is still necessary however to
+  include the html import for each element you wish to create this way.
 * Updated library name on each element to say `paper_elements` instead of
-* `core_elements`.
+  `core_elements`.
 
 ## 0.2.0
 
