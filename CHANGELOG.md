@@ -1,3 +1,8 @@
+## 0.3.0+1
+
+* Upgrade `custom_element_apigen` to a real dependency as its required in the
+  wrappers.
+
 ## 0.3.0
 
 * Update all elements so they can be built from code using a normal factory
