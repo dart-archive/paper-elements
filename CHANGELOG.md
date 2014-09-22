@@ -11,6 +11,14 @@
 * Updated library name on each element to say `paper_elements` instead of
   `core_elements`.
 
+## 0.2.1
+
+* Re-release of 0.3.0+1 as 0.2.1. The only reason to mark this as a breaking
+  change was the change of the library names, which are only visible via
+  reflection. However, correlated changes in core-elements broke several users
+  and we believe that releasing this package again with an old version number
+  minimizes how much our users will be broken.
+
 ## 0.2.0
 
 * Update all elements to the 0.4.0 js version.
