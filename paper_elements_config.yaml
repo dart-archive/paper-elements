@@ -8,7 +8,7 @@ files_to_generate:
   - paper-checkbox/paper-checkbox.html
   - paper-dialog/paper-dialog.html
   - paper-dialog/paper-dialog-transition.html
-  - paper-dropdown/paper-dropdown.html
+  - paper-dropdown-menu/paper-dropdown-menu.html
   - paper-fab/paper-fab.html
   - paper-focusable/paper-focusable.html
   - paper-icon-button/paper-icon-button.html
@@ -35,6 +35,8 @@ stubs_to_generate:
     - core-collapse/core-collapse.html
     - core-component-page/core-component-page.html
     - core-drawer-panel/core-drawer-panel.html
+    - core-dropdown/core-dropdown.html
+    - core-dropdown/core-dropdown-overlay.html
     - core-field/core-field.html
     - core-header-panel/core-header-panel.html
     - core-icon/core-icon.html
@@ -51,8 +53,6 @@ stubs_to_generate:
     - core-overlay/core-key-helper.html
     - core-overlay/core-overlay.html
     - core-overlay/core-overlay-layer.html
-    - core-popup-menu/core-popup-menu.html
-    - core-popup-menu/core-popup-overlay.html
     - core-range/core-range.html
     - core-scroll-header-panel/core-scroll-header-panel.html
     - core-selection/core-selection.html
