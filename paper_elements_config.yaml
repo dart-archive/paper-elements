@@ -29,6 +29,7 @@ files_to_generate:
   - sampler-scaffold/sampler-scaffold.html
 stubs_to_generate:
   core_elements:
+    - core-a11y-keys/core-a11y-keys.html
     - core-animation/core-animation.html
     - core-animation/core-animation-group.html
     - core-animation/web-animations.html
