@@ -1,96 +1,144 @@
 <!doctype html>
 <!--
-Copyright 2013 The Polymer Authors. All rights reserved.
-Use of this source code is governed by a BSD-style
-license that can be found in the LICENSE file.
+Copyright (c) 2014 The Polymer Project Authors. All rights reserved.
+This code may only be used under the BSD style license found at http://polymer.github.io/LICENSE.txt
+The complete set of authors may be found at http://polymer.github.io/AUTHORS.txt
+The complete set of contributors may be found at http://polymer.github.io/CONTRIBUTORS.txt
+Code distributed by Google as part of the polymer project is also
+subject to an additional IP rights grant found at http://polymer.github.io/PATENTS.txt
 -->
+
 <html>
 <head>
 
-  <meta name="viewport" content="width=device-width, minimum-scale=1.0, initial-scale=1, user-scalable=yes">
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <meta name="viewport" content="width=device-width, minimum-scale=1.0, initial-scale=1.0, user-scalable=yes">
 
   <title>paper-menu-button</title>
   <script src="packages/web_components/dart_support.js"></script>
+
   <link href="packages/core_elements/core_icons.html" rel="import">
   <link href="packages/paper_elements/paper_icon_button.html" rel="import">
   <link href="packages/paper_elements/paper_item.html" rel="import">
   <link href="packages/paper_elements/paper_shadow.html" rel="import">
   <link href="packages/paper_elements/paper_menu_button.html" rel="import">
-  <style>
+
+  <style shim-shadowdom>
     body {
-			margin: 0;
-			font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
-      font-size: 14px;
-      background: #f7f7f7;
+      font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+      font-size: 16px;
     }
 
-    .card {
-      background: #fff;
-      width: 320px;
-      height: 480px;
-      margin: 128px 96px;
-      border-radius: 3px;
+    html, body {
+      height: 100%;
+      margin: 0;
     }
 
     .toolbar {
-      background: #91a7ff;
-      position: relative;
-      padding: 0.5em;
-      border-radius: 3px 3px 0 0;
+      color: #fff;
+      font-size: 16px;
+      padding: 12px;
     }
 
-    .inner {
-      position: absolute;
-      top: 0;
-      left: 0;
-      bottom: 0;
-      right: 0;
-      z-index: -1;
+    .toolbar-1 {
+      background-color: #3b78e7;
     }
 
-    body /deep/ core-icon {
-      fill: #fff;
+    .toolbar-2 {
+      background-color: #4285f4;
     }
 
-    body /deep/ paper-item::shadow core-icon {
-      fill: #000;
+    .toolbar-3 {
+      background-color: #5e97f6;
     }
 
-    core-icon {
-      fill: #fff;
+    .bottom-toolbar-1 {
+      background-color: #0d904f;
     }
 
-    paper-item core-icon {
-      fill: #000;
+    .bottom-toolbar-2 {
+      background-color: #0f9d58;
+    }
+
+    .bottom-toolbar-3 {
+      background-color: #33ac71;
     }
   </style>
 </head>
 <body unresolved>
 
-  <paper-shadow></paper-shadow>
+  <template id="myTemplate" is="auto-binding-dart">
 
-  <div class="card paper-shadow-top-z-1">
-    <div class="inner paper-shadow-bottom-z-1"></div>
-    <div layout horizontal class="toolbar paper-shadow-top-z-1">
-      <div class="inner paper-shadow-bottom-z-1"></div>
-      <paper-menu-button icon="menu" halign="left">
-        <paper-item label="Menu Item 1"></paper-item>
-        <paper-item label="Menu Item 2"></paper-item>
-        <paper-item label="Menu Item 3"></paper-item>
-      </paper-menu-button>
+    <div layout vertical fit>
+
+      <div class="toolbar toolbar-1" layout horizontal center>
+
+        <paper-menu-button icon="menu">
+          <template repeat="{{pastries}}">
+            <paper-item>{{}}</paper-item>
+          </template>
+        </paper-menu-button>
+
+        <paper-menu-button icon="menu" noTransition>
+          <template repeat="{{countries}}">
+            <paper-item>{{name}}</paper-item>
+          </template>
+        </paper-menu-button>
+
+        <div flex></div>
+
+        <paper-menu-button icon="more-vert" halign="right" noTransition>
+          <template repeat="{{countries}}">
+            <paper-item>{{name}}</paper-item>
+          </template>
+        </paper-menu-button>
+
+        <paper-menu-button icon="more-vert" halign="right">
+          <template repeat="{{pastries}}">
+            <paper-item>{{}}</paper-item>
+          </template>
+        </paper-menu-button>
+
+      </div>
+
       <div flex></div>
-      <paper-icon-button icon="search"></paper-icon-button>
-      <paper-menu-button icon="more-vert" halign="right" slow>
-        <paper-item label="Refresh"></paper-item>
-        <paper-item label="Send Feedback"></paper-item>
-        <paper-item label="Settings"></paper-item>
-        <paper-item label="Help"></paper-item>
-        <paper-item label="Sign Out"></paper-item>
-      </paper-menu-button>
-    </div>
-  </div>
 
-  <script type="application/dart">export 'package:polymer/init.dart';</script>
+      <div class="toolbar bottom-toolbar-1" layout horizontal center>
+
+        <paper-menu-button icon="menu" valign="bottom">
+          <template repeat="{{pastries}}">
+            <paper-item>{{}}</paper-item>
+          </template>
+        </paper-menu-button>
+
+        <paper-menu-button icon="menu" valign="bottom" noTransition>
+          <template repeat="{{countries}}">
+            <paper-item>{{name}}</paper-item>
+          </template>
+        </paper-menu-button>
+
+        <div flex></div>
+
+        <paper-menu-button icon="more-vert" halign="right" valign="bottom" noTransition>
+          <template repeat="{{countries}}">
+            <paper-item>{{name}}</paper-item>
+          </template>
+        </paper-menu-button>
+
+        <paper-menu-button icon="more-vert" halign="right" valign="bottom">
+          <template repeat="{{pastries}}">
+            <paper-item>{{}}</paper-item>
+          </template>
+        </paper-menu-button>
+
+      </div>
+
+    </div>
+
+  </template>
+
+  <script type="application/dart" src="paper_menu_button.dart"></script>
 
 </body>
 </html>

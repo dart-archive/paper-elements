@@ -1,4 +1,4 @@
-## 0.4.0-dev
+## 0.4.0
 
 * Update elements to the 0.4.1 JavaScript versions.
   * **Breaking Change** `paper-dropdown` was renamed `paper-dropdown-menu`.

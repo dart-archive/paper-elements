@@ -1,23 +1,25 @@
 name: paper_elements
-version: 0.4.0-dev
+version: 0.4.0
 author: Polymer.dart Authors <web-ui-dev@dartlang.org>
 description: Paper elements for Dart
 homepage: https://www.dartlang.org/polymer-dart/
 dependencies:
-  core_elements: '>=0.3.0-dev <0.4.0'
+  core_elements: '>=0.3.0 <0.4.0'
   custom_element_apigen: ">= 0.0.2 <0.1.0"
-  polymer: ">=0.14.0 <0.15.0"
+  polymer: ">=0.14.0 <0.16.0"
 dev_dependencies:
   path: ">=1.0.0 <2.0.0"
 transformers:
 - polymer:
     entry_points:
       - example/core_scroll_header_panel.html
+      - example/core_toolbar.html
+      - example/demo.html
       - example/paper_button.html
       - example/paper_button2.html
       - example/paper_checkbox.html
       - example/paper_dialog.html
-      - example/paper_dropdown.html
+      - example/paper_dropdown_menu.html
       - example/paper_fab.html
       - example/paper_fab2.html
       - example/paper_icon_button.html
