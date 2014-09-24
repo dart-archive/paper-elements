@@ -9,18 +9,18 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
 
 <!--
 
-`paper-dropdown` is a control where the user can choose from an array of
+`paper-dropdown-menu` is a control where the user can choose from an array of
 options in a drop-down menu. The currently selected option is displayed in
 the control.
 
 Example:
 
-    <paper-dropdown selected="Financier" valueattr="label">
+    <paper-dropdown-menu selected="Financier" valueattr="label">
         <paper-item label="Croissant"></paper-item>
         <paper-item label="Donut"></paper-item>
         <paper-item label="Financier"></paper-item>
         <paper-item label="Madeleine"></paper-item>
-    </core-dropdown>
+    </paper-dropdown-menu>
 
 This example renders a drop-down menu with 4 options, with the option
 `Financier` pre-selected.
@@ -28,17 +28,17 @@ This example renders a drop-down menu with 4 options, with the option
 Theming
 -------
 
-Style the drop-down menu with the `paper-dropdown::shadow #menu` selector.
+Style the drop-down menu with the `paper-dropdown-menu::shadow #menu` selector.
 
 Example:
 
-    paper-dropdown::shadow #menu {
+    paper-dropdown-menu::shadow #dropdown {
         background-color: #eee;
         border: 1px solid #ccc;
     }
 
 @group Paper Elements
-@element paper-dropdown
+@element paper-dropdown-menu
 @status beta
 @homepage github.io
 -->
@@ -54,15 +54,18 @@ contains the selection state.
   @param {Object} detail.item the item element
 -->
 <link href="../polymer/polymer.html" rel="import">
+
+<link href="../core-dropdown/core-dropdown.html" rel="import">
 <link href="../core-icon/core-icon.html" rel="import">
 <link href="../core-icons/core-icons.html" rel="import">
-<link href="../core-popup-menu/core-popup-menu.html" rel="import">
+<link href="../core-menu/core-menu.html" rel="import">
+
 <link href="../paper-shadow/paper-shadow.html" rel="import">
 
-<polymer-element name="paper-dropdown">
+<polymer-element name="paper-dropdown-menu">
 <template>
 
-  <link href="paper-dropdown.css" rel="stylesheet">
+  <link href="paper-dropdown-menu.css" rel="stylesheet">
 
   <div id="control" layout horizontal selected?="{{selectedItem}}" on-tap="{{toggle}}">
     <div flex>
@@ -71,10 +74,17 @@ contains the selection state.
     <core-icon id="arrow" icon="{{opened ? 'arrow-drop-up' : 'arrow-drop-down'}}"></core-icon>
   </div>
 
-  <core-popup-menu id="menu" relatedTarget="{{$.control}}" opened="{{opened}}" halign="{{halign}}" valign="{{valign}}" selected="{{selected}}" selectedItem="{{selectedItem}}" selectedClass="{{selectedClass}}" valueattr="{{valueattr}}" selectedProperty="{{selectedProperty}}" selectedAttribute="{{selectedAttribute}}" on-core-select="{{selectAction}}">
-    <paper-shadow z="1" target="{{$.menu}}" hasPosition></paper-shadow>
-    <content select="*"></content>
-  </core-popup-menu>
+  <core-dropdown id="dropdown" relatedTarget="{{$.control}}" opened="{{opened}}" halign="{{halign}}" valign="{{valign}}">
+
+    <paper-shadow z="1" target="{{$.dropdown}}" hasPosition></paper-shadow>
+
+    <div class="menu-container">
+      <core-menu id="menu" selected="{{selected}}" selectedItem="{{selectedItem}}" selectedClass="{{selectedClass}}" valueattr="{{valueattr}}" selectedProperty="{{selectedProperty}}" selectedAttribute="{{selectedAttribute}}" on-core-activate="{{activateAction}}">
+        <content></content>
+      </core-menu>
+    </div>
+
+  </core-dropdown>
 
 </template>
 <script>
@@ -165,7 +175,7 @@ contains the selection state.
        * @type "left"|"right"
        * @default "left"
        */
-      halign: {value: 'left', reflect: true},
+      halign: 'left',
 
       /**
        * Vertically align the dropdown menu with the control.
@@ -173,7 +183,7 @@ contains the selection state.
        * @type "top"|"bottom"
        * @default "bottom"
        */
-      valign: {value: 'bottom', reflect: true}
+      valign: 'top'
 
     },
 
@@ -181,7 +191,7 @@ contains the selection state.
       this.opened = !this.opened;
     },
 
-    selectAction: function() {
+    activateAction: function() {
       this.opened = false;
     }
 
