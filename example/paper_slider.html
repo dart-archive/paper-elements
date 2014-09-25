@@ -137,7 +137,7 @@
       initPolymer().run(() {
         Polymer.onReady.then((_) {
           var ratings = querySelector('#ratings');
-          ratings.onChange.listen((_) {
+          ratings.on['core-change'].listen((_) {
             querySelector('#ratingsLabel').text = '${ratings.value}';
           });
         });

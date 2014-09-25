@@ -14,6 +14,7 @@ license that can be found in the LICENSE file.
   <link rel="import" href="packages/paper_elements/roboto.html">
   <link rel="import" href="packages/core_elements/core_icons.html">
   <link rel="import" href="packages/core_elements/core_toolbar.html">
+  <link rel="import" href="packages/core_elements/core_media_query.html">
   <link rel="import" href="packages/paper_elements/paper_icon_button.html">
 
   <style>
@@ -88,6 +89,25 @@ license that can be found in the LICENSE file.
     <div flex class="middle indent">Title</div>
     <div flex class="bottom indent" style="font-size: 18px;">Title2</div>
   </core-toolbar>
+
+ <core-media-query id="mediaQuery" query="max-width: 640px"></core-media-query>
+
+  <script type="application/dart">
+    import 'dart:html';
+    import 'dart:js';
+    import 'package:polymer/polymer.dart';
+
+    main() {
+      initPolymer().run(() {
+        Polymer.onReady.then((_) {
+          querySelector('#mediaQuery').on['core-media-change'].listen((e) {
+            var m = new JsObject.fromBrowserObject(e)['detail']['matches'];
+            document.body.classes.toggle('core-narrow', m);
+          });
+        });
+      });
+    }
+  </script>
   
 </body>
 </html>

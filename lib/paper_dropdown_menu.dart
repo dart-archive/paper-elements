@@ -1,7 +1,7 @@
 // DO NOT EDIT: auto-generated with `pub run custom_element_apigen:update`
 
-/// Dart API for the polymer element `paper_dropdown`.
-library paper_elements.paper_dropdown;
+/// Dart API for the polymer element `paper_dropdown_menu`.
+library paper_elements.paper_dropdown_menu;
 
 import 'dart:html';
 import 'dart:js' show JsArray, JsObject;
@@ -9,18 +9,18 @@ import 'package:web_components/interop.dart' show registerDartType;
 import 'package:polymer/polymer.dart' show initMethod;
 import 'package:custom_element_apigen/src/common.dart' show DomProxyMixin;
 
-/// `paper-dropdown` is a control where the user can choose from an array of
+/// `paper-dropdown-menu` is a control where the user can choose from an array of
 /// options in a drop-down menu. The currently selected option is displayed in
 /// the control.
 ///
 /// Example:
 ///
-///     <paper-dropdown selected="Financier" valueattr="label">
+///     <paper-dropdown-menu selected="Financier" valueattr="label">
 ///         <paper-item label="Croissant"></paper-item>
 ///         <paper-item label="Donut"></paper-item>
 ///         <paper-item label="Financier"></paper-item>
 ///         <paper-item label="Madeleine"></paper-item>
-///     </core-dropdown>
+///     </paper-dropdown-menu>
 ///
 /// This example renders a drop-down menu with 4 options, with the option
 /// `Financier` pre-selected.
@@ -28,17 +28,17 @@ import 'package:custom_element_apigen/src/common.dart' show DomProxyMixin;
 /// Theming
 /// -------
 ///
-/// Style the drop-down menu with the `paper-dropdown::shadow #menu` selector.
+/// Style the drop-down menu with the `paper-dropdown-menu::shadow #menu` selector.
 ///
 /// Example:
 ///
-///     paper-dropdown::shadow #menu {
+///     paper-dropdown-menu::shadow #dropdown {
 ///         background-color: #eee;
 ///         border: 1px solid #ccc;
 ///     }
-class PaperDropdown extends HtmlElement with DomProxyMixin {
-  PaperDropdown.created() : super.created();
-  factory PaperDropdown() => new Element.tag('paper-dropdown');
+class PaperDropdownMenu extends HtmlElement with DomProxyMixin {
+  PaperDropdownMenu.created() : super.created();
+  factory PaperDropdownMenu() => new Element.tag('paper-dropdown-menu');
 
   /// True if the menu is open.
   bool get opened => jsElement['opened'];
@@ -85,4 +85,4 @@ class PaperDropdown extends HtmlElement with DomProxyMixin {
   set valign(value) { jsElement['valign'] = (value is Map || value is Iterable) ? new JsObject.jsify(value) : value;}
 }
 @initMethod
-upgradePaperDropdown() => registerDartType('paper-dropdown', PaperDropdown);
+upgradePaperDropdownMenu() => registerDartType('paper-dropdown-menu', PaperDropdownMenu);

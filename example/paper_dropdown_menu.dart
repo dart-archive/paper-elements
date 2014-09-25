@@ -6,8 +6,9 @@
  * Code distributed by Google as part of the polymer project is also
  * subject to an additional IP rights grant found at http://polymer.github.io/PATENTS.txt
  */
-library paper_elements.example.paper_dropdown_demo;
+library paper_elements.example.paper_dropdown_menu_demo;
 
+import 'dart:js';
 import 'package:polymer/polymer.dart';
 export 'package:polymer/init.dart';
 
@@ -271,6 +272,11 @@ class DropdownDemo extends PolymerElement {
       'Sfogliatelle',
   ];
   DropdownDemo.created() : super.created();
+
+  selectAction(e) {
+    var detail = new JsObject.fromBrowserObject(e)['detail'];
+    print('select: ${detail['selected']}, ${detail['item']}');
+  }
 }
 
 class Country {

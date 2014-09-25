@@ -1,3 +1,8 @@
+## 0.4.0
+
+* Update elements to the 0.4.1 JavaScript versions.
+  * **Breaking Change** `paper-dropdown` was renamed `paper-dropdown-menu`.
+
 ## 0.3.0+1
 
 * Upgrade `custom_element_apigen` to a real dependency as its required in the

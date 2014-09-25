@@ -20,7 +20,7 @@ import 'package:custom_element_apigen/src/common.dart' show DomProxyMixin;
 ///         <paper-item label="Sign Out"></paper-item>
 ///     </core-menu>
 ///
-/// To use as a link, put an `&lt;a&gt;` element in the item.
+/// To use as a link, put an `<a>` element in the item.
 ///
 /// Example:
 ///

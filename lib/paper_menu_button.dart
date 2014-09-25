@@ -43,7 +43,7 @@ class PaperMenuButton extends PaperFocusable {
   PaperMenuButton.created() : super.created();
   factory PaperMenuButton() => new Element.tag('paper-menu-button');
 
-  /// The URL of an image for the icon.  Should not use `icon` property
+  /// The URL of an image for the icon. Should not use `icon` property
   /// if you are using this property.
   String get src => jsElement['src'];
   set src(String value) { jsElement['src'] = value; }
@@ -58,16 +58,20 @@ class PaperMenuButton extends PaperFocusable {
   bool get opened => jsElement['opened'];
   set opened(bool value) { jsElement['opened'] = value; }
 
-  /// The horizontal alignment of the pulldown menu relative to the button.
+  /// The horizontal alignment of the menu relative to the button.
   get halign => jsElement['halign'];
   set halign(value) { jsElement['halign'] = (value is Map || value is Iterable) ? new JsObject.jsify(value) : value;}
 
-  /// The vertical alignment of the pulldown menu relative to the button.
+  /// The vertical alignment of the menu relative to the button.
   get valign => jsElement['valign'];
   set valign(value) { jsElement['valign'] = (value is Map || value is Iterable) ? new JsObject.jsify(value) : value;}
 
   get slow => jsElement['slow'];
   set slow(value) { jsElement['slow'] = (value is Map || value is Iterable) ? new JsObject.jsify(value) : value;}
+
+  /// Set to true to disable the transition.
+  bool get noTransition => jsElement['noTransition'];
+  set noTransition(bool value) { jsElement['noTransition'] = value; }
 
   /// Toggle the opened state of the menu.
   void toggle() =>
