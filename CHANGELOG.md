@@ -1,3 +1,8 @@
+## 0.4.1
+
+* Update `paper_elements_config.yaml` with the new `deletion_patterns` option.
+  This deletes a lot of cruft code from `bower update`.
+
 ## 0.4.0
 
 * Update elements to the 0.4.1 JavaScript versions.
