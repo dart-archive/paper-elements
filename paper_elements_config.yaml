@@ -62,3 +62,10 @@ stubs_to_generate:
     - core-toolbar/core-toolbar.html
     - core-transition/core-transition.html
     - core-transition/core-transition-css.html
+deletion_patterns:
+  - metadata\.html$
+  - index\.html$
+  - bower\.json$
+  - ^core-
+  - ^platform$
+  - ^polymer$
