@@ -57,20 +57,20 @@ core-icon::shadow svg {
 }
 
 .paper-menu-button-overlay-ink {
-	position: absolute;
-	top: 0;
-	left: 0;
-	width: 40px;
-	height: 40px;
-	border-radius: 20px;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 40px;
+  height: 40px;
+  border-radius: 20px;
   opacity: 0;
   transform: scale(0);
   -webkit-transform: scale(0);
 }
 
 :host([halign="right"]) .paper-menu-button-overlay-ink {
-	left: auto;
-	right: 0;
+  left: auto;
+  right: 0;
 }
 
 :host([valign="bottom"]) .paper-menu-button-overlay-ink {
@@ -79,13 +79,14 @@ core-icon::shadow svg {
 }
 
 .paper-menu-button-overlay-bg {
-	position: absolute;
-	top: 0;
-	left: 0;
-	bottom: 0;
-	right: 0;
-	border-radius: 3px;
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  border-radius: 3px;
   opacity: 0;
+  z-index: -1;
 }
 
 :host([noTransition]) .paper-menu-button-overlay-bg {

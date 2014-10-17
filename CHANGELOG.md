@@ -1,3 +1,13 @@
+## 0.5.0-dev
+  * Updated to match JavaScript version 0.4.2. This includes some breaking
+    changes in elements APIs. For example, `PaperButton.raisedButton` was
+    renamed to `PaperButton.raised`.
+  * removed unnecessary files (README from the paper element repos)
+
+## 0.4.2
+  * Updated to use polymer 0.15.1 (Dart interop support is loaded automatically
+    now.)
+
 ## 0.4.1
 
 * Update `paper_elements_config.yaml` with the new `deletion_patterns` option.

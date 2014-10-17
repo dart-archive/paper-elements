@@ -7,63 +7,64 @@ import 'dart:html';
 import 'dart:js' show JsArray, JsObject;
 import 'package:web_components/interop.dart' show registerDartType;
 import 'package:polymer/polymer.dart' show initMethod;
-import 'paper_focusable.dart';
+import 'paper_button_base.dart';
 
-/// `paper-button` is a button containing text or an image. When the user touches
-/// the button, a ripple effect emanates from the point of contact.
+/// Material Design: <a href="http://www.google.com/design/spec/components/buttons.html">Buttons</a>
 ///
-/// A `paper-button` may be flat or raised. A raised button behaves like a piece
-/// of paper resting on another sheet, and lifts up upon press. Flat buttons do
-/// not raise up. Add the `raisedButton` attribute to make a raised button.
+/// `paper-button` is a button. When the user touches the button, a ripple effect emanates
+/// from the point of contact. It may be flat or raised. A raised button is styled with a
+/// shadow.
 ///
 /// Example:
 ///
-///     <paper-button label="flat button"></paper-button>
-///     <paper-button label="raised button" raisedButton></paper-button>
+///     <paper-button>flat button</paper-button>
+///     <paper-button raised>raised button</paper-button>
 ///
-/// A button should be styled with a background color, text color, ripple color
-/// and hover color.
+/// You may use custom DOM in the button body to create a variety of buttons. For example, to
+/// create a button with an icon and some text:
 ///
-/// To style the background, text and hover color, apply the `background` and
-/// `color` CSS properties to the button. To style the ripple color, apply the
-/// `color` CSS property to the `#ripple` element in the button's shadow root:
+///     <paper-button>
+///       <core-icon icon="favorite">
+///       custom button content
+///     </paper-button>
 ///
-///     /* Style #my-button blue with white text and darker blue ink. */
+/// Styling
+/// -------
+///
+/// Style the button with CSS as you would a normal DOM element.
+///
+///     /* make #my-button green with yellow text */
 ///     #my-button {
-///         background: #4285f4;
-///         color: #fff;
+///         background: green;
+///         color: yellow;
 ///     }
 ///
-///     #my-button:hover {
-///         background: #2a56c6;
-///     }
+/// By default, the ripple is the same color as the foreground at 25% opacity. You may
+/// customize the color using this selector:
 ///
+///     /* make #my-button use a blue ripple instead of foreground color */
 ///     #my-button::shadow #ripple {
-///         color: #2a56c6;
+///       color: blue;
 ///     }
-class PaperButton extends PaperFocusable {
+///
+/// The opacity of the ripple is not customizable via CSS.
+class PaperButton extends PaperButtonBase {
   PaperButton.created() : super.created();
   factory PaperButton() => new Element.tag('paper-button');
 
-  /// The label of the button.
-  String get label => jsElement['label'];
-  set label(String value) { jsElement['label'] = value; }
+  /// If true, the button will be styled with a shadow.
+  bool get raised => jsElement['raised'];
+  set raised(bool value) { jsElement['raised'] = value; }
 
-  /// If true, the button will be styled as a "raised" button.
-  bool get raisedButton => jsElement['raisedButton'];
-  set raisedButton(bool value) { jsElement['raisedButton'] = value; }
+  /// By default the ripple emanates from where the user touched the button.
+  /// Set this to true to always center the ripple.
+  bool get recenteringTouch => jsElement['recenteringTouch'];
+  set recenteringTouch(bool value) { jsElement['recenteringTouch'] = value; }
 
-  /// (optional) The URL of an image for an icon to use in the button.
-  /// Should not use `icon` property if you are using this property.
-  String get iconSrc => jsElement['iconSrc'];
-  set iconSrc(String value) { jsElement['iconSrc'] = value; }
-
-  /// (optional) Specifies the icon name or index in the set of icons
-  /// available in the icon set. If using this property, load the icon
-  /// set separately where the icon is used. Should not use `src`
-  /// if you are using this property.
-  String get icon => jsElement['icon'];
-  set icon(String value) { jsElement['icon'] = value; }
+  /// By default the ripple expands to fill the button. Set this to true to
+  /// constrain the ripple to a circle within the button.
+  bool get fill => jsElement['fill'];
+  set fill(bool value) { jsElement['fill'] = value; }
 }
 @initMethod
 upgradePaperButton() => registerDartType('paper-button', PaperButton);

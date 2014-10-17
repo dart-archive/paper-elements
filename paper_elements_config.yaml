@@ -5,6 +5,7 @@ package_mappings:
 files_to_generate:
   - font-roboto/roboto.html
   - paper-button/paper-button.html
+  - paper-button/paper-button-base.html
   - paper-checkbox/paper-checkbox.html
   - paper-dialog/paper-dialog.html
   - paper-dialog/paper-dialog-transition.html
@@ -66,6 +67,7 @@ deletion_patterns:
   - metadata\.html$
   - index\.html$
   - bower\.json$
+  - README\.md$
   - ^core-
   - ^platform$
   - ^polymer$

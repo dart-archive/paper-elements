@@ -12,11 +12,11 @@ license that can be found in the LICENSE file.
   <meta name="viewport" content="width=device-width, minimum-scale=1.0, initial-scale=1, user-scalable=yes">
   <link href="packages/paper_elements/roboto.html" rel="import">
   <link href="packages/core_elements/core_icons.html" rel="import">
-  <link href="packages/core_elements/core_menu.html" rel="import">
   <link href="packages/paper_elements/paper_item.html" rel="import">
   <style shim-shadowdom>
     body {
       font-family: RobotoDraft, 'Helvetica Neue', Helvetica, Arial;
+      margin: 20px;
     }
 
     paper-item {
@@ -25,14 +25,25 @@ license that can be found in the LICENSE file.
   </style>
 </head>
 <body unresolved>
-  <core-menu>
-    <paper-item icon="refresh" label="Item 1"></paper-item>
-    <paper-item label="Item 2"></paper-item>
-    <paper-item label="Item with a link">
-      <a href="https://www.dartlang.org/polymer-dart/" target="_self"></a>
-    </paper-item>
-  </core-menu>
 
+  <h2>items with icon and label:</h2>
+  <paper-item icon="refresh" label="Refresh"></paper-item>
+  <paper-item icon="favorite" label="Favorite"></paper-item>
+  <paper-item icon="delete" label="Delete"></paper-item>
+  <paper-item icon="bookmark" label="Bookmark"></paper-item>
+  
+  <br><br>
+
+  <h2>links (via &lt;a&gt;):</h2>
+  <paper-item label="Polymer Project link">
+    <a href="http://www.polymer-project.org" target="_blank"></a>
+  </paper-item>
+  <paper-item label="GitHub link">
+    <a href="https://github.com/Polymer" target="_blank"></a>
+  </paper-item>
+  <paper-item label="WebComponents.org link">
+    <a href="http://webcomponents.org/" target="_blank"></a>
+  </paper-item>
   <script type="application/dart">export 'package:polymer/init.dart';</script>  
 </body>
 </html>

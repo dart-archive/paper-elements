@@ -76,13 +76,13 @@ paper-menu-button:shadow .paper-menu-button-overlay-ink {
   })();
 </script>
 
-<polymer-element name="paper-menu-button" extends="paper-focusable" attributes="src icon opened halign valign slow" on-tap="{{tapAction}}">
+<polymer-element name="paper-menu-button" extends="paper-focusable" attributes="src icon opened halign valign slow">
   <template>
 
     <link rel="stylesheet" href="paper-menu-button.css">
     <core-style ref="paper-menu-button"></core-style>
 
-    <core-icon src="{{src}}" icon="{{icon}}"></core-icon>
+    <core-icon src="{{src}}" icon="{{icon}}" on-tap="{{tapAction}}"></core-icon>
 
     <core-dropdown id="dropdown" relatedTarget="{{}}" opened="{{opened}}" halign="{{halign}}" valign="{{valign}}" transition="{{noTransition ? '' : transition}}" on-core-transitionend="{{transitionEndAction}}">
 
@@ -92,7 +92,7 @@ paper-menu-button:shadow .paper-menu-button-overlay-ink {
       <div id="overlayBg" class="paper-menu-button-overlay-bg"></div>
 
       <div class="paper-menu-button-menu-container">
-        <core-menu id="menu" selected="{{selected}}" selectedItem="{{selectedItem}}" selectedClass="{{selectedClass}}" valueattr="{{valueattr}}" selectedProperty="{{selectedProperty}}" selectedAttribute="{{selectedAttribute}}" on-core-select="{{selectAction}}">
+        <core-menu id="menu" selected="{{selected}}" selectedItem="{{selectedItem}}" selectedClass="{{selectedClass}}" valueattr="{{valueattr}}" selectedProperty="{{selectedProperty}}" selectedAttribute="{{selectedAttribute}}" on-core-select="{{selectAction}}" on-core-activate="{{activateAction}}">
           <content></content>
         </core-menu>
       </div>
@@ -182,6 +182,10 @@ paper-menu-button:shadow .paper-menu-button-overlay-ink {
 
       transitionEndAction: function() {
         this.$.shadow.z = 1;
+      },
+
+      activateAction: function() {
+        this.opened = false;
       },
 
       /**
