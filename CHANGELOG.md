@@ -1,4 +1,4 @@
-## 0.5.0-dev
+## 0.5.0
   * Updated to match JavaScript version 0.4.2. This includes some breaking
     changes in elements APIs. For example, `PaperButton.raisedButton` was
     renamed to `PaperButton.raised`.
