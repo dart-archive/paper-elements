@@ -17,6 +17,7 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
 
   <title>paper-menu-button</title>
   <link href="packages/core_elements/core_icons.html" rel="import">
+  <link href="packages/core_elements/core_list_dart.html" rel="import">
   <link href="packages/paper_elements/paper_icon_button.html" rel="import">
   <link href="packages/paper_elements/paper_item.html" rel="import">
   <link href="packages/paper_elements/paper_shadow.html" rel="import">
@@ -73,23 +74,29 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
       <div class="toolbar toolbar-1" layout horizontal center>
 
         <paper-menu-button icon="menu">
-          <template repeat="{{pastries}}">
+          <template repeat="{{pastries}}" height="48">
             <paper-item>{{}}</paper-item>
           </template>
         </paper-menu-button>
 
-        <paper-menu-button icon="menu" noTransition>
-          <template repeat="{{countries}}">
-            <paper-item>{{name}}</paper-item>
-          </template>
+        <paper-menu-button icon="menu" id="top-left">
+          <core-list-dart data="{{countries}}" scrollTarget="{{topLeftTarget}}"
+                          height="48">
+            <template>
+              <paper-item>{{model.name}}</paper-item>
+            </template>
+          </core-list-dart>
         </paper-menu-button>
 
         <div flex></div>
 
-        <paper-menu-button icon="more-vert" halign="right" noTransition>
-          <template repeat="{{countries}}">
-            <paper-item>{{name}}</paper-item>
-          </template>
+        <paper-menu-button icon="more-vert" halign="right" id="top-right">
+          <core-list-dart data="{{countries}}" scrollTarget="{{topRightTarget}}"
+                          height="48">
+            <template>
+              <paper-item>{{model.name}}</paper-item>
+            </template>
+          </core-list-dart>
         </paper-menu-button>
 
         <paper-menu-button icon="more-vert" halign="right">
@@ -110,18 +117,25 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
           </template>
         </paper-menu-button>
 
-        <paper-menu-button icon="menu" valign="bottom" noTransition>
-          <template repeat="{{countries}}">
-            <paper-item>{{name}}</paper-item>
-          </template>
+        <paper-menu-button icon="menu" valign="bottom" id="bottom-left">
+          <core-list-dart data="{{countries}}"
+                          scrollTarget="{{bottomLeftTarget}}" height="48">
+            <template>
+              <paper-item>{{model.name}}</paper-item>
+            </template>
+          </core-list-dart>
         </paper-menu-button>
 
         <div flex></div>
 
-        <paper-menu-button icon="more-vert" halign="right" valign="bottom" noTransition>
-          <template repeat="{{countries}}">
-            <paper-item>{{name}}</paper-item>
-          </template>
+        <paper-menu-button icon="more-vert" halign="right" valign="bottom"
+                           id="bottom-right">
+          <core-list-dart data="{{countries}}"
+                          scrollTarget="{{bottomRightTarget}}" height="48">
+            <template>
+              <paper-item>{{model.name}}</paper-item>
+            </template>
+          </core-list-dart>
         </paper-menu-button>
 
         <paper-menu-button icon="more-vert" halign="right" valign="bottom">

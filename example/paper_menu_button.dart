@@ -8,6 +8,7 @@
  */
 library paper_elements.example.paper_menu_button;
 
+import 'dart:async';
 import 'dart:html';
 import 'package:polymer/polymer.dart';
 
@@ -16,6 +17,17 @@ main () {
     Polymer.onReady.then((_) {
       var template = querySelector('#myTemplate');
       template.model = new MyModel();
+
+      new Future(() {}).then((_) {
+        template.model.topLeftTarget = querySelector('#top-left')
+            .shadowRoot.querySelector('#dropdown').children.last;
+        template.model.topRightTarget = querySelector('#top-right')
+            .shadowRoot.querySelector('#dropdown').children.last;
+        template.model.bottomLeftTarget = querySelector('#bottom-left')
+            .shadowRoot.querySelector('#dropdown').children.last;
+        template.model.bottomRightTarget = querySelector('#bottom-right')
+            .shadowRoot.querySelector('#dropdown').children.last;
+      });
     });
   });
 }
@@ -26,7 +38,12 @@ class Country {
   const Country(this.name, this.code);
 }
 
-class MyModel {
+class MyModel extends Observable {
+  @observable Element topLeftTarget;
+  @observable Element topRightTarget;
+  @observable Element bottomLeftTarget;
+  @observable Element bottomRightTarget;
+
   final List<Country> countries = [
     const Country('Afghanistan','AF'),
     const Country('Åland Islands','AX'),
