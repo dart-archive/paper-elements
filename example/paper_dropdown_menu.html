@@ -1,8 +1,11 @@
 <!doctype html>
 <!--
-Copyright 2013 The Polymer Authors. All rights reserved.
-Use of this source code is governed by a BSD-style
-license that can be found in the LICENSE file.
+Copyright (c) 2014 The Polymer Project Authors. All rights reserved.
+This code may only be used under the BSD style license found at http://polymer.github.io/LICENSE.txt
+The complete set of authors may be found at http://polymer.github.io/AUTHORS.txt
+The complete set of contributors may be found at http://polymer.github.io/CONTRIBUTORS.txt
+Code distributed by Google as part of the polymer project is also
+subject to an additional IP rights grant found at http://polymer.github.io/PATENTS.txt
 -->
 <html>
 <head>
@@ -13,84 +16,146 @@ license that can be found in the LICENSE file.
 
   <title>paper-dropdown-menu</title>
 
-  <link href="packages/paper_elements/roboto.html" rel="import">
+
+  <link href="packages/core_elements/core_collapse.html" rel="import">
+  <link href="packages/core_elements/core_menu.html" rel="import">
+  <link href="packages/paper_elements/paper_dropdown.html" rel="import">
   <link href="packages/paper_elements/paper_item.html" rel="import">
+
   <link href="packages/paper_elements/paper_dropdown_menu.html" rel="import">
 
   <style shim-shadowdom>
-    html, body {
-      font-family: Roboto, 'Helvetica Neue', Helvetica, Arial;
-      height: 100%;
+    body {
+      font-family: RobotoDraft, 'Helvetica Neue', Helvetica, Arial;
+      font-size: 14px;
       margin: 0;
+      padding: 24px;
+      -webkit-tap-highlight-color: rgba(0,0,0,0);
+      -webkit-touch-callout: none;
     }
-
-    dropdown-demo {
-      display: block;
+    section {
+      padding: 20px 0;
     }
-
-    dropdown-demo::shadow > section {
-      padding: 12px;
+    section > div {
+      padding: 14px;
+      font-size: 16px;
     }
-
-    body /deep/ paper-dropdown-menu.narrow {
-      max-width: 100px;
+    html /deep/ paper-dropdown-menu {
+      box-sizing: border-box;
+      width: 170px;
+    }
+    html /deep/ core-menu {
+      box-sizing: border-box;
+      width: 170px;
+    }
+    paper-item {
+      overflow: hidden;
+      white-space: nowrap;
+      text-overflow: ellipsis;
+    }
+    html /deep/ core-collapse {
+      border: 1px solid #ccc;
+      padding: 8px;
+    }
+    .constrained-height {
+      height: 150px;
+    }
+    .colored {
+      color: #0f9d58;
+    }
+    .dropdown.colored::shadow #ripple,
+    .dropdown.colored::shadow #background {
+      border: 1px solid #0f9d58;
+      background-color: #b7e1cd;
     }
   </style>
 
 </head>
 <body unresolved>
 
-<polymer-element name="dropdown-demo" on-core-select="{{selectAction}}">
-<template>
-  <section layout vertical fit>
-    <section layout horizontal>
-
-      <paper-dropdown-menu>
-        <template repeat="{{countries}}">
-          <paper-item label="{{name}}"></paper-item>
-        </template>
-      </paper-dropdown-menu>
-
-      <!--         <div style="margin:0 12px;">
-                narrow:
-                <paper-dropdown-menu class="narrow">
-                  <template repeat="{{countries}}">
-                    <paper-item label="{{name}}"></paper-item>
-                  </template>
-                </paper-dropdown-menu>
-              </div>
-      -->
-
-      <div flex></div>
-
-      <paper-dropdown-menu halign="right">
-        <template repeat="{{countries}}">
-          <paper-item label="{{name}}"></paper-item>
-        </template>
-      </paper-dropdown-menu>
-    </section>
-
-    <div flex center-center>
-    </div>
+  <template is="auto-binding-dart" id="myTemplate">
 
     <section>
-      drop-up:
-      <paper-dropdown-menu valign="bottom" valueattr="label" label="Favorite pastry" selected="Donut">
-        <paper-item label="Croissant"></paper-item>
-        <paper-item label="Donut"></paper-item>
-        <paper-item label="Financier"></paper-item>
-        <paper-item label="Madeleine"></paper-item>
+
+      <div>Absolutely positioned dropdowns</div>
+
+      <paper-dropdown-menu label="Your favorite pastry">
+        <paper-dropdown class="dropdown">
+          <core-menu class="menu">
+            <template repeat="{{pastries}}">
+              <paper-item>{{}}</paper-item>
+            </template>
+          </core-menu>
+        </paper-dropdown>
       </paper-dropdown-menu>
+
+      <br><br>
+
+      <paper-dropdown-menu label="Disabled" disabled>
+        <paper-dropdown class="dropdown">
+          <core-menu class="menu">
+            <paper-item>Should not see this</paper-item>
+          </core-menu>
+        </paper-dropdown>
+      </paper-dropdown-menu>
+
     </section>
 
-  </section>
+    <section>
 
-</template>
-</polymer-element>
+      <div>Layered dropdowns</div>
 
-<dropdown-demo fit></dropdown-demo>
+      <button on-tap="{{toggleCollapse}}">toggle core-collapse</button>
 
-<script type="application/dart" src="paper_dropdown_menu.dart"></script>
+      <br>
+
+      <core-collapse id="collapse">
+
+        <paper-dropdown-menu label="Your favorite pastry">
+          <paper-dropdown layered class="dropdown">
+            <core-menu class="menu">
+              <template repeat="{{pastries}}">
+                <paper-item>{{}}</paper-item>
+              </template>
+            </core-menu>
+          </paper-dropdown>
+        </paper-dropdown-menu>
+
+      </core-collapse>
+
+    </section>
+
+    <section>
+
+      <div>Custom styling</div>
+
+      <paper-dropdown-menu label="Constrained height">
+        <paper-dropdown class="dropdown constrained-height">
+          <core-menu class="menu">
+            <template repeat="{{pastries}}">
+              <paper-item>{{}}</paper-item>
+            </template>
+          </core-menu>
+        </paper-dropdown>
+      </paper-dropdown-menu>
+
+      <br><br>
+
+      <paper-dropdown-menu label="Colored">
+        <paper-dropdown class="dropdown colored">
+          <core-menu class="menu">
+            <template repeat="{{pastries}}">
+              <paper-item>{{}}</paper-item>
+            </template>
+          </core-menu>
+        </paper-dropdown>
+      </paper-dropdown-menu>
+
+    </section>
+
+  </template>
+
+  <script type="application/dart" src="paper_dropdown_menu.dart"></script>
 
 </body>
 </html>

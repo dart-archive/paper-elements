@@ -7,45 +7,52 @@ import 'dart:html';
 import 'dart:js' show JsArray, JsObject;
 import 'package:web_components/interop.dart' show registerDartType;
 import 'package:polymer/polymer.dart' show initMethod;
-import 'package:custom_element_apigen/src/common.dart' show DomProxyMixin;
+import 'paper_button_base.dart';
 
-/// `paper-item` is a list-item object for use in menus. It may contain and icon and/or
-/// a text label.
+/// Material Design: <a href="http://www.google.com/design/spec/components/menus.html">Menus</a>
+///
+/// `paper-item` is a simple item object for use in menus. When the user touches the item, a ripple
+/// effect emanates from the point of contact. If used in a `core-selector`, the selected item will
+/// be highlighted.
 ///
 /// Example:
 ///
 ///     <core-menu>
-///         <paper-item icon="refresh" label="Refresh"></paper-item>
-///         <paper-item label="Help"></paper-item>
-///         <paper-item label="Sign Out"></paper-item>
+///         <paper-item>Cut</paper-item>
+///         <paper-item>Copy</paper-item>
+///         <paper-item>Paste</paper-item>
 ///     </core-menu>
 ///
-/// To use as a link, put an `<a>` element in the item.
+/// Links
+/// -----
+///
+/// To use as a link, put an `<a>` element in the item. You may also use the `noink` attribute to
+/// prevent the ripple from "freezing" during a page navigation.
 ///
 /// Example:
 ///
-///     <paper-item icon="home" label="Home">
-///         <a href="http://www.polymer-project.org"></a>
+///     <paper-item noink>
+///         <a href="http://www.polymer-project.org" layout horizontal center>Polymer</a>
 ///     </paper-item>
-class PaperItem extends HtmlElement with DomProxyMixin {
+class PaperItem extends PaperButtonBase {
   PaperItem.created() : super.created();
   factory PaperItem() => new Element.tag('paper-item');
 
-  /// The label for the item.
-  String get label => jsElement['label'];
-  set label(String value) { jsElement['label'] = value; }
+  get $ => jsElement[r'$'];
 
-  /// (optional) The URL of an image for an icon to use in the button.
-  /// Should not use `icon` property if you are using this property.
-  String get iconSrc => jsElement['iconSrc'];
-  set iconSrc(String value) { jsElement['iconSrc'] = value; }
+  /// If true, the button will be styled with a shadow.
+  bool get raised => jsElement[r'raised'];
+  set raised(bool value) { jsElement[r'raised'] = value; }
 
-  /// (optional) Specifies the icon name or index in the set of icons
-  /// available in the icon set. If using this property, load the icon
-  /// set separately where the icon is used. Should not use `src`
-  /// if you are using this property.
-  String get icon => jsElement['icon'];
-  set icon(String value) { jsElement['icon'] = value; }
+  /// By default the ripple emanates from where the user touched the button.
+  /// Set this to true to always center the ripple.
+  bool get recenteringTouch => jsElement[r'recenteringTouch'];
+  set recenteringTouch(bool value) { jsElement[r'recenteringTouch'] = value; }
+
+  /// By default the ripple expands to fill the button. Set this to false to
+  /// constrain the ripple to a circle within the button.
+  bool get fill => jsElement[r'fill'];
+  set fill(bool value) { jsElement[r'fill'] = value; }
 }
 @initMethod
 upgradePaperItem() => registerDartType('paper-item', PaperItem);

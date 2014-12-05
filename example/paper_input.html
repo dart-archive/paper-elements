@@ -7,110 +7,179 @@
   <title>paper-input</title>
 
   <link rel="import" href="packages/paper_elements/roboto.html">
+  <link rel="import" href="packages/paper_elements/paper_autogrow_textarea.html">
+  <link rel="import" href="packages/paper_elements/paper_input_decorator.html">
   <link rel="import" href="packages/paper_elements/paper_input.html">
 
   <style shim-shadowdom>
-  
     body {
       font-family: RobotoDraft, 'Helvetica Neue', Helvetica, Arial;
+      font-size: 14px;
       margin: 0;
       padding: 24px;
-      -webkit-user-select: none;
-      -moz-user-select: none;
-      -ms-user-select: none;
-      user-select: none;
       -webkit-tap-highlight-color: rgba(0,0,0,0);
       -webkit-touch-callout: none;
     }
-
+    section {
+      padding: 20px 0;
+    }
+    section > div {
+      padding: 14px;
+      font-size: 16px;
+    }
+    paper-input {
+      width: 80%;
+    }
+    paper-input-decorator {
+      max-width: 80%;
+    }
     paper-input.narrow {
       width: 150px;
     }
-    
+    .custom /deep/ ::-webkit-input-placeholder {
+      color: #f4b400;
+    }
+    .custom /deep/ ::-moz-placeholder {
+      color: #f4b400;
+    }
+    .custom /deep/ :-ms-input-placeholder {
+      color: #f4b400;
+    }
+    .custom /deep/ .label-text,
+    .custom /deep/ .error {
+      color: #f4b400;
+    }
+    .custom /deep/ .unfocused-underline {
+      background-color: #f4b400;
+    }
+    .custom[focused] /deep/ .floated-label .label-text {
+      color: #0f9d58;
+    }
+    .custom /deep/ .focused-underline {
+      background-color: #0f9d58;
+    }
+    .custom /deep/ .cursor {
+      background-color: #1a237e;
+    }
+    .custom.invalid /deep/ .floated-label .label-text,
+    .custom /deep/ .error {
+      color: #f06292;
+    }
+    .custom.invalid /deep/ .focused-underline,
+    .custom.invalid /deep/ .cursor {
+      background-color: #f06292;
+    }
+    .custom {
+      color: #1a237e;
+    }
   </style>
 
 </head>
 <body unresolved>
-  <section>
 
-    <paper-input label="Type something"></paper-input>
+  <template is="auto-binding-dart" id="myTemplate">
+    <section>
 
-    <br>
+      <div>Standalone</div>
 
-    <paper-input label="Type something" value="Prefilled value"></paper-input>
+      <br>
 
-    <br>
+      <paper-input label="label"></paper-input>
 
-    <paper-input class="narrow" label="Long labels get truncated"></paper-input>
+      <br>
 
-    <br>
+      <paper-input label="floating label" floatingLabel></paper-input>
 
-    <paper-input label="Type only numbers" type="number" error="Input is not a number!"></paper-input>
+    </section>
 
-    <br>
+    <section>
 
-    <paper-input label="Type something" required error="This input requires a value!"></paper-input>
+      <div>Decorator</div>
 
-    <br>
+      <br>
 
-    <paper-input disabled label="I'm disabled"></paper-input>
+      <paper-input-decorator label="with core-input">
+        <input is="core-input">
+      </paper-input-decorator>
 
-    <br>
+      <br>
 
-    <paper-input floatingLabel label="Floating label"></paper-input>
+      <paper-input-decorator label="with core-input + floatingLabel" floatingLabel>
+        <input is="core-input">
+      </paper-input-decorator>
 
-    <br>
+      <br>
 
-    <paper-input floatingLabel label="Type an email here (floating label)" type="email" error="Input is not an email!"></paper-input>
+      <paper-input-decorator label="with autogrowing text area">
+        <paper-autogrow-textarea>
+          <textarea></textarea>
+        </paper-autogrow-textarea>
+      </paper-input-decorator>
 
-    <br>
+      <br>
 
-    <paper-input floatingLabel multiline label="Type multiple lines here" value="Prefilled multiline input value"></paper-input>
+      <paper-input-decorator label="with autogrowing text area + floatingLabel" floatingLabel>
+        <paper-autogrow-textarea>
+          <textarea></textarea>
+        </paper-autogrow-textarea>
+      </paper-input-decorator>
 
-    <br>
+    </section>
 
-    <paper-input multiline label="Type multiple lines here..."></paper-input>
+    <section id="validate">
 
-    <br>
+      <div>Validation</div>
 
-    <paper-input multiline rows="3" label="This input is 3 rows high"></paper-input>
+      <button on-tap="{{validateAll}}">click me to validate all</button>
 
-    <br>
+      <paper-input-decorator label="required" floatingLabel error="input is required!">
+        <input is="core-input" required>
+      </paper-input-decorator>
 
-    <paper-input multiline maxRows="3" label="This input is at most 3 rows high"></paper-input>
+    </section>
 
-    <br>
+    <section>
 
-    <paper-input multiline label="Sized with CSS, height: 150px;" style="height: 150px;"></paper-input>
+      <div>Custom styling</div>
 
-    <br>
+      <br>
 
-    <paper-input multiline floatingLabel label="Multiple lines and a floating label"></paper-input>
+      <paper-input class="custom" label="paper-input"></paper-input>
 
-    <br>
+      <br>
 
-    <paper-input label="Becomes visible after polymer-ready" hidden></paper-input>
+      <paper-input-decorator class="custom" label="decorator">
+        <input is="core-input">
+      </paper-input-decorator>
 
-    <paper-input multiline floatingLabel rows="2" label="Becomes visible after polymer-ready, min 2 rows" value="Some prefilled value" hidden></paper-input>
-
-    <br>
-
-  </section>
+    </section>
+  </template>
   <script type="application/dart">
-    import 'dart:async';
-    import 'dart:html';
     import 'package:polymer/polymer.dart';
+    import 'package:paper_elements/paper_input_decorator.dart';
+    import 'dart:html';
+
+    class MyModel {
+      var $;
+      MyModel(this.$);
+
+      validateAll() {
+        $['validate'].querySelectorAll('paper-input-decorator')
+            .forEach((PaperInputDecorator e) {
+              e.isInvalid =
+                  !(e.querySelector('input') as InputElement).validity.valid;
+            });
+      }
+    }
 
     main() {
-      initPolymer().run((){
+      initPolymer().run(() {
         Polymer.onReady.then((_) {
-          new Future.delayed(const Duration(milliseconds: 500), () {
-            querySelectorAll('paper-input[hidden]').forEach((input) {
-              input.attributes.remove('hidden');
-            });
-          });
+          var t = querySelector('#myTemplate') as AutoBindingElement;
+          t.model = new MyModel(t.$);
         });
       });
     }
   </script>
 </body>
+</html>

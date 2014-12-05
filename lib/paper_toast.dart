@@ -45,6 +45,13 @@ import 'package:custom_element_apigen/src/common.dart' show DomProxyMixin;
 ///       left: 10px;
 ///     }
 ///
+/// To position the toast to the right:
+///
+///     paper-toast {
+///       right: 10px;
+///       left: auto;
+///     }
+///
 /// To make it fit at the bottom of the screen:
 ///
 ///     paper-toast {
@@ -59,26 +66,34 @@ class PaperToast extends HtmlElement with DomProxyMixin {
   PaperToast.created() : super.created();
   factory PaperToast() => new Element.tag('paper-toast');
 
+  get $ => jsElement[r'$'];
+
   /// The text shows in a toast.
-  String get text => jsElement['text'];
-  set text(String value) { jsElement['text'] = value; }
+  String get text => jsElement[r'text'];
+  set text(String value) { jsElement[r'text'] = value; }
 
   /// The duration in milliseconds to show the toast.
-  num get duration => jsElement['duration'];
-  set duration(num value) { jsElement['duration'] = value; }
+  num get duration => jsElement[r'duration'];
+  set duration(num value) { jsElement[r'duration'] = value; }
 
   /// Set opened to true to show the toast and to false to hide it.
-  bool get opened => jsElement['opened'];
-  set opened(bool value) { jsElement['opened'] = value; }
+  bool get opened => jsElement[r'opened'];
+  set opened(bool value) { jsElement[r'opened'] = value; }
 
   /// Min-width when the toast changes to narrow layout.  In narrow layout,
   /// the toast fits at the bottom of the screen when opened.
-  String get responsiveWidth => jsElement['responsiveWidth'];
-  set responsiveWidth(String value) { jsElement['responsiveWidth'] = value; }
+  String get responsiveWidth => jsElement[r'responsiveWidth'];
+  set responsiveWidth(String value) { jsElement[r'responsiveWidth'] = value; }
 
   /// If true, the toast can't be swiped.
-  bool get swipeDisabled => jsElement['swipeDisabled'];
-  set swipeDisabled(bool value) { jsElement['swipeDisabled'] = value; }
+  bool get swipeDisabled => jsElement[r'swipeDisabled'];
+  set swipeDisabled(bool value) { jsElement[r'swipeDisabled'] = value; }
+
+  /// By default, the toast will close automatically if the user taps
+  /// outside it or presses the escape key. Disable this behavior by setting
+  /// the `autoCloseDisabled` property to true.
+  bool get autoCloseDisabled => jsElement[r'autoCloseDisabled'];
+  set autoCloseDisabled(bool value) { jsElement[r'autoCloseDisabled'] = value; }
 
   /// Toggle the opened state of the toast.
   void toggle() =>

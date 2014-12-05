@@ -1,0 +1,174 @@
+<!doctype html>
+<!--
+Copyright (c) 2014 The Polymer Project Authors. All rights reserved.
+This code may only be used under the BSD style license found at http://polymer.github.io/LICENSE.txt
+The complete set of authors may be found at http://polymer.github.io/AUTHORS.txt
+The complete set of contributors may be found at http://polymer.github.io/CONTRIBUTORS.txt
+Code distributed by Google as part of the polymer project is also
+subject to an additional IP rights grant found at http://polymer.github.io/PATENTS.txt
+-->
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <meta name="viewport" content="width=device-width, minimum-scale=1.0, initial-scale=1, user-scalable=yes">
+
+  <title>paper-dropdown</title>
+
+  <link href="packages/core_elements/core_collapse.html" rel="import">
+  <link href="packages/core_elements/core_icons.html" rel="import">
+  <link href="packages/paper_elements/paper_icon_button.html" rel="import">
+  <link href="packages/paper_elements/paper_item.html" rel="import">
+
+  <link href="packages/paper_elements/paper_dropdown.html" rel="import">
+
+  <style shim-shadowdom>
+    body {
+      font-family: RobotoDraft, 'Helvetica Neue', Helvetica, Arial;
+      font-size: 14px;
+      margin: 0;
+      padding: 24px;
+      -webkit-tap-highlight-color: rgba(0,0,0,0);
+      -webkit-touch-callout: none;
+    }
+    section {
+      padding: 20px 0;
+    }
+    section > div {
+      padding: 14px;
+      font-size: 16px;
+    }
+    x-trigger {
+      z-index: auto;
+    }
+    html /deep/ paper-dropdown:not(.no-padding)::shadow #scroller {
+      box-sizing: border-box;
+      padding: 8px;
+    }
+    .with-margin {
+      margin: 12px;
+    }
+    .open-below {
+      top: 38px;
+    }
+  </style>
+  </head>
+<body>
+
+  <polymer-element name="x-trigger" relative noink>
+    <template>
+      <paper-icon-button on-tap="{{toggle}}" icon="{{icon}}">
+      </paper-icon-button>
+      <content></content>
+    </template>
+  </polymer-element>
+
+  <template is="auto-binding-dart" id="myTemplate">
+
+    <section>
+
+      <div>Absolutely positioned dropdowns</div>
+
+      <x-trigger icon="menu">
+        <paper-dropdown>
+          halign = left
+          <br>
+          valign = top
+        </paper-dropdown>
+      </x-trigger>
+
+      <x-trigger icon="menu">
+        <paper-dropdown valign="bottom">
+          halign = left
+          <br>
+          valign = bottom
+        </paper-dropdown>
+      </x-trigger>
+
+      <x-trigger icon="menu">
+        <paper-dropdown halign="right">
+          halign = right
+          <br>
+          valign = top
+        </paper-dropdown>
+      </x-trigger>
+
+      <x-trigger icon="menu">
+        <paper-dropdown class="no-padding">
+          <div class="menu">
+            <paper-item>Item 1</paper-item>
+            <paper-item>Item 2</paper-item>
+            <paper-item>Item 3</paper-item>
+          </div>
+        </paper-dropdown>
+      </x-trigger>
+
+    </section>
+
+    <section>
+
+      <div>Layered dropdowns</div>
+
+      <button onclick="document.getElementById('collapse').toggle()">toggle core-collapse</button>
+
+      <br>
+
+      <core-collapse id="collapse">
+
+        <x-trigger icon="menu">
+          <paper-dropdown layered>
+            halign = left
+            <br>
+            valign = top
+          </paper-dropdown>
+        </x-trigger>
+
+      </core-collapse>
+
+    </section>
+
+    <section>
+
+      <div>Scrolling and margin</div>
+
+      <x-trigger icon="menu">
+        <paper-dropdown>
+          no margin<br>
+          <br>
+          <template repeat="{{countries}}">
+            {{name}}<br>
+          </template>
+        </paper-dropdown>
+      </x-trigger>
+
+      <x-trigger icon="menu">
+        <paper-dropdown class="with-margin">
+          with margin<br>
+          <br>
+          <template repeat="{{countries}}">
+            {{name}}<br>
+          </template>
+        </paper-dropdown>
+      </x-trigger>
+
+    </section>
+
+    <section>
+
+      <div>Custom position</div>
+
+      <x-trigger icon="menu">
+        <paper-dropdown class="open-below">
+          top: 38px
+        </paper-dropdown>
+      </x-trigger>
+
+    </section>
+
+  </template>
+
+  <script type="application/dart" src="paper_dropdown.dart">
+  </script>
+
+</body>
+</html>

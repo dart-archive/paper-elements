@@ -7,77 +7,53 @@ import 'dart:html';
 import 'dart:js' show JsArray, JsObject;
 import 'package:web_components/interop.dart' show registerDartType;
 import 'package:polymer/polymer.dart' show initMethod;
-import 'package:core_elements/core_input.dart';
+import 'package:custom_element_apigen/src/common.dart' show DomProxyMixin;
 
-/// `paper-input` is a single- or multi-line text field where user can enter input.
-/// It can optionally have a label.
+/// Material Design: <a href="http://www.google.com/design/spec/components/text-fields.html#text-fields-single-line-text-field">Single line text field</a>
+///
+/// `paper-input` is a single-line text field for user input. It is a convenience element composed of
+/// a `paper-input-decorator` and a `input is="core-input"`.
 ///
 /// Example:
 ///
 ///     <paper-input label="Your Name"></paper-input>
-///     <paper-input multiline label="Enter multiple lines here"></paper-input>
+///
+/// If you need more control over the `input` element, use `paper-input-decorator`.
 ///
 /// Theming
-/// --------
+/// -------
 ///
-/// Set `CoreStyle.g.paperInput.focusedColor` and `CoreStyle.g.paperInput.invalidColor` to theme
-/// the focused and invalid states.
+/// `paper-input` can be styled similarly to `paper-input-decorator`.
 ///
-/// To add custom styling to only some elements, use these selectors:
+/// Form submission
+/// ---------------
 ///
-///     html /deep/ paper-input[focused] .floated-label {
-///         /* floating label color when the input has focus */
-///         color: green;
-///     }
+/// Unlike inputs using `paper-input-decorator` directly, `paper-input` does not work out of
+/// the box with the native `form` element. This is because the native `form` is not aware of
+/// shadow DOM and does not treat `paper-input` as a form element.
 ///
-///     html /deep/ paper-input .focused-underline,
-///     html /deep/ paper-input .cursor {
-///         /* line and cursor color when the input has focus */
-///         background-color: green;
-///     }
-///
-///     html /deep/ paper-input.invalid[focused] .floated-label,
-///     html /deep/ paper-input[focused] .error-text,
-///     html /deep/ paper-input[focused] .error-icon {
-///         /* error text, icon, and floating label color when input is invalid */
-///         color: salmon;
-///     }
-///
-///     html /deep/ paper-input.invalid .focused-underline,
-///     html /deep/ paper-input.invalid .cursor {
-///         /* line and cursor color when the input is invalid */
-///         background-color: salmon;
-///     }
-class PaperInput extends CoreInput {
+/// Use `paper-input-decorator` directly, or see
+/// <a href="https://github.com/garstasio/ajax-form">`ajax-form`</a> for a possible solution
+/// to submitting a `paper-input`.
+class PaperInput extends HtmlElement with DomProxyMixin {
   PaperInput.created() : super.created();
   factory PaperInput() => new Element.tag('paper-input');
 
+  get $ => jsElement[r'$'];
+
   /// The label for this input. It normally appears as grey text inside
   /// the text input and disappears once the user enters text.
-  String get label => jsElement['label'];
-  set label(String value) { jsElement['label'] = value; }
+  String get label => jsElement[r'label'];
+  set label(String value) { jsElement[r'label'] = value; }
 
   /// If true, the label will "float" above the text input once the
   /// user enters text instead of disappearing.
-  bool get floatingLabel => jsElement['floatingLabel'];
-  set floatingLabel(bool value) { jsElement['floatingLabel'] = value; }
+  bool get floatingLabel => jsElement[r'floatingLabel'];
+  set floatingLabel(bool value) { jsElement[r'floatingLabel'] = value; }
 
-  /// (multiline only) If set to a non-zero value, the height of this
-  /// text input will grow with the value changes until it is maxRows
-  /// rows tall. If the maximum size does not fit the value, the text
-  /// input will scroll internally.
-  num get maxRows => jsElement['maxRows'];
-  set maxRows(num value) { jsElement['maxRows'] = value; }
-
-  /// The message to display if the input value fails validation. If this
-  /// is unset or the empty string, a default message is displayed depending
-  /// on the type of validation error.
-  String get error => jsElement['error'];
-  set error(String value) { jsElement['error'] = value; }
-
-  get inputValueForMirror => jsElement['inputValueForMirror'];
-
-  get inputHasValue => jsElement['inputHasValue'];
+  /// Set to true to style the element as disabled.
+  bool get disabled => jsElement[r'disabled'];
+  set disabled(bool value) { jsElement[r'disabled'] = value; }
 }
 @initMethod
 upgradePaperInput() => registerDartType('paper-input', PaperInput);

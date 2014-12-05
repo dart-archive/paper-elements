@@ -7,82 +7,54 @@ import 'dart:html';
 import 'dart:js' show JsArray, JsObject;
 import 'package:web_components/interop.dart' show registerDartType;
 import 'package:polymer/polymer.dart' show initMethod;
-import 'package:custom_element_apigen/src/common.dart' show DomProxyMixin;
+import 'paper_dialog_base.dart';
 
-/// Provides a dialog overlay.
+/// Material Design: <a href="http://www.google.com/design/spec/components/dialogs.html">Dialogs</a>
 ///
-/// Child elements that include a `dismissive` attribute are positioned in the lower left corner of the dialog. Elements that use the `affirmative` attribute are positioned in the lower right corner.
-///
-/// Child elements that include the `dismissive` or `affirmative` attribute will automatically toggle the dialog when clicked.
-///
-/// One child element should have the `autofocus` attribute so that the Enter key will automatically take action. This is
-/// especially important for screen reader environments.
+/// `paper-dialog` is an overlay with a drop shadow.
 ///
 /// Example:
 ///
-///     <paper-dialog heading="Title for dialog">
-///       <p>Lorem ipsum ....</p>
-///       <p>Id qui scripta ...</p>
-///       <paper-button label="More Info..." dismissive></paper-button>
-///       <paper-button label="Decline" affirmative></paper-button>
-///       <paper-button label="Accept" affirmative autofocus></paper-button>
+///     <paper-dialog heading="Dialog Title">
+///       <p>Some content</p>
 ///     </paper-dialog>
 ///
-/// #### Transitions
+/// Styling
+/// -------
 ///
-/// `<paper-dialog>` can be used with `<paper-transition>` to transition the overlay open and close.
+/// Because a `paper-dialog` is `layered` by default, you need to use the `/deep/`
+/// combinator to style all instances of the `paper-dialog`. Style the position,
+/// colors and other inherited properties of the dialog using the
+/// `html /deep/ paper-dialog` selector. Use the `html /deep/ paper-dialog::shadow #scroller` selector to size the dialog. Note that if you provided actions, the height
+/// of the actions will be added to the height of the dialog.
 ///
-/// To use a transition, import `paper-dialog-transition.html` alongside paper-dialog:
+///     html /deep/ paper-dialog {
+///         color: green;
+///     }
 ///
-///     <link rel="import" href="paper-dialog/paper-dialog-transition.html">
+///     html /deep/ paper-dialog::shadow #scroller {
+///         height: 300px;
+///         width: 300px;
+///     }
 ///
-/// Then set the `transition` attribute:
+/// Transitions
+/// -----------
 ///
-///     <paper-dialog heading="Title for dialog" transition="paper-dialog-transition-center">
+/// You can use transitions provided by `core-transition` with this element.
 ///
-///     <paper-dialog heading="Title for dialog" transition="paper-dialog-transition-bottom">
-class PaperDialog extends HtmlElement with DomProxyMixin {
+///     <paper-dialog transition="core-transition-center">
+///       <p>Some content</p>
+///     </paper-dialog>
+///
+/// Accessibility
+/// -------------
+///
+/// By default, the `aria-label` will be set to the value of the `heading` attribute.
+class PaperDialog extends PaperDialogBase {
   PaperDialog.created() : super.created();
   factory PaperDialog() => new Element.tag('paper-dialog');
 
-  /// Set opened to true to show the dialog and to false to hide it.
-  /// A dialog may be made intially opened by setting its opened attribute.
-  bool get opened => jsElement['opened'];
-  set opened(bool value) { jsElement['opened'] = value; }
-
-  String get heading => jsElement['heading'];
-  set heading(String value) { jsElement['heading'] = value; }
-
-  /// Set this property to the id of a `core-transition` element to specify
-  /// the transition to use when opening/closing this dialog.
-  String get transition => jsElement['transition'];
-  set transition(String value) { jsElement['transition'] = value; }
-
-  /// By default a dialog will close automatically if the user
-  /// taps outside it or presses the escape key. Disable this
-  /// behavior by setting the `autoCloseDisabled` property to true.
-  bool get autoCloseDisabled => jsElement['autoCloseDisabled'];
-  set autoCloseDisabled(bool value) { jsElement['autoCloseDisabled'] = value; }
-
-  /// If true, the dialog has a backdrop darkening the rest of the screen.
-  /// The backdrop element is attached to the document body and may be styled
-  /// with the class `core-overlay-backdrop`. When opened the `core-opened`
-  /// class is applied.
-  bool get backdrop => jsElement['backdrop'];
-  set backdrop(bool value) { jsElement['backdrop'] = value; }
-
-  /// If true, the dialog is guaranteed to display above page content.
-  bool get layered => jsElement['layered'];
-  set layered(bool value) { jsElement['layered'] = value; }
-
-  /// This property specifies a selector matching elements that should
-  /// close the dialog on tap.
-  String get closeSelector => jsElement['closeSelector'];
-  set closeSelector(String value) { jsElement['closeSelector'] = value; }
-
-  /// Toggle the dialog's opened state.
-  void toggle() =>
-      jsElement.callMethod('toggle', []);
+  get $ => jsElement[r'$'];
 }
 @initMethod
 upgradePaperDialog() => registerDartType('paper-dialog', PaperDialog);

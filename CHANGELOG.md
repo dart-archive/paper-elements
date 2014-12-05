@@ -1,3 +1,23 @@
+## 0.6.0
+  * Updated to match JS version 0.5.1.
+    * **New Element** `paper-spinner` is a new element that provides a material
+      design loading spinner.
+    * **New Element** `paper-dropdown` is a new material design styled dropdown.
+    * **Breaking Change** `paper-input` has had a lot of changes. Namely, it no
+      longer supports the `multiline` property. There are two new elements which
+      can be used to duplicate the old functionality, `paper-input-decorator`
+      and `paper-autogrow-textarea`.
+    * **Breaking Change** `paper-item` removed `icon`, `iconSrc`, and `label`
+      attributes. Use nested DOM for label content.
+    * **Breaking Change** `paper-shadow` is a container instead of targeting
+      another element.
+      * Use `setZ()` to set the depth of the shadow instead of assigning the `z`
+        property.
+      * The `z` attribute now uses a one time binding.
+    * **Breaking Change** `paper-dialog` was broken into two elements.
+      * `paper-dialog` for a plain dialog.
+      * `paper-action-dialog` for a dialog with scrollable body and buttons.
+
 ## 0.5.0
   * Updated to match JavaScript version 0.4.2. This includes some breaking
     changes in elements APIs. For example, `PaperButton.raisedButton` was

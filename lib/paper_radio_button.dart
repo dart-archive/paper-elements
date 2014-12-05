@@ -49,23 +49,25 @@ class PaperRadioButton extends HtmlElement with DomProxyMixin {
   PaperRadioButton.created() : super.created();
   factory PaperRadioButton() => new Element.tag('paper-radio-button');
 
+  get $ => jsElement[r'$'];
+
   /// Gets or sets the state, `true` is checked and `false` is unchecked.
-  bool get checked => jsElement['checked'];
-  set checked(bool value) { jsElement['checked'] = value; }
+  bool get checked => jsElement[r'checked'];
+  set checked(bool value) { jsElement[r'checked'] = value; }
 
   /// The label for the radio button.
-  String get label => jsElement['label'];
-  set label(String value) { jsElement['label'] = value; }
+  String get label => jsElement[r'label'];
+  set label(String value) { jsElement[r'label'] = value; }
 
   /// Normally the user cannot uncheck the radio button by tapping once
   /// checked.  Setting this property to `true` makes the radio button
   /// toggleable from checked to unchecked.
-  bool get toggles => jsElement['toggles'];
-  set toggles(bool value) { jsElement['toggles'] = value; }
+  bool get toggles => jsElement[r'toggles'];
+  set toggles(bool value) { jsElement[r'toggles'] = value; }
 
   /// If true, the user cannot interact with this element.
-  bool get disabled => jsElement['disabled'];
-  set disabled(bool value) { jsElement['disabled'] = value; }
+  bool get disabled => jsElement[r'disabled'];
+  set disabled(bool value) { jsElement[r'disabled'] = value; }
 }
 @initMethod
 upgradePaperRadioButton() => registerDartType('paper-radio-button', PaperRadioButton);

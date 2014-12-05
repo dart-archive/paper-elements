@@ -49,6 +49,8 @@ import 'paper_radio_button.dart';
 class PaperCheckbox extends PaperRadioButton {
   PaperCheckbox.created() : super.created();
   factory PaperCheckbox() => new Element.tag('paper-checkbox');
+
+  get $ => jsElement[r'$'];
 }
 @initMethod
 upgradePaperCheckbox() => registerDartType('paper-checkbox', PaperCheckbox);

@@ -31,9 +31,11 @@ class PaperTab extends HtmlElement with DomProxyMixin {
   PaperTab.created() : super.created();
   factory PaperTab() => new Element.tag('paper-tab');
 
+  get $ => jsElement[r'$'];
+
   /// If true, ink ripple effect is disabled.
-  bool get noink => jsElement['noink'];
-  set noink(bool value) { jsElement['noink'] = value; }
+  bool get noink => jsElement[r'noink'];
+  set noink(bool value) { jsElement[r'noink'] = value; }
 }
 @initMethod
 upgradePaperTab() => registerDartType('paper-tab', PaperTab);

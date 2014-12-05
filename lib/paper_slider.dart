@@ -44,9 +44,9 @@ import 'package:core_elements/core_range.dart';
 ///       background-color: #0f9d58;
 ///     }
 ///
-/// To change the slider pin's value:
+/// To change the slider pin's font color:
 ///
-///     paper-slider::shadow #sliderKnobInner::after {
+///     paper-slider::shadow #sliderKnob > #sliderKnobInner::after {
 ///       color: #0f9d58
 ///     }
 ///
@@ -59,34 +59,36 @@ class PaperSlider extends CoreRange {
   PaperSlider.created() : super.created();
   factory PaperSlider() => new Element.tag('paper-slider');
 
+  get $ => jsElement[r'$'];
+
   /// If true, the slider thumb snaps to tick marks evenly spaced based
   /// on the `step` property value.
-  bool get snaps => jsElement['snaps'];
-  set snaps(bool value) { jsElement['snaps'] = value; }
+  bool get snaps => jsElement[r'snaps'];
+  set snaps(bool value) { jsElement[r'snaps'] = value; }
 
   /// If true, a pin with numeric value label is shown when the slider thumb
   /// is pressed.  Use for settings for which users need to know the exact
   /// value of the setting.
-  bool get pin => jsElement['pin'];
-  set pin(bool value) { jsElement['pin'] = value; }
+  bool get pin => jsElement[r'pin'];
+  set pin(bool value) { jsElement[r'pin'] = value; }
 
   /// If true, this slider is disabled.  A disabled slider cannot be tapped
   /// or dragged to change the slider value.
-  bool get disabled => jsElement['disabled'];
-  set disabled(bool value) { jsElement['disabled'] = value; }
+  bool get disabled => jsElement[r'disabled'];
+  set disabled(bool value) { jsElement[r'disabled'] = value; }
 
   /// The number that represents the current secondary progress.
-  num get secondaryProgress => jsElement['secondaryProgress'];
-  set secondaryProgress(num value) { jsElement['secondaryProgress'] = value; }
+  num get secondaryProgress => jsElement[r'secondaryProgress'];
+  set secondaryProgress(num value) { jsElement[r'secondaryProgress'] = value; }
 
   /// If true, an input is shown and user can use it to set the slider value.
-  bool get editable => jsElement['editable'];
-  set editable(bool value) { jsElement['editable'] = value; }
+  bool get editable => jsElement[r'editable'];
+  set editable(bool value) { jsElement[r'editable'] = value; }
 
   /// The immediate value of the slider.  This value is updated while the user
   /// is dragging the slider.
-  num get immediateValue => jsElement['immediateValue'];
-  set immediateValue(num value) { jsElement['immediateValue'] = value; }
+  num get immediateValue => jsElement[r'immediateValue'];
+  set immediateValue(num value) { jsElement[r'immediateValue'] = value; }
 }
 @initMethod
 upgradePaperSlider() => registerDartType('paper-slider', PaperSlider);

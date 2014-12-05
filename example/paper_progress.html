@@ -39,9 +39,11 @@
 
   <paper-progress></paper-progress>
 
-  <paper-button raisedButton label="Start"></paper-button>
+  <paper-button raisedButton>Start</paper-button>
   
   <br><br><br>
+
+  <paper-progress></paper-progress><br>
   
   <paper-progress value="40"></paper-progress><br>
   
@@ -50,10 +52,14 @@
   <paper-progress value="40" secondaryProgress="80"></paper-progress><br>
   
   <paper-progress value="200" max="200"></paper-progress><br>
+
+  <paper-progress indeterminate></paper-progress><br>
   
   <paper-progress class="pink" value="80"></paper-progress><br>
   
-  <paper-progress class="pink" value="40" secondaryProgress="80"></paper-progress>
+  <paper-progress class="pink" value="40" secondaryProgress="80"></paper-progress><br>
+
+  <paper-progress class="pink" indeterminate></paper-progress><br>
   
   <script type="application/dart">
     import 'dart:html';
@@ -71,7 +77,9 @@
       } else {
         if (++repeat >= maxRepeat) {
           animating = false;
-          button.disabled = false;
+          // TODO(jakemac): Remove js interop once mixins work properly
+          // https://github.com/dart-lang/custom-element-apigen/issues/15
+          button.jsElement['disabled'] = false;
           return;
         }
         progress.value = progress.min;
@@ -84,7 +92,9 @@
     startProgress(_) {
       repeat = 0;
       progress.value = progress.min;
-      button.disabled = true;
+      // TODO(jakemac): Remove js interop once mixins work properly
+      // https://github.com/dart-lang/custom-element-apigen/issues/15
+      button.jsElement['disabled'] = true;
       if (!animating) {
           nextProgress(0);
       }

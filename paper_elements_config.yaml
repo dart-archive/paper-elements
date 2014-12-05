@@ -7,22 +7,27 @@ files_to_generate:
   - paper-button/paper-button.html
   - paper-button/paper-button-base.html
   - paper-checkbox/paper-checkbox.html
+  - paper-dialog/paper-action-dialog.html
   - paper-dialog/paper-dialog.html
+  - paper-dialog/paper-dialog-base.html
   - paper-dialog/paper-dialog-transition.html
+  - paper-dropdown/paper-dropdown.html
+  - paper-dropdown/paper-dropdown-transition.html
   - paper-dropdown-menu/paper-dropdown-menu.html
   - paper-fab/paper-fab.html
-  - paper-focusable/paper-focusable.html
   - paper-icon-button/paper-icon-button.html
+  - paper-input/paper-autogrow-textarea.html
   - paper-input/paper-input.html
+  - paper-input/paper-input-decorator.html
   - paper-item/paper-item.html
   - paper-menu-button/paper-menu-button.html
-  - paper-menu-button/paper-menu-button-transition.html
   - paper-progress/paper-progress.html
   - paper-radio-button/paper-radio-button.html
   - paper-radio-group/paper-radio-group.html
   - paper-ripple/paper-ripple.html
   - paper-shadow/paper-shadow.html
   - paper-slider/paper-slider.html
+  - paper-spinner/paper-spinner.html
   - paper-tabs/paper-tab.html
   - paper-tabs/paper-tabs.html
   - paper-toast/paper-toast.html
@@ -38,8 +43,9 @@ stubs_to_generate:
     - core-component-page/core-component-page.html
     - core-drawer-panel/core-drawer-panel.html
     - core-dropdown/core-dropdown.html
-    - core-dropdown/core-dropdown-overlay.html
+    - core-dropdown/core-dropdown-base.html
     - core-field/core-field.html
+    - core-focusable/core-focusable.html
     - core-header-panel/core-header-panel.html
     - core-icon/core-icon.html
     - core-icon-button/core-icon-button.html
@@ -71,3 +77,4 @@ deletion_patterns:
   - ^core-
   - ^platform$
   - ^polymer$
+  - ^webcomponentsjs$

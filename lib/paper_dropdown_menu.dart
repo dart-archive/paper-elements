@@ -7,82 +7,48 @@ import 'dart:html';
 import 'dart:js' show JsArray, JsObject;
 import 'package:web_components/interop.dart' show registerDartType;
 import 'package:polymer/polymer.dart' show initMethod;
-import 'package:custom_element_apigen/src/common.dart' show DomProxyMixin;
+import 'package:core_elements/core_dropdown_base.dart';
 
-/// `paper-dropdown-menu` is a control where the user can choose from an array of
-/// options in a drop-down menu. The currently selected option is displayed in
-/// the control.
+/// `paper-dropdown-menu` works together with `paper-dropdown` and `core-menu` to
+/// implement a drop-down menu. The currently selected item is displayed in the
+/// control. If no item is selected, the `label` is displayed instead.
+///
+/// The child element with the class `dropdown` will be used as the drop-down
+/// menu. It should be a `paper-dropdown` or other overlay element. You should
+/// also provide a `core-selector` or other selector element, such as `core-menu`,
+/// in the drop-down. You should apply the class `menu` to the selector element.
 ///
 /// Example:
 ///
-///     <paper-dropdown-menu selected="Financier" valueattr="label">
-///         <paper-item label="Croissant"></paper-item>
-///         <paper-item label="Donut"></paper-item>
-///         <paper-item label="Financier"></paper-item>
-///         <paper-item label="Madeleine"></paper-item>
+///     <paper-dropdown-menu label="Your favorite pastry">
+///         <paper-dropdown class="dropdown">
+///             <core-menu class="menu">
+///                 <paper-item>Croissant</paper-item>
+///                 <paper-item>Donut</paper-item>
+///                 <paper-item>Financier</paper-item>
+///                 <paper-item>Madeleine</paper-item>
+///             </core-menu>
+///         </paper-dropdown>
 ///     </paper-dropdown-menu>
 ///
-/// This example renders a drop-down menu with 4 options, with the option
-/// `Financier` pre-selected.
-///
-/// Theming
-/// -------
-///
-/// Style the drop-down menu with the `paper-dropdown-menu::shadow #menu` selector.
-///
-/// Example:
-///
-///     paper-dropdown-menu::shadow #dropdown {
-///         background-color: #eee;
-///         border: 1px solid #ccc;
-///     }
-class PaperDropdownMenu extends HtmlElement with DomProxyMixin {
+/// This example renders a drop-down menu with 4 options.
+class PaperDropdownMenu extends CoreDropdownBase {
   PaperDropdownMenu.created() : super.created();
   factory PaperDropdownMenu() => new Element.tag('paper-dropdown-menu');
 
-  /// True if the menu is open.
-  bool get opened => jsElement['opened'];
-  set opened(bool value) { jsElement['opened'] = value; }
+  get $ => jsElement[r'$'];
 
   /// A label for the control. The label is displayed if no item is selected.
-  String get label => jsElement['label'];
-  set label(String value) { jsElement['label'] = value; }
+  String get label => jsElement[r'label'];
+  set label(String value) { jsElement[r'label'] = value; }
 
-  /// The currently selected element. By default this is the index of the item element.
-  /// If you want a specific attribute value of the element to be used instead of the
-  /// index, set `valueattr` to that attribute name.
-  get selected => jsElement['selected'];
-  set selected(value) { jsElement['selected'] = (value is Map || value is Iterable) ? new JsObject.jsify(value) : value;}
+  /// The icon to display when the drop-down is opened.
+  String get openedIcon => jsElement[r'openedIcon'];
+  set openedIcon(String value) { jsElement[r'openedIcon'] = value; }
 
-  /// Specifies the attribute to be used for "selected" attribute.
-  String get valueattr => jsElement['valueattr'];
-  set valueattr(String value) { jsElement['valueattr'] = value; }
-
-  /// Specifies the CSS class to be used to add to the selected element.
-  String get selectedClass => jsElement['selectedClass'];
-  set selectedClass(String value) { jsElement['selectedClass'] = value; }
-
-  /// Specifies the property to be used to set on the selected element
-  /// to indicate its active state.
-  String get selectedProperty => jsElement['selectedProperty'];
-  set selectedProperty(String value) { jsElement['selectedProperty'] = value; }
-
-  /// Specifies the attribute to set on the selected element to indicate
-  /// its active state.
-  String get selectedAttribute => jsElement['selectedAttribute'];
-  set selectedAttribute(String value) { jsElement['selectedAttribute'] = value; }
-
-  /// The currently selected element.
-  get selectedItem => jsElement['selectedItem'];
-  set selectedItem(value) { jsElement['selectedItem'] = (value is Map || value is Iterable) ? new JsObject.jsify(value) : value;}
-
-  /// Horizontally align the overlay with the control.
-  get halign => jsElement['halign'];
-  set halign(value) { jsElement['halign'] = (value is Map || value is Iterable) ? new JsObject.jsify(value) : value;}
-
-  /// Vertically align the dropdown menu with the control.
-  get valign => jsElement['valign'];
-  set valign(value) { jsElement['valign'] = (value is Map || value is Iterable) ? new JsObject.jsify(value) : value;}
+  /// The icon to display when the drop-down is closed.
+  String get closedIcon => jsElement[r'closedIcon'];
+  set closedIcon(String value) { jsElement[r'closedIcon'] = value; }
 }
 @initMethod
 upgradePaperDropdownMenu() => registerDartType('paper-dropdown-menu', PaperDropdownMenu);

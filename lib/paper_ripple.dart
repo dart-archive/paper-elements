@@ -56,13 +56,15 @@ class PaperRipple extends HtmlElement with DomProxyMixin {
   PaperRipple.created() : super.created();
   factory PaperRipple() => new Element.tag('paper-ripple');
 
+  get $ => jsElement[r'$'];
+
   /// The initial opacity set on the wave.
-  num get initialOpacity => jsElement['initialOpacity'];
-  set initialOpacity(num value) { jsElement['initialOpacity'] = value; }
+  num get initialOpacity => jsElement[r'initialOpacity'];
+  set initialOpacity(num value) { jsElement[r'initialOpacity'] = value; }
 
   /// How fast (opacity per second) the wave fades out.
-  num get opacityDecayVelocity => jsElement['opacityDecayVelocity'];
-  set opacityDecayVelocity(num value) { jsElement['opacityDecayVelocity'] = value; }
+  num get opacityDecayVelocity => jsElement[r'opacityDecayVelocity'];
+  set opacityDecayVelocity(num value) { jsElement[r'opacityDecayVelocity'] = value; }
 }
 @initMethod
 upgradePaperRipple() => registerDartType('paper-ripple', PaperRipple);

@@ -1,0 +1,63 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>paper-spinner</title>
+  <link rel="import" href="packages/paper_elements/paper_spinner.html">
+  
+  <style shim-shadowdom>
+    paper-spinner.blue::shadow .circle {
+      border-color: #4285f4;
+    }
+
+    paper-spinner.red::shadow .circle {
+      border-color: #db4437;
+    }
+
+    paper-spinner.yellow::shadow .circle {
+      border-color: #f4b400;
+    }
+
+    paper-spinner.green::shadow .circle {
+      border-color: #0f9d58;
+    }
+  </style>
+  
+</head>
+<body unresolved>
+
+  <template is="auto-binding-dart" id="myTemplate">
+    <paper-spinner class="blue" active></paper-spinner>
+    <paper-spinner class="red" active></paper-spinner>
+    <paper-spinner class="yellow" active></paper-spinner>
+    <paper-spinner class="green" active></paper-spinner>
+    <paper-spinner active></paper-spinner>
+    <button on-tap="{{toggle}}">Toggle</button>
+  </template>
+  
+  <script type="application/dart">
+    import 'dart:html';
+    import 'package:polymer/polymer.dart';
+    import 'package:paper_elements/paper_spinner.dart';
+
+    class MyModel {
+      toggle() {
+        var spinners = querySelectorAll('paper-spinner');
+        spinners.forEach((PaperSpinner spinner) {
+          spinner.active = !spinner.active;
+        });
+      }
+    }
+
+    main() {
+      initPolymer().run(() {
+        Polymer.onReady.then((_) {
+          var template = querySelector('#myTemplate') as AutoBindingElement;
+          template.model = new MyModel();
+        });
+      });
+    }
+  </script>
+  
+</body>
+</html>

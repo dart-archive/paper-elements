@@ -15,241 +15,94 @@ license that can be found in the LICENSE file.
   <link rel="stylesheet" href="packages/paper_elements/src/paper-shadow/paper-shadow.css">
 
   <style>
-    body {
+      body {
       font-family: RobotoDraft, 'Helvetica Neue', Helvetica, Arial;
-      transform: translateZ(0);
-      -webkit-transform: translateZ(0);
-      transform: translateZ(0);
-      padding: 16px;
-      user-select: none;
-      -webkit-user-select: none;
+      font-size: 14px;
+      margin: 0;
+      padding: 24px;
+      -webkit-tap-highlight-color: rgba(0,0,0,0);
+      -webkit-touch-callout: none;
     }
-
     section {
-      display: flex;
-      display: -webkit-flex;
-      width: 80%;
-      margin: 16px;
+      padding: 20px 0;
     }
-
-    aside {
-      flex: 1 1 auto;
-      -webkit-flex: 1 1 auto;
-      padding: 48px 16px;
-      user-select: text;
-      -webkit-user-select: text;
+    section > div {
+      padding: 14px;
+      font-size: 16px;
     }
-
     .card {
+      display: inline-block;
       background: white;
-      width: 300px;
-      height: 300px;
-      position: relative;
+      box-sizing: border-box;
+      width: 100px;
+      height: 100px;
       margin: 16px;
+      padding: 16px;
       border-radius: 2px;
     }
-
-    .card-inner {
-      position: absolute;
-      left: 0;
-      top: 0;
-      right: 0;
-      bottom: 0;
-      border-radius: 2px;
+    .fab {
+      display: inline-block;
+      background: white;
+      box-sizing: border-box;
+      width: 56px;
+      height: 56px;
+      margin: 16px;
+      padding: 16px;
+      border-radius: 50%;
+      text-align: center;
     }
-
   </style>
 </head>
 <body unresolved>
 
-  <section>
-    <div>
-      <div class="card">
-      </div>
-    </div>
-    <aside>
-      z-depth = 0
-    </aside>
-  </section>
+  <template is="auto-binding-dart" id="myTemplate">
 
-  <section>
-    <!-- Example of using paper-shadow to add a shadow to an element -->
-    <div>
-      <div class="card">
-        <paper-shadow z="1"></paper-shadow>
-      </div>
-    </div>
-    <aside>
-      z-depth = 1
-    </aside>
-  </section>
+    <section>
 
-  <section>
-    <!-- Example of using paper-shadow as part of a Polymer element -->
-    <polymer-element name="x-card" attributes="z">
-      <template>
-        <style>
-          :host {
-            display: block;
-          }
-        </style>
-        <paper-shadow z="{{z}}"></paper-shadow>
-      </template>
-    </polymer-element>
-    <div>
-      <x-card class="card" z="2"></x-card>
-    </div>
-    <aside>
-      z-depth = 2
-    </aside>
-  </section>
+      <div>Shadows</div>
 
-  <section>
-    <!-- Example of using paper-shadow by adding a class directly -->
-    <div>
-      <div class="card paper-shadow-top-z-3">
-        <div class="card-inner paper-shadow-bottom-z-3">
-        </div>
-      </div>
-    </div>
-    <aside>
-      z-depth = 3
-    </aside>
-  </section>
+      <paper-shadow class="card" z="0">
+        z = 0
+      </paper-shadow>
 
-  <section>
-    <div>
-      <div class="card paper-shadow-top-z-4">
-        <div class="card-inner paper-shadow-bottom-z-4">
-        </div>
-      </div>
-    </div>
-    <aside>
-      z-depth = 4
-    </aside>
-  </section>
+      <paper-shadow class="card" z="1">
+        z = 1
+      </paper-shadow>
 
-  <section>
-    <div>
-      <div class="card paper-shadow-top-z-5">
-        <div class="card-inner paper-shadow-bottom-z-5">
-        </div>
-      </div>
-    </div>
-    <aside>
-      z-depth = 5
-    </aside>
-  </section>
+      <paper-shadow class="card" z="2">
+        z = 2
+      </paper-shadow>
 
-  <br>
-  <br>
-  <br>
-  <br>
+      <paper-shadow class="card" z="3">
+        z = 3
+      </paper-shadow>
 
-  <polymer-element name="x-shadow" attributes="z" on-tap="{{tapAction}}">
-    <template>
-      <style>
-        :host {
-          position: relative;
-        }
+      <paper-shadow class="card" z="4">
+        z = 4
+      </paper-shadow>
 
-        :host,
-        .paper-shadow-bottom {
-          display: block;
-          background: white;
-          color: #ccc;
-        }
+      <paper-shadow class="card" z="5">
+        z = 5
+      </paper-shadow>
 
-        :host(.fab),
-        :host(.fab) .paper-shadow-bottom {
-          width: 48px;
-          height: 48px;
-          border-radius: 24px;
-        }
-      </style>
-      <paper-shadow z="{{z}}" animated></paper-shadow>
-    </template>
-  </polymer-element>
+    </section>
 
-  <section>
-    <div>
-      <x-shadow id="card" z="0" class="card"></x-shadow>
-    </div>
-    <aside>
-      Tap to lift/drop the card.
-      <br>
-      Current z-index = <span id="card-z">0</span>
-    </aside>
-  </section>
+    <section on-tap="{{tapAction}}">
 
-  <section>
-    <div>
-      <style>
-        x-shadow.fab {
-          margin: 48px 142px;
-        }
-      </style>
-      <x-shadow id="fab" z="0" class="fab"></x-shadow>
-    </div>
-    <aside>
-      Tap to lift/drop the button.
-      <br>
-      Current z-index = <span id="fab-z">0</span>
-    </aside>
-    <script type="application/dart">
-      import 'package:polymer/polymer.dart';
-      export 'package:polymer/init.dart';
-      import 'dart:html';
+      <div>Animated</div>
 
-      @CustomTag('x-card')
-      class XCard extends PolymerElement {
-        XCard.created() : super.created();
-        @PublishedProperty(reflect: true) int z = 1;
-      }
+      <paper-shadow class="card" z="0" animated>
+        tap
+      </paper-shadow>
 
-      @CustomTag('x-shadow')
-      class XShadow extends PolymerElement {
-        XShadow.created() : super.created();
-        @PublishedProperty(reflect: true) int z = 0;
-        bool up = true;
+      <paper-shadow class="fab" z="0" animated layout center-center>
+        tap
+      </paper-shadow>
 
-        zChanged(oldValue, newValue) {
-          fire('shadow-z-changed');
-        }
+    </section>
 
-        tapAction() {
-          if (up) {
-            if (z < 5) {
-              z += 1;
-            } else {
-              z -= 1;
-              up = false;
-            }
-          } else {
-            if (z > 0) {
-              z -= 1;
-            } else {
-              z += 1;
-              up = true;
-            }
-          }
-        }
-      }
+  </template>
 
-      @initMethod init() {
-        Polymer.onReady.then((_) {
-          XShadow card = document.querySelector('#card');
-          card.on['shadow-z-changed'].listen((e) {
-            document.querySelector('#card-z').text = '${card.z}';
-          });
-          XShadow fab = document.querySelector('#fab');
-          fab.on['shadow-z-changed'].listen((e) {
-            document.querySelector('#fab-z').text = '${fab.z}';
-          });
-        });
-      }
-    </script>
-  </section>
-
+  <script type="application/dart" src="paper_shadow.dart"></script>
 </body>
 </html>

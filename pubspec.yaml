@@ -1,15 +1,17 @@
 name: paper_elements
-version: 0.5.0
+version: 0.6.0
 author: Polymer.dart Authors <web-ui-dev@dartlang.org>
 description: Paper elements for Dart
 homepage: https://www.dartlang.org/polymer-dart/
 dependencies:
-  core_elements: '>=0.3.2 <0.5.0'
-  custom_element_apigen: ">= 0.1.1 <0.2.0"
-  polymer: ">=0.14.0 <0.16.0"
-  web_components: ">=0.9.0 <0.10.0"
+  core_elements: '>=0.5.0 <0.6.0'
+  custom_element_apigen: ">= 0.1.2+1 <0.2.0"
+  polymer: ">=0.15.2 <0.16.0"
+  web_components: ">=0.9.0 <0.11.0"
 dev_dependencies:
   path: ">=1.0.0 <2.0.0"
+  unittest: ">=0.11.0+2 <0.12.0"
+  matcher: ">=0.10.1+1 <0.12.0"
 transformers:
 - polymer:
     entry_points:
@@ -17,9 +19,9 @@ transformers:
       - example/core_toolbar.html
       - example/demo.html
       - example/paper_button.html
-      - example/paper_button2.html
       - example/paper_checkbox.html
       - example/paper_dialog.html
+      - example/paper_dropdown.html
       - example/paper_dropdown_menu.html
       - example/paper_fab.html
       - example/paper_icon_button.html
@@ -32,9 +34,22 @@ transformers:
       - example/paper_ripple.html
       - example/paper_shadow.html
       - example/paper_slider.html
+      - example/paper_spinner.html
       - example/paper_tabs.html
       - example/paper_toast.html
       - example/paper_toggle_button.html
+      - test/paper_button_a11y_test.html
+      - test/paper_button_basic_test.html
+      - test/paper_dropdown_basic_test.html
+      - test/paper_fab_a11y_test.html
+      - test/paper_fab_basic_test.html
+      - test/paper_icon_button_a11y_test.html
+      - test/paper_icon_button_basic_test.html
+      - test/paper_input_a11y_test.html
+      - test/paper_input_autogrow_test.html
+      - test/paper_input_decorator_test.html
+      - test/paper_ripple_position_test.html
+      - test/paper_shadow_basic_test.html
     lint:
       exclude: lib/src/
     inline_stylesheets:

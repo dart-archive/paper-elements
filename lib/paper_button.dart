@@ -19,12 +19,13 @@ import 'paper_button_base.dart';
 ///
 ///     <paper-button>flat button</paper-button>
 ///     <paper-button raised>raised button</paper-button>
+///     <paper-button noink>No ripple effect</paper-button>
 ///
 /// You may use custom DOM in the button body to create a variety of buttons. For example, to
 /// create a button with an icon and some text:
 ///
 ///     <paper-button>
-///       <core-icon icon="favorite">
+///       <core-icon icon="favorite"></core-icon>
 ///       custom button content
 ///     </paper-button>
 ///
@@ -52,19 +53,21 @@ class PaperButton extends PaperButtonBase {
   PaperButton.created() : super.created();
   factory PaperButton() => new Element.tag('paper-button');
 
+  get $ => jsElement[r'$'];
+
   /// If true, the button will be styled with a shadow.
-  bool get raised => jsElement['raised'];
-  set raised(bool value) { jsElement['raised'] = value; }
+  bool get raised => jsElement[r'raised'];
+  set raised(bool value) { jsElement[r'raised'] = value; }
 
   /// By default the ripple emanates from where the user touched the button.
   /// Set this to true to always center the ripple.
-  bool get recenteringTouch => jsElement['recenteringTouch'];
-  set recenteringTouch(bool value) { jsElement['recenteringTouch'] = value; }
+  bool get recenteringTouch => jsElement[r'recenteringTouch'];
+  set recenteringTouch(bool value) { jsElement[r'recenteringTouch'] = value; }
 
   /// By default the ripple expands to fill the button. Set this to true to
   /// constrain the ripple to a circle within the button.
-  bool get fill => jsElement['fill'];
-  set fill(bool value) { jsElement['fill'] = value; }
+  bool get fill => jsElement[r'fill'];
+  set fill(bool value) { jsElement[r'fill'] = value; }
 }
 @initMethod
 upgradePaperButton() => registerDartType('paper-button', PaperButton);
