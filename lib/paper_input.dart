@@ -54,6 +54,14 @@ class PaperInput extends HtmlElement with DomProxyMixin {
   /// Set to true to style the element as disabled.
   bool get disabled => jsElement[r'disabled'];
   set disabled(bool value) { jsElement[r'disabled'] = value; }
+
+  /// The current value of the input.
+  String get value => jsElement[r'value'];
+  set value(String value) { jsElement[r'value'] = value; }
+
+  /// The most recently committed value of the input.
+  String get committedValue => jsElement[r'committedValue'];
+  set committedValue(String value) { jsElement[r'committedValue'] = value; }
 }
 @initMethod
 upgradePaperInput() => registerDartType('paper-input', PaperInput);

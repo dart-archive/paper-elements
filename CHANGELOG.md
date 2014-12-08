@@ -1,3 +1,7 @@
+## 0.6.0+1
+  * Add back `value` and `committedValue` to `paper-input`, fixes
+    [66](https://github.com/dart-lang/paper-elements/issues/66).
+
 ## 0.6.0
   * Updated to match JS version 0.5.1.
     * **New Element** `paper-spinner` is a new element that provides a material
