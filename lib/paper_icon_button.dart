@@ -60,8 +60,6 @@ class PaperIconButton extends PaperButtonBase {
   PaperIconButton.created() : super.created();
   factory PaperIconButton() => new Element.tag('paper-icon-button');
 
-  get $ => jsElement[r'$'];
-
   /// The URL of an image for the icon. If the src property is specified,
   /// the icon property should not be.
   String get src => jsElement[r'src'];

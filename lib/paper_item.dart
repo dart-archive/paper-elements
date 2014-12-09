@@ -38,8 +38,6 @@ class PaperItem extends PaperButtonBase {
   PaperItem.created() : super.created();
   factory PaperItem() => new Element.tag('paper-item');
 
-  get $ => jsElement[r'$'];
-
   /// If true, the button will be styled with a shadow.
   bool get raised => jsElement[r'raised'];
   set raised(bool value) { jsElement[r'raised'] = value; }

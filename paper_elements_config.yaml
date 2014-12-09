@@ -2,6 +2,8 @@
 package_mappings:
   - core-: core_elements
   - web-animations: core_elements
+  # For mixin classes
+  - Core: core_elements
 files_to_generate:
   - font-roboto/roboto.html
   - paper-button/paper-button.html

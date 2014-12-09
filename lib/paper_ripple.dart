@@ -7,7 +7,7 @@ import 'dart:html';
 import 'dart:js' show JsArray, JsObject;
 import 'package:web_components/interop.dart' show registerDartType;
 import 'package:polymer/polymer.dart' show initMethod;
-import 'package:custom_element_apigen/src/common.dart' show DomProxyMixin;
+import 'package:custom_element_apigen/src/common.dart' show PolymerProxyMixin, DomProxyMixin;
 
 /// `paper-ripple` provides a visual effect that other paper elements can
 /// use to simulate a rippling effect emanating from the point of contact.  The
@@ -52,11 +52,9 @@ import 'package:custom_element_apigen/src/common.dart' show DomProxyMixin;
 /// Apply `circle` class to make the rippling effect within a circle.
 ///
 ///     <paper-ripple class="circle"></paper-ripple>
-class PaperRipple extends HtmlElement with DomProxyMixin {
+class PaperRipple extends HtmlElement with DomProxyMixin, PolymerProxyMixin {
   PaperRipple.created() : super.created();
   factory PaperRipple() => new Element.tag('paper-ripple');
-
-  get $ => jsElement[r'$'];
 
   /// The initial opacity set on the wave.
   num get initialOpacity => jsElement[r'initialOpacity'];

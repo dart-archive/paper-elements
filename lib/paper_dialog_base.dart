@@ -17,8 +17,6 @@ class PaperDialogBase extends CoreOverlay {
   PaperDialogBase.created() : super.created();
   factory PaperDialogBase() => new Element.tag('paper-dialog-base');
 
-  get $ => jsElement[r'$'];
-
   /// The title of the dialog.
   String get heading => jsElement[r'heading'];
   set heading(String value) { jsElement[r'heading'] = value; }

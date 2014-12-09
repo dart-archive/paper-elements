@@ -47,8 +47,6 @@ class PaperProgress extends CoreRange {
   PaperProgress.created() : super.created();
   factory PaperProgress() => new Element.tag('paper-progress');
 
-  get $ => jsElement[r'$'];
-
   /// The number that represents the current secondary progress.
   num get secondaryProgress => jsElement[r'secondaryProgress'];
   set secondaryProgress(num value) { jsElement[r'secondaryProgress'] = value; }

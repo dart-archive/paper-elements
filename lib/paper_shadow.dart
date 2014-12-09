@@ -7,7 +7,7 @@ import 'dart:html';
 import 'dart:js' show JsArray, JsObject;
 import 'package:web_components/interop.dart' show registerDartType;
 import 'package:polymer/polymer.dart' show initMethod;
-import 'package:custom_element_apigen/src/common.dart' show DomProxyMixin;
+import 'package:custom_element_apigen/src/common.dart' show PolymerProxyMixin, DomProxyMixin;
 
 /// `paper-shadow` is a container that renders two shadows on top of each other to
 /// create the effect of a lifted piece of paper.
@@ -17,11 +17,9 @@ import 'package:custom_element_apigen/src/common.dart' show DomProxyMixin;
 ///     <paper-shadow z="1">
 ///       ... card content ...
 ///     </paper-shadow>
-class PaperShadow extends HtmlElement with DomProxyMixin {
+class PaperShadow extends HtmlElement with DomProxyMixin, PolymerProxyMixin {
   PaperShadow.created() : super.created();
   factory PaperShadow() => new Element.tag('paper-shadow');
-
-  get $ => jsElement[r'$'];
 
   /// The z-depth of this shadow, from 0-5. Setting this property
   /// after element creation has no effect. Use `setZ()` instead.

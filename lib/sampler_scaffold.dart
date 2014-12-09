@@ -7,7 +7,7 @@ import 'dart:html';
 import 'dart:js' show JsArray, JsObject;
 import 'package:web_components/interop.dart' show registerDartType;
 import 'package:polymer/polymer.dart' show initMethod;
-import 'package:custom_element_apigen/src/common.dart' show DomProxyMixin;
+import 'package:custom_element_apigen/src/common.dart' show PolymerProxyMixin, DomProxyMixin;
 
 /// `sampler-scaffold` provides a responsive layout for elements sampler.
 ///
@@ -25,11 +25,9 @@ import 'package:custom_element_apigen/src/common.dart' show DomProxyMixin;
 ///
 /// Use `label` to set the sampler label and `responsiveWidth` to change the layout
 /// of the scaffold.
-class SamplerScaffold extends HtmlElement with DomProxyMixin {
+class SamplerScaffold extends HtmlElement with DomProxyMixin, PolymerProxyMixin {
   SamplerScaffold.created() : super.created();
   factory SamplerScaffold() => new Element.tag('sampler-scaffold');
-
-  get $ => jsElement[r'$'];
 
   /// Sampler label.
   String get label => jsElement[r'label'];

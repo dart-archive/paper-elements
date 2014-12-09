@@ -7,7 +7,7 @@ import 'dart:html';
 import 'dart:js' show JsArray, JsObject;
 import 'package:web_components/interop.dart' show registerDartType;
 import 'package:polymer/polymer.dart' show initMethod;
-import 'package:custom_element_apigen/src/common.dart' show DomProxyMixin;
+import 'package:custom_element_apigen/src/common.dart' show PolymerProxyMixin, DomProxyMixin;
 
 /// `paper-autogrow-textarea` is an element containing a textarea that grows in height as more
 /// lines of input are entered. Unless an explicit height or the `maxRows` property is set, it will
@@ -27,11 +27,9 @@ import 'package:custom_element_apigen/src/common.dart' show DomProxyMixin;
 ///     /* using example HTML above */
 ///     t1.value = 'some\ntext';
 ///     a1.update();
-class PaperAutogrowTextarea extends HtmlElement with DomProxyMixin {
+class PaperAutogrowTextarea extends HtmlElement with DomProxyMixin, PolymerProxyMixin {
   PaperAutogrowTextarea.created() : super.created();
   factory PaperAutogrowTextarea() => new Element.tag('paper-autogrow-textarea');
-
-  get $ => jsElement[r'$'];
 
   /// The textarea that should auto grow.
   get target => jsElement[r'target'];

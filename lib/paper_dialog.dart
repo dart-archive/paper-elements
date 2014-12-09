@@ -53,8 +53,6 @@ import 'paper_dialog_base.dart';
 class PaperDialog extends PaperDialogBase {
   PaperDialog.created() : super.created();
   factory PaperDialog() => new Element.tag('paper-dialog');
-
-  get $ => jsElement[r'$'];
 }
 @initMethod
 upgradePaperDialog() => registerDartType('paper-dialog', PaperDialog);

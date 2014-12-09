@@ -30,8 +30,6 @@ import 'package:core_elements/core_dropdown_base.dart';
 class PaperMenuButton extends CoreDropdownBase {
   PaperMenuButton.created() : super.created();
   factory PaperMenuButton() => new Element.tag('paper-menu-button');
-
-  get $ => jsElement[r'$'];
 }
 @initMethod
 upgradePaperMenuButton() => registerDartType('paper-menu-button', PaperMenuButton);
