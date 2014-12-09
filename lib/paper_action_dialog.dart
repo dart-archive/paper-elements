@@ -29,8 +29,6 @@ class PaperActionDialog extends PaperDialogBase {
   PaperActionDialog.created() : super.created();
   factory PaperActionDialog() => new Element.tag('paper-action-dialog');
 
-  get $ => jsElement[r'$'];
-
   String get closeSelector => jsElement[r'closeSelector'];
   set closeSelector(String value) { jsElement[r'closeSelector'] = value; }
 }

@@ -32,8 +32,6 @@ import 'package:core_elements/core_dropdown.dart';
 class PaperDropdown extends CoreDropdown {
   PaperDropdown.created() : super.created();
   factory PaperDropdown() => new Element.tag('paper-dropdown');
-
-  get $ => jsElement[r'$'];
 }
 @initMethod
 upgradePaperDropdown() => registerDartType('paper-dropdown', PaperDropdown);

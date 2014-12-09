@@ -17,8 +17,6 @@ class PaperDropdownTransition extends CoreTransitionCss {
   PaperDropdownTransition.created() : super.created();
   factory PaperDropdownTransition() => new Element.tag('paper-dropdown-transition');
 
-  get $ => jsElement[r'$'];
-
   /// The duration of the transition in ms. You can also set the duration by
   /// setting a `duration` attribute on the target:
   ///

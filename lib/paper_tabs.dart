@@ -78,8 +78,6 @@ class PaperTabs extends CoreSelector {
   PaperTabs.created() : super.created();
   factory PaperTabs() => new Element.tag('paper-tabs');
 
-  get $ => jsElement[r'$'];
-
   /// If true, ink ripple effect is disabled.
   bool get noink => jsElement[r'noink'];
   set noink(bool value) { jsElement[r'noink'] = value; }

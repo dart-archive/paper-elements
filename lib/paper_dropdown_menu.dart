@@ -36,8 +36,6 @@ class PaperDropdownMenu extends CoreDropdownBase {
   PaperDropdownMenu.created() : super.created();
   factory PaperDropdownMenu() => new Element.tag('paper-dropdown-menu');
 
-  get $ => jsElement[r'$'];
-
   /// A label for the control. The label is displayed if no item is selected.
   String get label => jsElement[r'label'];
   set label(String value) { jsElement[r'label'] = value; }

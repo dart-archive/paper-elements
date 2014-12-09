@@ -59,8 +59,6 @@ class PaperSlider extends CoreRange {
   PaperSlider.created() : super.created();
   factory PaperSlider() => new Element.tag('paper-slider');
 
-  get $ => jsElement[r'$'];
-
   /// If true, the slider thumb snaps to tick marks evenly spaced based
   /// on the `step` property value.
   bool get snaps => jsElement[r'snaps'];

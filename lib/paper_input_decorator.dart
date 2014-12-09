@@ -7,7 +7,7 @@ import 'dart:html';
 import 'dart:js' show JsArray, JsObject;
 import 'package:web_components/interop.dart' show registerDartType;
 import 'package:polymer/polymer.dart' show initMethod;
-import 'package:custom_element_apigen/src/common.dart' show DomProxyMixin;
+import 'package:custom_element_apigen/src/common.dart' show PolymerProxyMixin, DomProxyMixin;
 
 /// Material Design: <a href="http://www.google.com/design/spec/components/text-fields.html">Text fields</a>
 ///
@@ -95,11 +95,9 @@ import 'package:custom_element_apigen/src/common.dart' show DomProxyMixin;
 /// `paper-input-decorator` will automatically set the `aria-label` attribute on the nested input
 /// to the value of `label`. Do not set the `placeholder` attribute on the nested input, as it will
 /// conflict with this element.
-class PaperInputDecorator extends HtmlElement with DomProxyMixin {
+class PaperInputDecorator extends HtmlElement with DomProxyMixin, PolymerProxyMixin {
   PaperInputDecorator.created() : super.created();
   factory PaperInputDecorator() => new Element.tag('paper-input-decorator');
-
-  get $ => jsElement[r'$'];
 
   /// The label for this input. It normally appears as grey text inside
   /// the text input and disappears once the user enters text.

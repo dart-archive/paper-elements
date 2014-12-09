@@ -7,7 +7,7 @@ import 'dart:html';
 import 'dart:js' show JsArray, JsObject;
 import 'package:web_components/interop.dart' show registerDartType;
 import 'package:polymer/polymer.dart' show initMethod;
-import 'package:custom_element_apigen/src/common.dart' show DomProxyMixin;
+import 'package:custom_element_apigen/src/common.dart' show PolymerProxyMixin, DomProxyMixin;
 
 /// `paper-radio-button` is a button that can be either checked or unchecked.
 /// User can tap the radio button to check it.  But it cannot be unchecked by
@@ -45,11 +45,9 @@ import 'package:custom_element_apigen/src/common.dart' show DomProxyMixin;
 ///     paper-radio-button::shadow #offRadio {
 ///       border-color: #b5b5b5;
 ///     }
-class PaperRadioButton extends HtmlElement with DomProxyMixin {
+class PaperRadioButton extends HtmlElement with DomProxyMixin, PolymerProxyMixin {
   PaperRadioButton.created() : super.created();
   factory PaperRadioButton() => new Element.tag('paper-radio-button');
-
-  get $ => jsElement[r'$'];
 
   /// Gets or sets the state, `true` is checked and `false` is unchecked.
   bool get checked => jsElement[r'checked'];

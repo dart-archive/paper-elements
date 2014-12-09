@@ -7,7 +7,7 @@ import 'dart:html';
 import 'dart:js' show JsArray, JsObject;
 import 'package:web_components/interop.dart' show registerDartType;
 import 'package:polymer/polymer.dart' show initMethod;
-import 'package:custom_element_apigen/src/common.dart' show DomProxyMixin;
+import 'package:custom_element_apigen/src/common.dart' show PolymerProxyMixin, DomProxyMixin;
 
 /// `paper-toast` provides lightweight feedback about an operation in a small popup
 /// at the base of the screen on mobile and at the lower left on desktop. Toasts are
@@ -62,11 +62,9 @@ import 'package:custom_element_apigen/src/common.dart' show DomProxyMixin;
 ///
 /// When the screen size is smaller than the `responsiveWidth` (default to 480px),
 /// the toast will automatically fits at the bottom of the screen.
-class PaperToast extends HtmlElement with DomProxyMixin {
+class PaperToast extends HtmlElement with DomProxyMixin, PolymerProxyMixin {
   PaperToast.created() : super.created();
   factory PaperToast() => new Element.tag('paper-toast');
-
-  get $ => jsElement[r'$'];
 
   /// The text shows in a toast.
   String get text => jsElement[r'text'];

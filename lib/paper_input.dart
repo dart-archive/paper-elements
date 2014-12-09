@@ -7,7 +7,7 @@ import 'dart:html';
 import 'dart:js' show JsArray, JsObject;
 import 'package:web_components/interop.dart' show registerDartType;
 import 'package:polymer/polymer.dart' show initMethod;
-import 'package:custom_element_apigen/src/common.dart' show DomProxyMixin;
+import 'package:custom_element_apigen/src/common.dart' show PolymerProxyMixin, DomProxyMixin;
 
 /// Material Design: <a href="http://www.google.com/design/spec/components/text-fields.html#text-fields-single-line-text-field">Single line text field</a>
 ///
@@ -35,11 +35,9 @@ import 'package:custom_element_apigen/src/common.dart' show DomProxyMixin;
 /// Use `paper-input-decorator` directly, or see
 /// <a href="https://github.com/garstasio/ajax-form">`ajax-form`</a> for a possible solution
 /// to submitting a `paper-input`.
-class PaperInput extends HtmlElement with DomProxyMixin {
+class PaperInput extends HtmlElement with DomProxyMixin, PolymerProxyMixin {
   PaperInput.created() : super.created();
   factory PaperInput() => new Element.tag('paper-input');
-
-  get $ => jsElement[r'$'];
 
   /// The label for this input. It normally appears as grey text inside
   /// the text input and disappears once the user enters text.

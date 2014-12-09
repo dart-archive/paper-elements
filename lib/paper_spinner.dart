@@ -7,7 +7,7 @@ import 'dart:html';
 import 'dart:js' show JsArray, JsObject;
 import 'package:web_components/interop.dart' show registerDartType;
 import 'package:polymer/polymer.dart' show initMethod;
-import 'package:custom_element_apigen/src/common.dart' show DomProxyMixin;
+import 'package:custom_element_apigen/src/common.dart' show PolymerProxyMixin, DomProxyMixin;
 
 /// Element providing material design circular spinner.
 ///
@@ -27,11 +27,9 @@ import 'package:custom_element_apigen/src/common.dart' show DomProxyMixin;
 ///     </style>
 ///
 ///     <paper-spinner class="blue" active></paper-spinner>
-class PaperSpinner extends HtmlElement with DomProxyMixin {
+class PaperSpinner extends HtmlElement with DomProxyMixin, PolymerProxyMixin {
   PaperSpinner.created() : super.created();
   factory PaperSpinner() => new Element.tag('paper-spinner');
-
-  get $ => jsElement[r'$'];
 
   /// Displays the spinner.
   bool get active => jsElement[r'active'];

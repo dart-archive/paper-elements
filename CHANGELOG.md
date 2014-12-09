@@ -1,3 +1,7 @@
+## 0.6.0+2
+  * Added some methods/properties from the polymer base class.
+  * Added mixin support so elements that mixin CoreFocusable work as intended.
+
 ## 0.6.0+1
   * Add back `value` and `committedValue` to `paper-input`, fixes
     [66](https://github.com/dart-lang/paper-elements/issues/66).
