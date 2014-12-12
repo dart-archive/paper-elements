@@ -30,4 +30,4 @@ transformers:
     lint:
       exclude: lib/src/
     inline_stylesheets:
-      lib/src/paper-shadow/paper-shadow.css: false
+      lib/src/paper-shadow/paper-shadow.css: true
