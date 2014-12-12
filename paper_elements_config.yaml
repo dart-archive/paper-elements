@@ -76,6 +76,8 @@ deletion_patterns:
   - index\.html$
   - bower\.json$
   - README\.md$
+  - demo\.html$
+  - demos$
   - ^core-
   - ^platform$
   - ^polymer$
