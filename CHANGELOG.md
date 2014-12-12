@@ -1,3 +1,7 @@
+## 0.6.0+3
+  * Moved examples to central repo and updated readme
+    https://github.com/dart-lang/polymer-core-and-paper-examples.
+
 ## 0.6.0+2
   * Added some methods/properties from the polymer base class.
   * Added mixin support so elements that mixin CoreFocusable work as intended.

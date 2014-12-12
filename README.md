@@ -31,31 +31,9 @@ Import into Dart:
     import 'package:paper_elements/paper_input.dart';
  
 
-## Running demos
+## Examples
 
-If you download or fork the repo from
-https://github.com/dart-lang/paper-elements,
-then you can use the `pub` command to run any single demo or the sampler,
-which contains all the demos.
+All examples are located in a separate repo,
+https://github.com/dart-lang/polymer-core-and-paper-examples.
 
-If you only want to run a single demo, then you can edit `pubspec.yaml` to
-comment out all the entrypoints except the one you need.
 
-To run the paper element sampler:
-
-1. From the top directory, use the `pub serve` command, specifying the
-   `example` directory:
-
-        pub serve example
-
-2. In a browser, visit [http://localhost:8080/demo.html](http://localhost:8080/demo.html).
-
-To create a deployable build of a demo or the paper element sampler, use
-`pub build` from the top directory:
-
-    pub build example
-
-Copy the files from the resulting `build` directory to where you want to
-serve the files.
-
-**Note:** Building the sampler takes a few minutes.
