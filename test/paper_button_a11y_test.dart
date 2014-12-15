@@ -7,12 +7,13 @@
 
 library paper_button.a11y_test;
 
-import "dart:async";
-import "dart:html";
-import "package:paper_elements/paper_button.dart";
-import "package:polymer/polymer.dart";
-import "package:unittest/unittest.dart";
-import "package:unittest/html_config.dart" show useHtmlConfiguration;
+import 'dart:html';
+import 'dart:js';
+import 'package:paper_elements/paper_button.dart';
+import 'package:polymer/polymer.dart';
+import 'package:unittest/unittest.dart';
+import 'package:unittest/html_config.dart' show useHtmlConfiguration;
+import 'common.dart';
 
 void main() {
   useHtmlConfiguration();
@@ -28,7 +29,8 @@ void main() {
       test('aria-disabled is set', () {
         expect(b1.attributes['aria-disabled'], isNotNull);
         b1.attributes.remove('disabled');
-        return new Future(() {}).then((_) {
+        context['Polymer'].callMethod('flush', []);
+        return flushLayoutAndRender().then((_) {
           expect(b1.attributes['aria-disabled'], isNull);
         });
       });

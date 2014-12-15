@@ -7,12 +7,11 @@
 
 library paper_fab.basic_test;
 
-import "dart:async";
-import "dart:html";
-import "package:paper_elements/paper_fab.dart";
-import "package:polymer/polymer.dart";
-import "package:unittest/unittest.dart";
-import "package:unittest/html_config.dart" show useHtmlConfiguration;
+import 'dart:html';
+import 'package:paper_elements/paper_fab.dart';
+import 'package:polymer/polymer.dart';
+import 'package:unittest/unittest.dart';
+import 'package:unittest/html_config.dart' show useHtmlConfiguration;
 
 void main() {
   useHtmlConfiguration();

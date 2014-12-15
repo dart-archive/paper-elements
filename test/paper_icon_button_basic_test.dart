@@ -7,12 +7,11 @@
 
 library paper_icon_button.basic_test;
 
-import "dart:async";
-import "dart:html";
-import "package:paper_elements/paper_icon_button.dart";
-import "package:polymer/polymer.dart";
-import "package:unittest/unittest.dart";
-import "package:unittest/html_config.dart" show useHtmlConfiguration;
+import 'dart:html';
+import 'package:paper_elements/paper_icon_button.dart';
+import 'package:polymer/polymer.dart';
+import 'package:unittest/unittest.dart';
+import 'package:unittest/html_config.dart' show useHtmlConfiguration;
 
 void main() {
   useHtmlConfiguration();
@@ -22,7 +21,7 @@ void main() {
       var b1 = document.getElementById('button1') as PaperIconButton;
 
       test('renders correctly independent of font size', () {
-        expect(centerOf(b1.jsElement['\$']['icon']), centerOf(b1));
+        expect(centerOf(b1.$['icon']), centerOf(b1));
       });
 
     });

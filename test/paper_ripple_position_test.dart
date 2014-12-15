@@ -7,12 +7,12 @@
 
 library paper_ripple.position_test;
 
-import "dart:async";
-import "dart:html";
-import "package:paper_elements/paper_ripple.dart";
-import "package:polymer/polymer.dart";
-import "package:unittest/unittest.dart";
-import "package:unittest/html_config.dart" show useHtmlConfiguration;
+import 'dart:async';
+import 'dart:html';
+import 'package:polymer/polymer.dart';
+import 'package:unittest/unittest.dart';
+import 'package:unittest/html_config.dart' show useHtmlConfiguration;
+import 'common.dart';
 
 void main() {
   useHtmlConfiguration();
@@ -26,7 +26,7 @@ void main() {
         var e = new MouseEvent('down', canBubble: true, clientX: center['x'],
             clientY: center['y']);
         ripple1.dispatchEvent(e);
-        return new Future(() {}).then((_) {
+        return flushLayoutAndRender().then((_) {
           var wave = querySelector('.ripple-1 /deep/ .wave');
           expectCloseTo(centerOf(ripple1), centerOf(wave));
         });
@@ -38,7 +38,7 @@ void main() {
         var e = new MouseEvent('down', canBubble: true, clientX: center['x'],
             clientY: center['y']);
         ripple2.dispatchEvent(e);
-        return new Future(() {}).then((_) {
+        return flushLayoutAndRender().then((_) {
           var wave = querySelector('.ripple-2 /deep/ .wave');
           expectCloseTo(centerOf(ripple2), centerOf(wave));
         });

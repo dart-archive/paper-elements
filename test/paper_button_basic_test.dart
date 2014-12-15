@@ -7,13 +7,13 @@
 
 library paper_button.basic_test;
 
-import "dart:async";
-import "dart:html";
-import "package:paper_elements/paper_button.dart";
-import "package:paper_elements/paper_shadow.dart";
-import "package:polymer/polymer.dart";
-import "package:unittest/unittest.dart";
-import "package:unittest/html_config.dart" show useHtmlConfiguration;
+import 'dart:html';
+import 'package:paper_elements/paper_button.dart';
+import 'package:paper_elements/paper_shadow.dart';
+import 'package:polymer/polymer.dart';
+import 'package:unittest/unittest.dart';
+import 'package:unittest/html_config.dart' show useHtmlConfiguration;
+import 'common.dart';
 
 void main() {
   useHtmlConfiguration();
@@ -25,14 +25,11 @@ void main() {
       test('can set raised imperatively', () {
         expect(b1.shadowRoot.querySelector('paper-shadow'), isNull);
         b1.raised = true;
-        return new Future(() {}).then((_) {
+        return flushLayoutAndRender().then((_) {
           var shadow =
               b1.shadowRoot.querySelector('paper-shadow') as PaperShadow;
           expect(shadow, isNotNull);
-          // TODO(jakemac): Stop using js interop once $ is available
-          // https://github.com/dart-lang/custom-element-apigen/issues/16
-          expect(
-              shadow.jsElement['\$']['shadow-top'].getComputedStyle().boxShadow,
+          expect(shadow.$['shadow-top'].getComputedStyle().boxShadow,
               isNot('none'));
         });
       });

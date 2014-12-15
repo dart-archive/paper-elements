@@ -7,12 +7,11 @@
 
 library paper_input.a11y_test;
 
-import "dart:async";
-import "dart:html";
-import "package:paper_elements/paper_input_decorator.dart";
-import "package:polymer/polymer.dart";
-import "package:unittest/unittest.dart";
-import "package:unittest/html_config.dart" show useHtmlConfiguration;
+import 'dart:html';
+import 'package:paper_elements/paper_input_decorator.dart';
+import 'package:polymer/polymer.dart';
+import 'package:unittest/unittest.dart';
+import 'package:unittest/html_config.dart' show useHtmlConfiguration;
 
 void main() {
   useHtmlConfiguration();

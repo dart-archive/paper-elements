@@ -7,12 +7,12 @@
 
 library paper_icon_button.a11y_test;
 
-import "dart:async";
-import "dart:html";
-import "package:paper_elements/paper_icon_button.dart";
-import "package:polymer/polymer.dart";
-import "package:unittest/unittest.dart";
-import "package:unittest/html_config.dart" show useHtmlConfiguration;
+import 'dart:html';
+import 'package:paper_elements/paper_icon_button.dart';
+import 'package:polymer/polymer.dart';
+import 'package:unittest/unittest.dart';
+import 'package:unittest/html_config.dart' show useHtmlConfiguration;
+import 'common.dart';
 
 void main() {
   useHtmlConfiguration();
@@ -29,9 +29,9 @@ void main() {
       
       test('aria-disabled is set', () {
         expect(f2.attributes['aria-disabled'], isNotNull);
-        return new Future(() {}).then((_) {
+        return flushLayoutAndRender().then((_) {
           f2.attributes.remove('disabled');
-          return new Future(() {}).then((_) {
+          return flushLayoutAndRender().then((_) {
             expect(f2.attributes['aria-disabled'], isNull);
           });
         });
@@ -44,7 +44,7 @@ void main() {
       test('user-defined aria-label is preserved', () {
         expect(f3.attributes['aria-label'], 'custom');
         f3.icon = 'arrow-forward';
-        return new Future(() {}).then((_) {
+        return flushLayoutAndRender().then((_) {
           expect(f3.attributes['aria-label'], 'custom');
         });
       });

@@ -7,12 +7,12 @@
 
 library paper_input.autogrow_test;
 
-import "dart:async";
-import "dart:html";
-import "package:paper_elements/paper_autogrow_textarea.dart";
-import "package:polymer/polymer.dart";
-import "package:unittest/unittest.dart";
-import "package:unittest/html_config.dart" show useHtmlConfiguration;
+import 'dart:html';
+import 'package:paper_elements/paper_autogrow_textarea.dart';
+import 'package:polymer/polymer.dart';
+import 'package:unittest/unittest.dart';
+import 'package:unittest/html_config.dart' show useHtmlConfiguration;
+import 'common.dart';
 
 void main() {
   useHtmlConfiguration();
@@ -28,7 +28,7 @@ void main() {
         dispatchInputEvent(t1);
         a1.rows = 1;
         a1.maxRows = 0;
-        return new Future(() {});
+        return flushLayoutAndRender();
       });
 
       test('empty input has height', () {
@@ -44,7 +44,7 @@ void main() {
         var h1 = a1.offsetHeight;
         t1.value = 'foo\nbar\nbaz';
         dispatchInputEvent(t1);
-        return new Future(() {
+        return flushLayoutAndRender().then((_) {
           var h2 = a1.offsetHeight;
           expect(h2, greaterThan(h1));
           expect(a1.getBoundingClientRect(), t1.getBoundingClientRect());
@@ -54,7 +54,7 @@ void main() {
       test('honors the rows attribute', () {
         var h1 = a1.offsetHeight;
         a1.rows = 2;
-        return new Future(() {
+        return flushLayoutAndRender().then((_) {
           var h2 = a1.offsetHeight;
           between(h2, h1, 3 * h1);
         });
@@ -65,7 +65,7 @@ void main() {
         a1.maxRows = 2;
         t1.value = 'foo\nbar\nbaz\nzot';
         dispatchInputEvent(t1);
-        return new Future(() {
+        return flushLayoutAndRender().then((_) {
           var h2 = a1.offsetHeight;
           expect(h2, lessThan(3 * h1));
         });

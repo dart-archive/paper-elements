@@ -7,14 +7,14 @@
 
 library paper_input.decorator_test;
 
-import "dart:async";
-import "dart:html";
-import "dart:js";
-import "package:core_elements/core_input.dart";
-import "package:paper_elements/paper_input_decorator.dart";
-import "package:polymer/polymer.dart";
-import "package:unittest/unittest.dart";
-import "package:unittest/html_config.dart" show useHtmlConfiguration;
+import 'dart:async';
+import 'dart:html';
+import 'package:core_elements/core_input.dart';
+import 'package:paper_elements/paper_input_decorator.dart';
+import 'package:polymer/polymer.dart';
+import 'package:unittest/unittest.dart';
+import 'package:unittest/html_config.dart' show useHtmlConfiguration;
+import 'common.dart';
 
 void main() {
   useHtmlConfiguration();
@@ -46,16 +46,16 @@ void main() {
         test('label is invisible if floating label and focused', () {
           expect(d3.jsElement['_labelVisible'], isTrue);
           d3.jsElement['focused'] = true;
-          return new Future(() {}).then((_) {
+          return flushLayoutAndRender().then((_) {
             expect(d3.jsElement['_labelVisible'], isFalse);
           });
         });
 
         test('label is invisible if value = 0', () {
           expect(d1.jsElement['_labelVisible'], isTrue);
-          // Dart Note: Changed to the String "0" since in dart the value has
+          // Dart Note: Changed to the String '0' since in dart the value has
           // to be a string.
-          i1.value = "0";
+          i1.value = '0';
           d1.updateLabelVisibility(i1.value);
           expect(d1.jsElement['_labelVisible'], isFalse);
         });
@@ -75,12 +75,15 @@ void main() {
   
         test('tapping on floating label focuses input', () {
           i3.value = 'foobar';
-          return new Future(() {}).then((_) {
+          return flushLayoutAndRender().then((_) {
             expect(d3.jsElement['_labelVisible'], isFalse);
             var e = new Event('down', canBubble: true);
             d1.shadowRoot.querySelector('.floated-label').dispatchEvent(e);
-            return new Future(() {}).then((_) {
-              expect(document.activeElement, i1);
+            return flushLayoutAndRender().then((_) {
+              // TODO(jakemac): In IE these two elements aren't identical, even
+              // though they appear to be, so we check the id instead of normal
+              // equality.
+              expect(document.activeElement.id, i1.id);
             });
           });
         });

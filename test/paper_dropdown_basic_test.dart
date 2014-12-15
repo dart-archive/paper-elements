@@ -7,12 +7,12 @@
 
 library paper_dropdown.basic_test;
 
-import "dart:async";
-import "dart:html";
-import "package:paper_elements/paper_dropdown.dart";
-import "package:polymer/polymer.dart";
-import "package:unittest/unittest.dart";
-import "package:unittest/html_config.dart" show useHtmlConfiguration;
+import 'dart:html';
+import 'package:paper_elements/paper_dropdown.dart';
+import 'package:polymer/polymer.dart';
+import 'package:unittest/unittest.dart';
+import 'package:unittest/html_config.dart' show useHtmlConfiguration;
+import 'common.dart';
 
 void main() {
   useHtmlConfiguration();
@@ -69,11 +69,4 @@ void assertPosition(PaperDropdown dropdown, Element trigger) {
   } else {
     expect(dr.bottom, tr.bottom);
   }
-}
-
-// TODO(jakemac): Without the delay its flaky in dartium, why?
-Future flushLayoutAndRender() {
-  return new Future(() {
-    document.body.offsetTop;
-  }).then((_) => new Future.delayed(new Duration(milliseconds: 50), () {}));
 }
