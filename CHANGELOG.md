@@ -1,3 +1,6 @@
+## 0.6.0+4
+  * Increase `core-elements` upper bound.
+
 ## 0.6.0+3
   * Moved examples to central repo and updated readme
     https://github.com/dart-lang/polymer-core-and-paper-examples.
