@@ -71,8 +71,9 @@ void assertPosition(PaperDropdown dropdown, Element trigger) {
   }
 }
 
+// TODO(jakemac): Without the delay its flaky in dartium, why?
 Future flushLayoutAndRender() {
   return new Future(() {
     document.body.offsetTop;
-  }).then((_) => new Future(() {}));
+  }).then((_) => new Future.delayed(new Duration(milliseconds: 50), () {}));
 }
