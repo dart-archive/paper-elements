@@ -28,7 +28,7 @@ void main() {
         ripple1.dispatchEvent(e);
         return new Future(() {}).then((_) {
           var wave = querySelector('.ripple-1 /deep/ .wave');
-          expect(centerOf(ripple1), centerOf(wave));
+          expectCloseTo(centerOf(ripple1), centerOf(wave));
         });
       });
 
@@ -40,7 +40,7 @@ void main() {
         ripple2.dispatchEvent(e);
         return new Future(() {}).then((_) {
           var wave = querySelector('.ripple-2 /deep/ .wave');
-          expect(centerOf(ripple2), centerOf(wave));
+          expectCloseTo(centerOf(ripple2), centerOf(wave));
         });
       });
 
@@ -48,10 +48,15 @@ void main() {
   });
 }
 
+expectCloseTo(Map a, Map b) {
+  expect(a['x'], closeTo(b['x'], 1));
+  expect(a['y'], closeTo(b['y'], 1));
+}
+
 centerOf(Element node) {
   var rect = node.getBoundingClientRect();
   return {
-    'x': (rect.left + rect.width / 2).floor(),
-    'y': (rect.top + rect.height / 2).floor(),
+    'x': (rect.left + rect.width / 2).round(),
+    'y': (rect.top + rect.height / 2).round(),
   };
 }
