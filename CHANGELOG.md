@@ -1,3 +1,7 @@
+## 0.6.1
+  * Cherry pick fixes in paper-input for breaking long words in mirror
+    (paper-input@2f4c286 and paper-input@5ec201a)
+
 ## 0.6.0+4
   * Increase `core-elements` upper bound.
 
