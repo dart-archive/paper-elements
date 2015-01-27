@@ -70,6 +70,23 @@ void main() {
           expect(h2, lessThan(3 * h1));
         });
       });
+
+      test('mirror text is visibility:hidden', () {
+        expect(a1.$['mirror'].getComputedStyle().visibility, 'hidden');
+      });
+
+      test('grows with a long word', () {
+        var h1 = a1.offsetHeight;
+
+        t1.value = new List<String>.filled(1000, '').join("P");
+        dispatchInputEvent(t1);
+
+        return flushLayoutAndRender().then((_) {
+          var h2 = a1.offsetHeight;
+          expect(h2, greaterThan(h1));
+          expect(a1.getBoundingClientRect(), t1.getBoundingClientRect());
+        });
+      });
     });
   }));
 }
