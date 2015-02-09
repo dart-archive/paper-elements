@@ -8,6 +8,9 @@ import 'dart:js' show JsArray, JsObject;
 import 'package:web_components/interop.dart' show registerDartType;
 import 'package:polymer/polymer.dart' show initMethod;
 import 'paper_button_base.dart';
+import 'package:core_elements/core_icon.dart';
+import 'paper_ripple.dart';
+import 'paper_shadow.dart';
 
 /// Material Design: <a href="http://www.google.com/design/spec/components/buttons.html">Button</a>
 ///

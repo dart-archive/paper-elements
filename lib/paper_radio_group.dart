@@ -8,6 +8,8 @@ import 'dart:js' show JsArray, JsObject;
 import 'package:web_components/interop.dart' show registerDartType;
 import 'package:polymer/polymer.dart' show initMethod;
 import 'package:core_elements/core_selector.dart';
+import 'package:core_elements/core_a11y_keys.dart';
+import 'paper_radio_button.dart';
 
 /// `paper-radio-group` allows user to select only one radio button from a set.
 /// Checking one radio button that belongs to a radio group unchecks any

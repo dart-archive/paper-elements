@@ -8,6 +8,7 @@ import 'dart:js' show JsArray, JsObject;
 import 'package:web_components/interop.dart' show registerDartType;
 import 'package:polymer/polymer.dart' show initMethod;
 import 'package:core_elements/core_overlay.dart';
+import 'package:core_elements/core_transition_css.dart';
 
 /// Material Design: <a href="http://www.google.com/design/spec/components/dialogs.html">Dialogs</a>
 ///

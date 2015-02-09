@@ -12,6 +12,11 @@ dev_dependencies:
   path: ">=1.0.0 <2.0.0"
   unittest: ">=0.11.0+2 <0.12.0"
   matcher: ">=0.10.1+1 <0.12.0"
+dependency_overrides:
+  custom_element_apigen:
+    path: ../custom-element-apigen
+  core_elements:
+    path: ../core-elements
 transformers:
 - polymer:
     entry_points:

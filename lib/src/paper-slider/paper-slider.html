@@ -116,6 +116,12 @@ To change the slider secondary progress bar color:
      *
      * @event core-change
      */
+     
+    /**
+     * Fired when the slider's immediateValue changes.
+     *
+     * @event immediate-value-change
+     */
 
     /**
      * Fired when the slider's value changes due to user interaction.
@@ -227,6 +233,7 @@ To change the slider secondary progress bar color:
       if (!this.dragging) {
         this.value = this.immediateValue;
       }
+      this.fire('immediate-value-change');
     },
 
     expandKnob: function() {

@@ -8,6 +8,8 @@ import 'dart:js' show JsArray, JsObject;
 import 'package:web_components/interop.dart' show registerDartType;
 import 'package:polymer/polymer.dart' show initMethod;
 import 'package:custom_element_apigen/src/common.dart' show PolymerProxyMixin, DomProxyMixin;
+import 'package:core_elements/core_input.dart';
+import 'paper_input_decorator.dart';
 
 /// Material Design: <a href="http://www.google.com/design/spec/components/text-fields.html#text-fields-single-line-text-field">Single line text field</a>
 ///
@@ -35,6 +37,11 @@ import 'package:custom_element_apigen/src/common.dart' show PolymerProxyMixin, D
 /// Use `paper-input-decorator` directly, or see
 /// <a href="https://github.com/garstasio/ajax-form">`ajax-form`</a> for a possible solution
 /// to submitting a `paper-input`.
+///
+/// Validation
+/// ----------
+///
+/// Use `paper-input-decorator` if you would like to implement validation.
 class PaperInput extends HtmlElement with DomProxyMixin, PolymerProxyMixin {
   PaperInput.created() : super.created();
   factory PaperInput() => new Element.tag('paper-input');

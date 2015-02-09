@@ -8,6 +8,11 @@ import 'dart:js' show JsArray, JsObject;
 import 'package:web_components/interop.dart' show registerDartType;
 import 'package:polymer/polymer.dart' show initMethod;
 import 'package:core_elements/core_dropdown_base.dart';
+import 'package:core_elements/core_a11y_keys.dart';
+import 'package:core_elements/core_focusable.dart';
+import 'package:core_elements/core_icon.dart';
+import 'package:core_elements/core_icons.dart';
+import 'paper_shadow.dart';
 
 /// `paper-dropdown-menu` works together with `paper-dropdown` and `core-menu` to
 /// implement a drop-down menu. The currently selected item is displayed in the

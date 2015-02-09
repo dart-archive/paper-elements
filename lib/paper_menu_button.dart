@@ -8,6 +8,7 @@ import 'dart:js' show JsArray, JsObject;
 import 'package:web_components/interop.dart' show registerDartType;
 import 'package:polymer/polymer.dart' show initMethod;
 import 'package:core_elements/core_dropdown_base.dart';
+import 'package:core_elements/core_a11y_keys.dart';
 
 /// `paper-menu-button` works together with a button and a `paper-dropdown` to
 /// implement a button that displays a drop-down when tapped on.

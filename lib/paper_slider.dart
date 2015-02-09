@@ -8,6 +8,9 @@ import 'dart:js' show JsArray, JsObject;
 import 'package:web_components/interop.dart' show registerDartType;
 import 'package:polymer/polymer.dart' show initMethod;
 import 'package:core_elements/core_range.dart';
+import 'package:core_elements/core_a11y_keys.dart';
+import 'paper_progress.dart';
+import 'paper_input.dart';
 
 /// `paper-slider` allows user to select a value from a range of values by
 /// moving the slider thumb.  The interactive nature of the slider makes it a

@@ -27,6 +27,14 @@ import 'package:custom_element_apigen/src/common.dart' show PolymerProxyMixin, D
 ///     </style>
 ///
 ///     <paper-spinner class="blue" active></paper-spinner>
+///
+/// Alt attribute should be set to provide adequate context for accessibility. If not provided,
+/// it defaults to 'loading'.
+/// Empty alt can be provided to mark the element as decorative if alternative content is provided
+/// in another form (e.g. a text block following the spinner).
+///
+/// ##### Example
+///   <paper-spinner alt="Loading contacts list" active></paper-spinner>
 class PaperSpinner extends HtmlElement with DomProxyMixin, PolymerProxyMixin {
   PaperSpinner.created() : super.created();
   factory PaperSpinner() => new Element.tag('paper-spinner');
@@ -34,6 +42,12 @@ class PaperSpinner extends HtmlElement with DomProxyMixin, PolymerProxyMixin {
   /// Displays the spinner.
   bool get active => jsElement[r'active'];
   set active(bool value) { jsElement[r'active'] = value; }
+
+  /// Alternative text content for accessibility support.
+  /// If alt is present, it will add an aria-label whose content matches alt when active.
+  /// If alt is not present, it will default to 'loading' as the alt value.
+  String get alt => jsElement[r'alt'];
+  set alt(String value) { jsElement[r'alt'] = value; }
 }
 @initMethod
 upgradePaperSpinner() => registerDartType('paper-spinner', PaperSpinner);

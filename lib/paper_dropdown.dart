@@ -8,6 +8,8 @@ import 'dart:js' show JsArray, JsObject;
 import 'package:web_components/interop.dart' show registerDartType;
 import 'package:polymer/polymer.dart' show initMethod;
 import 'package:core_elements/core_dropdown.dart';
+import 'paper_shadow.dart';
+import 'paper_dropdown_transition.dart';
 
 /// `paper-dropdown` is a `core-dropdown` with a `paper-shadow`. By default, it
 /// is animated on open with `paper-dropdown-transition`. Use this element with

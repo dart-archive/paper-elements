@@ -8,6 +8,8 @@ import 'dart:js' show JsArray, JsObject;
 import 'package:web_components/interop.dart' show registerDartType;
 import 'package:polymer/polymer.dart' show initMethod;
 import 'package:custom_element_apigen/src/common.dart' show PolymerProxyMixin, DomProxyMixin;
+import 'paper_ripple.dart';
+import 'package:core_elements/core_a11y_keys.dart';
 
 /// `paper-radio-button` is a button that can be either checked or unchecked.
 /// User can tap the radio button to check it.  But it cannot be unchecked by

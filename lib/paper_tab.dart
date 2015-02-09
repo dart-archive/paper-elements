@@ -8,6 +8,7 @@ import 'dart:js' show JsArray, JsObject;
 import 'package:web_components/interop.dart' show registerDartType;
 import 'package:polymer/polymer.dart' show initMethod;
 import 'package:custom_element_apigen/src/common.dart' show PolymerProxyMixin, DomProxyMixin;
+import 'paper_ripple.dart';
 
 /// `paper-tab` is styled to look like a tab.  It should be used in conjunction with
 /// `paper-tabs`.

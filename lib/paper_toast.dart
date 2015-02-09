@@ -8,6 +8,9 @@ import 'dart:js' show JsArray, JsObject;
 import 'package:web_components/interop.dart' show registerDartType;
 import 'package:polymer/polymer.dart' show initMethod;
 import 'package:custom_element_apigen/src/common.dart' show PolymerProxyMixin, DomProxyMixin;
+import 'package:core_elements/core_overlay.dart';
+import 'package:core_elements/core_transition_css.dart';
+import 'package:core_elements/core_media_query.dart';
 
 /// `paper-toast` provides lightweight feedback about an operation in a small popup
 /// at the base of the screen on mobile and at the lower left on desktop. Toasts are

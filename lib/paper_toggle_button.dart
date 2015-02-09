@@ -8,6 +8,7 @@ import 'dart:js' show JsArray, JsObject;
 import 'package:web_components/interop.dart' show registerDartType;
 import 'package:polymer/polymer.dart' show initMethod;
 import 'package:custom_element_apigen/src/common.dart' show PolymerProxyMixin, DomProxyMixin;
+import 'paper_radio_button.dart';
 
 /// `paper-toggle-button` provides a ON/OFF switch that user can toggle the state
 /// by tapping or by dragging the swtich.

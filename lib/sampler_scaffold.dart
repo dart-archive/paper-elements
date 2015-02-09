@@ -8,6 +8,13 @@ import 'dart:js' show JsArray, JsObject;
 import 'package:web_components/interop.dart' show registerDartType;
 import 'package:polymer/polymer.dart' show initMethod;
 import 'package:custom_element_apigen/src/common.dart' show PolymerProxyMixin, DomProxyMixin;
+import 'package:core_elements/core_toolbar.dart';
+import 'package:core_elements/core_drawer_panel.dart';
+import 'package:core_elements/core_header_panel.dart';
+import 'package:core_elements/core_item.dart';
+import 'package:core_elements/core_menu.dart';
+import 'package:core_elements/core_submenu.dart';
+import 'package:core_elements/core_icon_button.dart';
 
 /// `sampler-scaffold` provides a responsive layout for elements sampler.
 ///
