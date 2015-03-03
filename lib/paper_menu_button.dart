@@ -1,12 +1,13 @@
 // DO NOT EDIT: auto-generated with `pub run custom_element_apigen:update`
 
 /// Dart API for the polymer element `paper_menu_button`.
+@HtmlImport('package:paper_elements/paper_menu_button_nodart.html')
 library paper_elements.paper_menu_button;
 
 import 'dart:html';
 import 'dart:js' show JsArray, JsObject;
-import 'package:web_components/interop.dart' show registerDartType;
-import 'package:polymer/polymer.dart' show initMethod;
+import 'package:web_components/custom_element_proxy.dart';
+import 'package:web_components/html_import_annotation.dart';
 import 'package:core_elements/core_dropdown_base.dart';
 import 'package:core_elements/core_a11y_keys.dart';
 
@@ -28,9 +29,8 @@ import 'package:core_elements/core_a11y_keys.dart';
 ///             </core-menu>
 ///         </paper-dropdown>
 ///     </paper-menu-button>
+@CustomElementProxy('paper-menu-button')
 class PaperMenuButton extends CoreDropdownBase {
   PaperMenuButton.created() : super.created();
   factory PaperMenuButton() => new Element.tag('paper-menu-button');
 }
-@initMethod
-upgradePaperMenuButton() => registerDartType('paper-menu-button', PaperMenuButton);

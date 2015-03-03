@@ -1,3 +1,8 @@
+## 0.6.2
+  * Increase `polymer` and `custom_element_apigen` lower bounds. Now takes
+    advantage of `@HtmlImport` so manual html imports are no longer required to
+    use the elements, just a dart import will work.
+
 ## 0.6.1
   * Cherry pick fixes in paper-input for breaking long words in mirror
     (paper-input@2f4c286 and paper-input@5ec201a)

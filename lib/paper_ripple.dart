@@ -1,12 +1,13 @@
 // DO NOT EDIT: auto-generated with `pub run custom_element_apigen:update`
 
 /// Dart API for the polymer element `paper_ripple`.
+@HtmlImport('package:paper_elements/paper_ripple_nodart.html')
 library paper_elements.paper_ripple;
 
 import 'dart:html';
 import 'dart:js' show JsArray, JsObject;
-import 'package:web_components/interop.dart' show registerDartType;
-import 'package:polymer/polymer.dart' show initMethod;
+import 'package:web_components/custom_element_proxy.dart';
+import 'package:web_components/html_import_annotation.dart';
 import 'package:custom_element_apigen/src/common.dart' show PolymerProxyMixin, DomProxyMixin;
 
 /// `paper-ripple` provides a visual effect that other paper elements can
@@ -53,6 +54,7 @@ import 'package:custom_element_apigen/src/common.dart' show PolymerProxyMixin, D
 /// Apply `circle` class to make the rippling effect within a circle.
 ///
 ///     <paper-ripple class="circle"></paper-ripple>
+@CustomElementProxy('paper-ripple')
 class PaperRipple extends HtmlElement with DomProxyMixin, PolymerProxyMixin {
   PaperRipple.created() : super.created();
   factory PaperRipple() => new Element.tag('paper-ripple');
@@ -65,5 +67,3 @@ class PaperRipple extends HtmlElement with DomProxyMixin, PolymerProxyMixin {
   num get opacityDecayVelocity => jsElement[r'opacityDecayVelocity'];
   set opacityDecayVelocity(num value) { jsElement[r'opacityDecayVelocity'] = value; }
 }
-@initMethod
-upgradePaperRipple() => registerDartType('paper-ripple', PaperRipple);

@@ -1,12 +1,13 @@
 // DO NOT EDIT: auto-generated with `pub run custom_element_apigen:update`
 
 /// Dart API for the polymer element `paper_input`.
+@HtmlImport('package:paper_elements/paper_input_nodart.html')
 library paper_elements.paper_input;
 
 import 'dart:html';
 import 'dart:js' show JsArray, JsObject;
-import 'package:web_components/interop.dart' show registerDartType;
-import 'package:polymer/polymer.dart' show initMethod;
+import 'package:web_components/custom_element_proxy.dart';
+import 'package:web_components/html_import_annotation.dart';
 import 'package:custom_element_apigen/src/common.dart' show PolymerProxyMixin, DomProxyMixin;
 import 'package:core_elements/core_input.dart';
 import 'paper_input_decorator.dart';
@@ -42,6 +43,7 @@ import 'paper_input_decorator.dart';
 /// ----------
 ///
 /// Use `paper-input-decorator` if you would like to implement validation.
+@CustomElementProxy('paper-input')
 class PaperInput extends HtmlElement with DomProxyMixin, PolymerProxyMixin {
   PaperInput.created() : super.created();
   factory PaperInput() => new Element.tag('paper-input');
@@ -68,5 +70,3 @@ class PaperInput extends HtmlElement with DomProxyMixin, PolymerProxyMixin {
   String get committedValue => jsElement[r'committedValue'];
   set committedValue(String value) { jsElement[r'committedValue'] = value; }
 }
-@initMethod
-upgradePaperInput() => registerDartType('paper-input', PaperInput);

@@ -1,12 +1,13 @@
 // DO NOT EDIT: auto-generated with `pub run custom_element_apigen:update`
 
 /// Dart API for the polymer element `paper_progress`.
+@HtmlImport('package:paper_elements/paper_progress_nodart.html')
 library paper_elements.paper_progress;
 
 import 'dart:html';
 import 'dart:js' show JsArray, JsObject;
-import 'package:web_components/interop.dart' show registerDartType;
-import 'package:polymer/polymer.dart' show initMethod;
+import 'package:web_components/custom_element_proxy.dart';
+import 'package:web_components/html_import_annotation.dart';
 import 'package:core_elements/core_range.dart';
 
 /// The progress bars are for situations where the percentage completed can be
@@ -43,6 +44,7 @@ import 'package:core_elements/core_range.dart';
 ///     paper-progress::shadow #progressContainer {
 ///       background-color: #64ffda;
 ///     }
+@CustomElementProxy('paper-progress')
 class PaperProgress extends CoreRange {
   PaperProgress.created() : super.created();
   factory PaperProgress() => new Element.tag('paper-progress');
@@ -55,5 +57,3 @@ class PaperProgress extends CoreRange {
   bool get indeterminate => jsElement[r'indeterminate'];
   set indeterminate(bool value) { jsElement[r'indeterminate'] = value; }
 }
-@initMethod
-upgradePaperProgress() => registerDartType('paper-progress', PaperProgress);

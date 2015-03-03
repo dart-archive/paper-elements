@@ -1,12 +1,13 @@
 // DO NOT EDIT: auto-generated with `pub run custom_element_apigen:update`
 
 /// Dart API for the polymer element `paper_spinner`.
+@HtmlImport('package:paper_elements/paper_spinner_nodart.html')
 library paper_elements.paper_spinner;
 
 import 'dart:html';
 import 'dart:js' show JsArray, JsObject;
-import 'package:web_components/interop.dart' show registerDartType;
-import 'package:polymer/polymer.dart' show initMethod;
+import 'package:web_components/custom_element_proxy.dart';
+import 'package:web_components/html_import_annotation.dart';
 import 'package:custom_element_apigen/src/common.dart' show PolymerProxyMixin, DomProxyMixin;
 
 /// Element providing material design circular spinner.
@@ -35,6 +36,7 @@ import 'package:custom_element_apigen/src/common.dart' show PolymerProxyMixin, D
 ///
 /// ##### Example
 ///   <paper-spinner alt="Loading contacts list" active></paper-spinner>
+@CustomElementProxy('paper-spinner')
 class PaperSpinner extends HtmlElement with DomProxyMixin, PolymerProxyMixin {
   PaperSpinner.created() : super.created();
   factory PaperSpinner() => new Element.tag('paper-spinner');
@@ -49,5 +51,3 @@ class PaperSpinner extends HtmlElement with DomProxyMixin, PolymerProxyMixin {
   String get alt => jsElement[r'alt'];
   set alt(String value) { jsElement[r'alt'] = value; }
 }
-@initMethod
-upgradePaperSpinner() => registerDartType('paper-spinner', PaperSpinner);
