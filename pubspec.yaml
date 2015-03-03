@@ -13,12 +13,22 @@ dev_dependencies:
   unittest: ">=0.11.0+2 <0.12.0"
   matcher: ">=0.10.1+1 <0.12.0"
 dependency_overrides:
-  custom_element_apigen:
-    path: ../custom-element-apigen
-  core_elements:
-    path: ../core-elements
   polymer:
-    path: ../polymer-dart
+    git:
+      url: git@github.com:dart-lang/polymer-dart.git
+      ref: smoke-generator
+  core_elements:
+    git:
+      url: git@github.com:dart-lang/core-elements.git
+      ref: 0.6.1
+  custom_element_apigen:
+    git:
+      url: git@github.com:dart-lang/custom-element-apigen.git
+      ref: reorg
+  web_components:
+    git:
+      url: git@github.com:dart-lang/web-components.git
+      ref: crawler
 transformers:
 - polymer:
     entry_points:
