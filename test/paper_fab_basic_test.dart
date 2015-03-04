@@ -16,7 +16,7 @@ import 'package:unittest/html_config.dart' show useHtmlConfiguration;
 void main() {
   useHtmlConfiguration();
 
-  initPolymer().run(() {
+  initPolymer().then((zone) => zone.run(() {
     Polymer.onReady.then((_) {
       var f1 = document.getElementById('fab1') as PaperFab;
 
@@ -25,7 +25,7 @@ void main() {
       });
 
     });
-  });
+  }));
 }
 
 centerOf(Element element) {

@@ -29,6 +29,10 @@ dependency_overrides:
     git:
       url: git@github.com:dart-lang/web-components.git
       ref: crawler
+  initialize:
+    git:
+      url: git@github.com:dart-lang/initialize.git
+      ref: exports
 transformers:
 - polymer:
     entry_points:
