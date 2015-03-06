@@ -17,7 +17,7 @@ import 'package:unittest/html_config.dart' show useHtmlConfiguration;
 void main() {
   useHtmlConfiguration();
 
-  initPolymer().run(() {
+  initPolymer().then((zone) => zone.run(() {
     Polymer.onReady.then((_) {
       var s1 = querySelector('#s1') as PaperShadow;
 
@@ -38,5 +38,5 @@ void main() {
       });
 
     });
-  });
+  }));
 }

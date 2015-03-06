@@ -17,7 +17,7 @@ import 'common.dart';
 void main() {
   useHtmlConfiguration();
 
-  initPolymer().run(() {
+  initPolymer().then((zone) => zone.run(() {
     return Polymer.onReady.then((_) {
       var d1 = querySelector('#dropdown1') as PaperDropdown;
       var t1 = querySelector('#trigger1');
@@ -53,7 +53,7 @@ void main() {
       });
 
     });
-  });
+  }));
 }
 
 void assertPosition(PaperDropdown dropdown, Element trigger) {

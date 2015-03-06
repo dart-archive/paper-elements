@@ -133,6 +133,9 @@ To change the radio unchecked color:
     },
     
     tap: function() {
+      if (this.disabled) {
+        return;
+      }
       var old = this.checked;
       this.toggle();
       if (this.checked !== old) {

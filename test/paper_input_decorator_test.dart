@@ -19,7 +19,7 @@ import 'common.dart';
 void main() {
   useHtmlConfiguration();
 
-  initPolymer().run(() {
+  initPolymer().then((zone) => zone.run(() {
     Polymer.onReady.then((_) {
       var d1 = querySelector('#decorator1') as PaperInputDecorator;
       var i1 = querySelector('#input1') as CoreInput;
@@ -97,7 +97,7 @@ void main() {
   
       });
     });
-  });
+  }));
 }
 
 void reset(PaperInputDecorator d, CoreInput i) {

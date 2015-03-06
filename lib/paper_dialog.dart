@@ -1,13 +1,15 @@
 // DO NOT EDIT: auto-generated with `pub run custom_element_apigen:update`
 
 /// Dart API for the polymer element `paper_dialog`.
+@HtmlImport('package:paper_elements/paper_dialog_nodart.html')
 library paper_elements.paper_dialog;
 
 import 'dart:html';
 import 'dart:js' show JsArray, JsObject;
-import 'package:web_components/interop.dart' show registerDartType;
-import 'package:polymer/polymer.dart' show initMethod;
+import 'package:web_components/custom_element_proxy.dart';
+import 'package:web_components/html_import_annotation.dart';
 import 'paper_dialog_base.dart';
+import 'paper_shadow.dart';
 
 /// Material Design: <a href="http://www.google.com/design/spec/components/dialogs.html">Dialogs</a>
 ///
@@ -50,9 +52,8 @@ import 'paper_dialog_base.dart';
 /// -------------
 ///
 /// By default, the `aria-label` will be set to the value of the `heading` attribute.
+@CustomElementProxy('paper-dialog')
 class PaperDialog extends PaperDialogBase {
   PaperDialog.created() : super.created();
   factory PaperDialog() => new Element.tag('paper-dialog');
 }
-@initMethod
-upgradePaperDialog() => registerDartType('paper-dialog', PaperDialog);

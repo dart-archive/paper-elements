@@ -16,7 +16,7 @@ import 'package:unittest/html_config.dart' show useHtmlConfiguration;
 void main() {
   useHtmlConfiguration();
 
-  initPolymer().run(() {
+  initPolymer().then((zone) => zone.run(() {
     Polymer.onReady.then((_) {
       var d1 = querySelector('#decorator1') as PaperInputDecorator;
       var i1 = querySelector('#input1') as InputElement;
@@ -25,5 +25,5 @@ void main() {
         expect(i1.attributes['aria-label'], d1.label);
       });
     });
-  });
+  }));
 }

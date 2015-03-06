@@ -17,7 +17,7 @@ import 'common.dart';
 void main() {
   useHtmlConfiguration();
 
-  initPolymer().run(() {
+  initPolymer().then((zone) => zone.run(() {
     Polymer.onReady.then((_) {
       var f1 = document.getElementById('fab1') as PaperFab;
       var f2 = document.getElementById('fab2') as PaperFab;
@@ -48,5 +48,5 @@ void main() {
       });
 
     });
-  });
+  }));
 }

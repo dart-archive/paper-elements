@@ -17,7 +17,7 @@ import 'common.dart';
 void main() {
   useHtmlConfiguration();
 
-  initPolymer().run(() => Polymer.onReady.then((_) {
+  initPolymer().then((zone) => zone.run(() => Polymer.onReady.then((_) {
     var a1 = querySelector('#autogrow1') as PaperAutogrowTextarea;
     var t1 = querySelector('#textarea1') as TextAreaElement;
 
@@ -88,7 +88,7 @@ void main() {
         });
       });
     });
-  }));
+  })));
 }
 
 void dispatchInputEvent(Element target) {

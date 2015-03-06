@@ -1,12 +1,13 @@
 // DO NOT EDIT: auto-generated with `pub run custom_element_apigen:update`
 
 /// Dart API for the polymer element `paper_shadow`.
+@HtmlImport('package:paper_elements/paper_shadow_nodart.html')
 library paper_elements.paper_shadow;
 
 import 'dart:html';
 import 'dart:js' show JsArray, JsObject;
-import 'package:web_components/interop.dart' show registerDartType;
-import 'package:polymer/polymer.dart' show initMethod;
+import 'package:web_components/custom_element_proxy.dart';
+import 'package:web_components/html_import_annotation.dart';
 import 'package:custom_element_apigen/src/common.dart' show PolymerProxyMixin, DomProxyMixin;
 
 /// `paper-shadow` is a container that renders two shadows on top of each other to
@@ -17,6 +18,7 @@ import 'package:custom_element_apigen/src/common.dart' show PolymerProxyMixin, D
 ///     <paper-shadow z="1">
 ///       ... card content ...
 ///     </paper-shadow>
+@CustomElementProxy('paper-shadow')
 class PaperShadow extends HtmlElement with DomProxyMixin, PolymerProxyMixin {
   PaperShadow.created() : super.created();
   factory PaperShadow() => new Element.tag('paper-shadow');
@@ -36,5 +38,3 @@ class PaperShadow extends HtmlElement with DomProxyMixin, PolymerProxyMixin {
   void setZ(num newZ) =>
       jsElement.callMethod('setZ', [newZ]);
 }
-@initMethod
-upgradePaperShadow() => registerDartType('paper-shadow', PaperShadow);

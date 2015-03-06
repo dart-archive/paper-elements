@@ -1,13 +1,17 @@
 // DO NOT EDIT: auto-generated with `pub run custom_element_apigen:update`
 
 /// Dart API for the polymer element `paper_icon_button`.
+@HtmlImport('package:paper_elements/paper_icon_button_nodart.html')
 library paper_elements.paper_icon_button;
 
 import 'dart:html';
 import 'dart:js' show JsArray, JsObject;
-import 'package:web_components/interop.dart' show registerDartType;
-import 'package:polymer/polymer.dart' show initMethod;
+import 'package:web_components/custom_element_proxy.dart';
+import 'package:web_components/html_import_annotation.dart';
 import 'paper_button_base.dart';
+import 'package:core_elements/core_icon.dart';
+import 'package:core_elements/core_icons.dart';
+import 'paper_ripple.dart';
 
 /// Material Design: <a href="http://www.google.com/design/spec/components/buttons.html">Buttons</a>
 ///
@@ -56,6 +60,7 @@ import 'paper_button_base.dart';
 /// you should ensure that the `aria-label` attribute is set.
 ///
 ///     <paper-icon-button src="star.png" aria-label="star"></paper-icon-button>
+@CustomElementProxy('paper-icon-button')
 class PaperIconButton extends PaperButtonBase {
   PaperIconButton.created() : super.created();
   factory PaperIconButton() => new Element.tag('paper-icon-button');
@@ -71,5 +76,3 @@ class PaperIconButton extends PaperButtonBase {
   String get icon => jsElement[r'icon'];
   set icon(String value) { jsElement[r'icon'] = value; }
 }
-@initMethod
-upgradePaperIconButton() => registerDartType('paper-icon-button', PaperIconButton);

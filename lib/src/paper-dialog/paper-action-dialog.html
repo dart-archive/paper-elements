@@ -37,7 +37,7 @@ Example:
 
 <link href="paper-dialog-base.html" rel="import">
 
-<polymer-element name="paper-action-dialog" extends="paper-dialog-base" role="dialog">
+<polymer-element name="paper-action-dialog" extends="paper-dialog-base" role="dialog" layout vertical>
 
 <template>
 
@@ -67,7 +67,7 @@ Example:
   <paper-shadow z="3" fit></paper-shadow>
 
   <!-- need this because the host needs to be overflow: visible -->
-  <div id="scroller" relative>
+  <div id="scroller" relative flex auto>
     <template if="{{heading}}">
       <h1>{{heading}}</h1>
     </template>

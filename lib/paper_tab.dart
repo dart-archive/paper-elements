@@ -1,13 +1,15 @@
 // DO NOT EDIT: auto-generated with `pub run custom_element_apigen:update`
 
 /// Dart API for the polymer element `paper_tab`.
+@HtmlImport('package:paper_elements/paper_tab_nodart.html')
 library paper_elements.paper_tab;
 
 import 'dart:html';
 import 'dart:js' show JsArray, JsObject;
-import 'package:web_components/interop.dart' show registerDartType;
-import 'package:polymer/polymer.dart' show initMethod;
+import 'package:web_components/custom_element_proxy.dart';
+import 'package:web_components/html_import_annotation.dart';
 import 'package:custom_element_apigen/src/common.dart' show PolymerProxyMixin, DomProxyMixin;
+import 'paper_ripple.dart';
 
 /// `paper-tab` is styled to look like a tab.  It should be used in conjunction with
 /// `paper-tabs`.
@@ -27,6 +29,7 @@ import 'package:custom_element_apigen/src/common.dart' show PolymerProxyMixin, D
 ///     .pink paper-tab::shadow #ink {
 ///       color: #ff4081;
 ///     }
+@CustomElementProxy('paper-tab')
 class PaperTab extends HtmlElement with DomProxyMixin, PolymerProxyMixin {
   PaperTab.created() : super.created();
   factory PaperTab() => new Element.tag('paper-tab');
@@ -35,5 +38,3 @@ class PaperTab extends HtmlElement with DomProxyMixin, PolymerProxyMixin {
   bool get noink => jsElement[r'noink'];
   set noink(bool value) { jsElement[r'noink'] = value; }
 }
-@initMethod
-upgradePaperTab() => registerDartType('paper-tab', PaperTab);

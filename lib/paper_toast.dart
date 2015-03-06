@@ -1,13 +1,17 @@
 // DO NOT EDIT: auto-generated with `pub run custom_element_apigen:update`
 
 /// Dart API for the polymer element `paper_toast`.
+@HtmlImport('package:paper_elements/paper_toast_nodart.html')
 library paper_elements.paper_toast;
 
 import 'dart:html';
 import 'dart:js' show JsArray, JsObject;
-import 'package:web_components/interop.dart' show registerDartType;
-import 'package:polymer/polymer.dart' show initMethod;
+import 'package:web_components/custom_element_proxy.dart';
+import 'package:web_components/html_import_annotation.dart';
 import 'package:custom_element_apigen/src/common.dart' show PolymerProxyMixin, DomProxyMixin;
+import 'package:core_elements/core_overlay.dart';
+import 'package:core_elements/core_transition_css.dart';
+import 'package:core_elements/core_media_query.dart';
 
 /// `paper-toast` provides lightweight feedback about an operation in a small popup
 /// at the base of the screen on mobile and at the lower left on desktop. Toasts are
@@ -62,6 +66,7 @@ import 'package:custom_element_apigen/src/common.dart' show PolymerProxyMixin, D
 ///
 /// When the screen size is smaller than the `responsiveWidth` (default to 480px),
 /// the toast will automatically fits at the bottom of the screen.
+@CustomElementProxy('paper-toast')
 class PaperToast extends HtmlElement with DomProxyMixin, PolymerProxyMixin {
   PaperToast.created() : super.created();
   factory PaperToast() => new Element.tag('paper-toast');
@@ -105,5 +110,3 @@ class PaperToast extends HtmlElement with DomProxyMixin, PolymerProxyMixin {
   void dismiss() =>
       jsElement.callMethod('dismiss', []);
 }
-@initMethod
-upgradePaperToast() => registerDartType('paper-toast', PaperToast);

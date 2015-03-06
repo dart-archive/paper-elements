@@ -1,12 +1,13 @@
 // DO NOT EDIT: auto-generated with `pub run custom_element_apigen:update`
 
 /// Dart API for the polymer element `paper_autogrow_textarea`.
+@HtmlImport('package:paper_elements/paper_autogrow_textarea_nodart.html')
 library paper_elements.paper_autogrow_textarea;
 
 import 'dart:html';
 import 'dart:js' show JsArray, JsObject;
-import 'package:web_components/interop.dart' show registerDartType;
-import 'package:polymer/polymer.dart' show initMethod;
+import 'package:web_components/custom_element_proxy.dart';
+import 'package:web_components/html_import_annotation.dart';
 import 'package:custom_element_apigen/src/common.dart' show PolymerProxyMixin, DomProxyMixin;
 
 /// `paper-autogrow-textarea` is an element containing a textarea that grows in height as more
@@ -27,6 +28,7 @@ import 'package:custom_element_apigen/src/common.dart' show PolymerProxyMixin, D
 ///     /* using example HTML above */
 ///     t1.value = 'some\ntext';
 ///     a1.update();
+@CustomElementProxy('paper-autogrow-textarea')
 class PaperAutogrowTextarea extends HtmlElement with DomProxyMixin, PolymerProxyMixin {
   PaperAutogrowTextarea.created() : super.created();
   factory PaperAutogrowTextarea() => new Element.tag('paper-autogrow-textarea');
@@ -50,5 +52,3 @@ class PaperAutogrowTextarea extends HtmlElement with DomProxyMixin, PolymerProxy
   void update() =>
       jsElement.callMethod('update', []);
 }
-@initMethod
-upgradePaperAutogrowTextarea() => registerDartType('paper-autogrow-textarea', PaperAutogrowTextarea);

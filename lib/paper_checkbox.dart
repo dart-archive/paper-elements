@@ -1,12 +1,13 @@
 // DO NOT EDIT: auto-generated with `pub run custom_element_apigen:update`
 
 /// Dart API for the polymer element `paper_checkbox`.
+@HtmlImport('package:paper_elements/paper_checkbox_nodart.html')
 library paper_elements.paper_checkbox;
 
 import 'dart:html';
 import 'dart:js' show JsArray, JsObject;
-import 'package:web_components/interop.dart' show registerDartType;
-import 'package:polymer/polymer.dart' show initMethod;
+import 'package:web_components/custom_element_proxy.dart';
+import 'package:web_components/html_import_annotation.dart';
 import 'paper_radio_button.dart';
 
 /// `paper-checkbox` is a button that can be either checked or unchecked.  User
@@ -46,9 +47,8 @@ import 'paper_radio_button.dart';
 ///     paper-checkbox::shadow #checkbox {
 ///       border-color: #b5b5b5;
 ///     }
+@CustomElementProxy('paper-checkbox')
 class PaperCheckbox extends PaperRadioButton {
   PaperCheckbox.created() : super.created();
   factory PaperCheckbox() => new Element.tag('paper-checkbox');
 }
-@initMethod
-upgradePaperCheckbox() => registerDartType('paper-checkbox', PaperCheckbox);

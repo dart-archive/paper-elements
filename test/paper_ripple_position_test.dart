@@ -17,7 +17,7 @@ import 'common.dart';
 void main() {
   useHtmlConfiguration();
 
-  initPolymer().run(() {
+  initPolymer().then((zone) => zone.run(() {
     Polymer.onReady.then((_) {
 
       test('tall container', () {
@@ -45,7 +45,7 @@ void main() {
       });
 
     });
-  });
+  }));
 }
 
 expectCloseTo(Map a, Map b) {

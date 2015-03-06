@@ -1,13 +1,15 @@
 // DO NOT EDIT: auto-generated with `pub run custom_element_apigen:update`
 
 /// Dart API for the polymer element `paper_item`.
+@HtmlImport('package:paper_elements/paper_item_nodart.html')
 library paper_elements.paper_item;
 
 import 'dart:html';
 import 'dart:js' show JsArray, JsObject;
-import 'package:web_components/interop.dart' show registerDartType;
-import 'package:polymer/polymer.dart' show initMethod;
+import 'package:web_components/custom_element_proxy.dart';
+import 'package:web_components/html_import_annotation.dart';
 import 'paper_button_base.dart';
+import 'paper_ripple.dart';
 
 /// Material Design: <a href="http://www.google.com/design/spec/components/menus.html">Menus</a>
 ///
@@ -34,6 +36,7 @@ import 'paper_button_base.dart';
 ///     <paper-item noink>
 ///         <a href="http://www.polymer-project.org" layout horizontal center>Polymer</a>
 ///     </paper-item>
+@CustomElementProxy('paper-item')
 class PaperItem extends PaperButtonBase {
   PaperItem.created() : super.created();
   factory PaperItem() => new Element.tag('paper-item');
@@ -52,5 +55,3 @@ class PaperItem extends PaperButtonBase {
   bool get fill => jsElement[r'fill'];
   set fill(bool value) { jsElement[r'fill'] = value; }
 }
-@initMethod
-upgradePaperItem() => registerDartType('paper-item', PaperItem);

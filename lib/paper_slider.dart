@@ -1,13 +1,17 @@
 // DO NOT EDIT: auto-generated with `pub run custom_element_apigen:update`
 
 /// Dart API for the polymer element `paper_slider`.
+@HtmlImport('package:paper_elements/paper_slider_nodart.html')
 library paper_elements.paper_slider;
 
 import 'dart:html';
 import 'dart:js' show JsArray, JsObject;
-import 'package:web_components/interop.dart' show registerDartType;
-import 'package:polymer/polymer.dart' show initMethod;
+import 'package:web_components/custom_element_proxy.dart';
+import 'package:web_components/html_import_annotation.dart';
 import 'package:core_elements/core_range.dart';
+import 'package:core_elements/core_a11y_keys.dart';
+import 'paper_progress.dart';
+import 'paper_input.dart';
 
 /// `paper-slider` allows user to select a value from a range of values by
 /// moving the slider thumb.  The interactive nature of the slider makes it a
@@ -55,6 +59,7 @@ import 'package:core_elements/core_range.dart';
 ///     paper-slider::shadow #sliderBar::shadow #secondaryProgress {
 ///       background-color: #0f9d58;
 ///     }
+@CustomElementProxy('paper-slider')
 class PaperSlider extends CoreRange {
   PaperSlider.created() : super.created();
   factory PaperSlider() => new Element.tag('paper-slider');
@@ -88,5 +93,3 @@ class PaperSlider extends CoreRange {
   num get immediateValue => jsElement[r'immediateValue'];
   set immediateValue(num value) { jsElement[r'immediateValue'] = value; }
 }
-@initMethod
-upgradePaperSlider() => registerDartType('paper-slider', PaperSlider);

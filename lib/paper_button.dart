@@ -1,13 +1,15 @@
 // DO NOT EDIT: auto-generated with `pub run custom_element_apigen:update`
 
 /// Dart API for the polymer element `paper_button`.
+@HtmlImport('package:paper_elements/paper_button_nodart.html')
 library paper_elements.paper_button;
 
 import 'dart:html';
 import 'dart:js' show JsArray, JsObject;
-import 'package:web_components/interop.dart' show registerDartType;
-import 'package:polymer/polymer.dart' show initMethod;
+import 'package:web_components/custom_element_proxy.dart';
+import 'package:web_components/html_import_annotation.dart';
 import 'paper_button_base.dart';
+import 'paper_shadow.dart';
 
 /// Material Design: <a href="http://www.google.com/design/spec/components/buttons.html">Buttons</a>
 ///
@@ -49,6 +51,7 @@ import 'paper_button_base.dart';
 ///     }
 ///
 /// The opacity of the ripple is not customizable via CSS.
+@CustomElementProxy('paper-button')
 class PaperButton extends PaperButtonBase {
   PaperButton.created() : super.created();
   factory PaperButton() => new Element.tag('paper-button');
@@ -67,5 +70,3 @@ class PaperButton extends PaperButtonBase {
   bool get fill => jsElement[r'fill'];
   set fill(bool value) { jsElement[r'fill'] = value; }
 }
-@initMethod
-upgradePaperButton() => registerDartType('paper-button', PaperButton);

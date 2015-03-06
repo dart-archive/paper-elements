@@ -1,13 +1,17 @@
 // DO NOT EDIT: auto-generated with `pub run custom_element_apigen:update`
 
 /// Dart API for the polymer element `paper_fab`.
+@HtmlImport('package:paper_elements/paper_fab_nodart.html')
 library paper_elements.paper_fab;
 
 import 'dart:html';
 import 'dart:js' show JsArray, JsObject;
-import 'package:web_components/interop.dart' show registerDartType;
-import 'package:polymer/polymer.dart' show initMethod;
+import 'package:web_components/custom_element_proxy.dart';
+import 'package:web_components/html_import_annotation.dart';
 import 'paper_button_base.dart';
+import 'package:core_elements/core_icon.dart';
+import 'paper_ripple.dart';
+import 'paper_shadow.dart';
 
 /// Material Design: <a href="http://www.google.com/design/spec/components/buttons.html">Button</a>
 ///
@@ -53,6 +57,7 @@ import 'paper_button_base.dart';
 /// you should ensure that the `aria-label` attribute is set.
 ///
 ///     <paper-fab src="star.png" aria-label="star"></paper-fab>
+@CustomElementProxy('paper-fab')
 class PaperFab extends PaperButtonBase {
   PaperFab.created() : super.created();
   factory PaperFab() => new Element.tag('paper-fab');
@@ -72,5 +77,3 @@ class PaperFab extends PaperButtonBase {
   bool get mini => jsElement[r'mini'];
   set mini(bool value) { jsElement[r'mini'] = value; }
 }
-@initMethod
-upgradePaperFab() => registerDartType('paper-fab', PaperFab);

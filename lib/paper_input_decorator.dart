@@ -1,13 +1,18 @@
 // DO NOT EDIT: auto-generated with `pub run custom_element_apigen:update`
 
 /// Dart API for the polymer element `paper_input_decorator`.
+@HtmlImport('package:paper_elements/paper_input_decorator_nodart.html')
 library paper_elements.paper_input_decorator;
 
 import 'dart:html';
 import 'dart:js' show JsArray, JsObject;
-import 'package:web_components/interop.dart' show registerDartType;
-import 'package:polymer/polymer.dart' show initMethod;
+import 'package:web_components/custom_element_proxy.dart';
+import 'package:web_components/html_import_annotation.dart';
 import 'package:custom_element_apigen/src/common.dart' show PolymerProxyMixin, DomProxyMixin;
+import 'package:core_elements/core_icon.dart';
+import 'package:core_elements/core_icons.dart';
+import 'package:core_elements/core_input.dart';
+import 'package:core_elements/core_style.dart';
 
 /// Material Design: <a href="http://www.google.com/design/spec/components/text-fields.html">Text fields</a>
 ///
@@ -30,8 +35,7 @@ import 'package:custom_element_apigen/src/common.dart' show PolymerProxyMixin, D
 ///
 /// - `CoreStyle.g.paperInput.labelColor` - The inline label, floating label, error message and error icon color when the input does not have focus.
 /// - `CoreStyle.g.paperInput.focusedColor` - The floating label and the underline color when the input has focus.
-/// - `CoreStyle.g.paperInput.cursorColor` - The cursor color during the focus animation. Typically this is the same as `focusedColor`.
-/// - `CoreStyle.g.paperInput.invalidColor` - The error message, the error icon, the cursor, the floating label and the underline's color when the input is invalid and has focus.
+/// - `CoreStyle.g.paperInput.invalidColor` - The error message, the error icon, the floating label and the underline's color when the input is invalid and has focus.
 ///
 /// To add custom styling to only some elements, use these selectors:
 ///
@@ -67,20 +71,14 @@ import 'package:custom_element_apigen/src/common.dart' show PolymerProxyMixin, D
 ///         background-color: orange;
 ///     }
 ///
-///     paper-input-decorator /deep/ .cursor {
-///         /* cursor color during the focus transition */
-///         background-color: orange;
-///     }
-///
 ///     paper-input-decorator.invalid[focused] /deep/ .floated-label .label-text,
 ///     paper-input-decorator[focused] /deep/ .error {
 ///         /* floating label, error message nad error icon color when the input is invalid and focused */
 ///         color: salmon;
 ///     }
 ///
-///     paper-input-decorator.invalid /deep/ .focused-underline,
-///     paper-input-decorator.invalid /deep/ .cursor {
-///         /* line and cursor color when the input is invalid and focused */
+///     paper-input-decorator.invalid /deep/ .focused-underline {
+///         /* line and color when the input is invalid and focused */
 ///         background-color: salmon;
 ///     }
 ///
@@ -89,12 +87,43 @@ import 'package:custom_element_apigen/src/common.dart' show PolymerProxyMixin, D
 ///
 /// You can use inputs decorated with this element in a `form` as usual.
 ///
+/// Validation
+/// ----------
+///
+/// Because you provide the `input` element to `paper-input-decorator`, you can use any validation library
+/// or the <a href="https://developer.mozilla.org/en-US/docs/Web/Guide/HTML/HTML5/Constraint_validation">HTML5 Constraints Validation API</a>
+/// to implement validation. Set the `isInvalid` attribute when the input is validated, and provide an
+/// error message in the `error` attribute.
+///
+/// Example:
+///
+///     <paper-input-decorator id="paper1" error="Value must start with a number!">
+///         <input id="input1" is="core-input" pattern="^[0-9].*">
+///     </paper-input-decorator>
+///     <button onclick="validate()"></button>
+///     <script>
+///         function validate() {
+///             var decorator = document.getElementById('paper1');
+///             var input = document.getElementById('input1');
+///             decorator.isInvalid = !input.validity.valid;
+///         }
+///     </script>
+///
+/// Example to validate as the user types:
+///
+///     <template is="auto-binding">
+///         <paper-input-decorator id="paper2" error="Value must start with a number!" isInvalid="{{!$.input2.validity.valid}}">
+///             <input id="input2" is="core-input" pattern="^[0-9].*">
+///         </paper-input-decorator>
+///     </template>
+///
 /// Accessibility
 /// -------------
 ///
 /// `paper-input-decorator` will automatically set the `aria-label` attribute on the nested input
 /// to the value of `label`. Do not set the `placeholder` attribute on the nested input, as it will
 /// conflict with this element.
+@CustomElementProxy('paper-input-decorator')
 class PaperInputDecorator extends HtmlElement with DomProxyMixin, PolymerProxyMixin {
   PaperInputDecorator.created() : super.created();
   factory PaperInputDecorator() => new Element.tag('paper-input-decorator');
@@ -136,5 +165,3 @@ class PaperInputDecorator extends HtmlElement with DomProxyMixin, PolymerProxyMi
   void updateLabelVisibility(String value) =>
       jsElement.callMethod('updateLabelVisibility', [value]);
 }
-@initMethod
-upgradePaperInputDecorator() => registerDartType('paper-input-decorator', PaperInputDecorator);
