@@ -1,5 +1,5 @@
 name: paper_elements
-version: 0.6.2-dev
+version: 0.6.2
 author: Polymer.dart Authors <web-ui-dev@dartlang.org>
 description: Paper elements for Dart
 homepage: https://www.dartlang.org/polymer-dart/
@@ -12,19 +12,6 @@ dev_dependencies:
   path: ">=1.0.0 <2.0.0"
   unittest: ">=0.11.0+2 <0.12.0"
   matcher: ">=0.10.1+1 <0.12.0"
-dependency_overrides:
-  polymer:
-    git:
-      url: https://github.com/dart-lang/polymer-dart.git
-      ref: smoke-generator
-  core_elements:
-    git:
-      url: https://github.com/dart-lang/core-elements.git
-      ref: 0.6.1
-  custom_element_apigen:
-    git:
-      url: https://github.com/dart-lang/custom-element-apigen.git
-      ref: reorg
 transformers:
 - polymer:
     entry_points:
