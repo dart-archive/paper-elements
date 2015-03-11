@@ -64,6 +64,7 @@ stubs_to_generate:
     - core-overlay/core-overlay.html
     - core-overlay/core-overlay-layer.html
     - core-range/core-range.html
+    - core-resizable/core-resizable.html
     - core-scroll-header-panel/core-scroll-header-panel.html
     - core-selection/core-selection.html
     - core-selector/core-selector.html

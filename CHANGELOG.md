@@ -1,3 +1,6 @@
+## 0.6.2+1
+  * Add missing stub for `core-resizable`.
+
 ## 0.6.2
   * Increase `polymer` and `custom_element_apigen` lower bounds. Now takes
     advantage of `@HtmlImport` so manual html imports are no longer required to
