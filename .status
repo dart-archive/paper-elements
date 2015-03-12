@@ -11,19 +11,6 @@
 */*/*/*/packages/*/*: Skip
 */*/*/*/*/packages/*/*: Skip
 
-[ $compiler == none && ($runtime == dartium || $runtime == ContentShellOnAndroid) ]
-build/test/paper_button_a11y_test: RuntimeError # Issue https://github.com/dart-lang/package-bots/issues/2
-build/test/paper_button_basic_test: RuntimeError # Issue https://github.com/dart-lang/package-bots/issues/2
-build/test/paper_fab_basic_test: RuntimeError # Issue https://github.com/dart-lang/package-bots/issues/2
-build/test/paper_fab_a11y_test: RuntimeError # Issue https://github.com/dart-lang/package-bots/issues/2
-build/test/paper_icon_button_a11y_test: RuntimeError # Issue https://github.com/dart-lang/package-bots/issues/2
-build/test/paper_icon_button_basic_test: RuntimeError # Issue https://github.com/dart-lang/package-bots/issues/2
-build/test/paper_input_autogrow_test: RuntimeError # Issue https://github.com/dart-lang/package-bots/issues/2
-build/test/paper_input_a11y_test: RuntimeError # Issue https://github.com/dart-lang/package-bots/issues/2
-build/test/paper_ripple_position_test: RuntimeError # Issue https://github.com/dart-lang/package-bots/issues/2
-build/test/paper_input_decorator_test: RuntimeError # Issue https://github.com/dart-lang/package-bots/issues/2
-build/test/paper_shadow_basic_test: RuntimeError # Issue https://github.com/dart-lang/package-bots/issues/2\
-
 [ $runtime == dartium || $runtime == drt ]
 # Add flaky/failing tests here.
 test/paper_dropdown_basic_test: Skip # Issue 78
