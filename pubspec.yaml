@@ -1,5 +1,5 @@
 name: paper_elements
-version: 0.6.2+1
+version: 0.6.2+2
 author: Polymer.dart Authors <web-ui-dev@dartlang.org>
 description: Paper elements for Dart
 homepage: https://www.dartlang.org/polymer-dart/
@@ -7,7 +7,7 @@ dependencies:
   core_elements: '>=0.5.0+1 <0.7.0'
   custom_element_apigen: ">= 0.1.4 <0.2.0"
   polymer: ">=0.16.0 <0.17.0"
-  web_components: ">=0.9.0 <0.11.0"
+  web_components: ">=0.9.0 <0.12.0"
 dev_dependencies:
   path: ">=1.0.0 <2.0.0"
   unittest: ">=0.11.0+2 <0.12.0"

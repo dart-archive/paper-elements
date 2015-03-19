@@ -1,3 +1,6 @@
+## 0.6.2+2
+  * Update constraint on `web_components`.
+
 ## 0.6.2+1
   * Add missing stub for `core-resizable`.
 
