@@ -1,3 +1,6 @@
+## 0.6.2+3
+  * Fix missing semicolon in `paper-ripple`.
+
 ## 0.6.2+2
   * Update constraint on `web_components`.
 
