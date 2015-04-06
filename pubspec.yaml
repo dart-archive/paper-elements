@@ -4,8 +4,8 @@ author: Polymer.dart Authors <web-ui-dev@dartlang.org>
 description: Paper elements for Dart
 homepage: https://www.dartlang.org/polymer-dart/
 dependencies:
-  core_elements: '>=0.5.0+1 <0.7.0'
-  custom_element_apigen: ">= 0.1.4 <0.2.0"
+  core_elements: '>=0.5.0+1 <0.8.0'
+  custom_element_apigen: ">= 0.1.5+1 <0.2.0"
   polymer: ">=0.16.0 <0.17.0"
   web_components: ">=0.9.0 <0.12.0"
 dev_dependencies:
@@ -31,3 +31,8 @@ transformers:
       exclude: lib/src/
     inline_stylesheets:
       lib/src/paper-shadow/paper-shadow.css: true
+dependency_overrides:
+  core_elements:
+    path: ../core-elements
+  custom_element_apigen:
+    path: ../custom-element-apigen

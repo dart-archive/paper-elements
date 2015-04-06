@@ -1,7 +1,7 @@
 // DO NOT EDIT: auto-generated with `pub run custom_element_apigen:update`
 
 /// Dart API for the polymer element `paper_toast`.
-@HtmlImport('package:paper_elements/paper_toast_nodart.html')
+@HtmlImport('paper_toast_nodart.html')
 library paper_elements.paper_toast;
 
 import 'dart:html';

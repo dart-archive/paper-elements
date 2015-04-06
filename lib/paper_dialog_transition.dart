@@ -1,7 +1,7 @@
 // DO NOT EDIT: auto-generated with `pub run custom_element_apigen:update`
 
 /// Dart API for the polymer element `paper_dialog_transition`.
-@HtmlImport('package:paper_elements/paper_dialog_transition_nodart.html')
+@HtmlImport('paper_dialog_transition_nodart.html')
 library paper_elements.paper_dialog_transition;
 
 import 'dart:html';

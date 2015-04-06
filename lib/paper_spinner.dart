@@ -1,7 +1,7 @@
 // DO NOT EDIT: auto-generated with `pub run custom_element_apigen:update`
 
 /// Dart API for the polymer element `paper_spinner`.
-@HtmlImport('package:paper_elements/paper_spinner_nodart.html')
+@HtmlImport('paper_spinner_nodart.html')
 library paper_elements.paper_spinner;
 
 import 'dart:html';

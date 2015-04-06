@@ -22,7 +22,7 @@ void main() {
       var s1 = querySelector('#s1') as PaperShadow;
 
       test('default', () {
-        expect(s1.jsElement['\$']['shadow-top'].getComputedStyle().boxShadow,
+        expect(s1.jsElement['\$']['shadow-bottom'].getComputedStyle().boxShadow,
             isNot('none'));
       });
 

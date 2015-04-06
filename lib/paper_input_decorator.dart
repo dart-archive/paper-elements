@@ -1,7 +1,7 @@
 // DO NOT EDIT: auto-generated with `pub run custom_element_apigen:update`
 
 /// Dart API for the polymer element `paper_input_decorator`.
-@HtmlImport('package:paper_elements/paper_input_decorator_nodart.html')
+@HtmlImport('paper_input_decorator_nodart.html')
 library paper_elements.paper_input_decorator;
 
 import 'dart:html';
@@ -153,11 +153,23 @@ class PaperInputDecorator extends HtmlElement with DomProxyMixin, PolymerProxyMi
   bool get isInvalid => jsElement[r'isInvalid'];
   set isInvalid(bool value) { jsElement[r'isInvalid'] = value; }
 
+  /// Set this property to true to validate the input as the user types.
+  /// This will not validate when changing the input programmatically; call
+  /// `validate()` instead.
+  bool get autoValidate => jsElement[r'autoValidate'];
+  set autoValidate(bool value) { jsElement[r'autoValidate'] = value; }
+
   /// The message to display if the input value fails validation. If this
   /// is unset or the empty string, a default message is displayed depending
   /// on the type of validation error.
   String get error => jsElement[r'error'];
   set error(String value) { jsElement[r'error'] = value; }
+
+  /// Validate the input using HTML5 Constraints.
+  ///
+  /// Returns if the input is valid.
+  validate() =>
+      jsElement.callMethod('validate', []);
 
   /// Updates the label visibility based on a value. This is handled automatically
   /// if the user is typing, but if you imperatively set the input value you need

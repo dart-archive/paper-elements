@@ -77,8 +77,10 @@ void main() {
           i3.value = 'foobar';
           return flushLayoutAndRender().then((_) {
             expect(d3.jsElement['_labelVisible'], isFalse);
-            var e = new Event('down', canBubble: true);
-            d1.shadowRoot.querySelector('.floated-label').dispatchEvent(e);
+            d1.shadowRoot.querySelector('.floated-label')
+                .dispatchEvent(new Event('down', canBubble: true));
+            d1.shadowRoot.querySelector('.floated-label')
+                .dispatchEvent(new Event('up', canBubble: true));
             return flushLayoutAndRender().then((_) {
               // TODO(jakemac): In IE these two elements aren't identical, even
               // though they appear to be, so we check the id instead of normal

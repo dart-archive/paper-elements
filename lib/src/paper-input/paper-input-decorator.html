@@ -175,7 +175,9 @@ conflict with this element.
 <polymer-element name="paper-input-decorator" layout vertical
   on-transitionEnd="{{transitionEndAction}}" on-webkitTransitionEnd="{{transitionEndAction}}"
   on-input="{{inputAction}}"
-  on-down="{{downAction}}">
+  on-down="{{downAction}}"
+  on-tap="{{tapAction}}"
+  on-char-counter-error="{{charCounterErrorAction}}">
 
   <template>
 
@@ -194,18 +196,23 @@ conflict with this element.
         <span id="labelText" class="label-text" invisible?="{{!_labelVisible}}" animated?="{{labelAnimated}}">{{label}}</span>
       </div>
 
-      <content></content>
+      <content select="*:not(.counter)"></content>
 
     </div>
 
     <div id="underline" class="underline" relative>
       <div class="unfocused-underline" fit invisible?="{{disabled}}"></div>
-      <div id="focusedUnderline" class="focused-underline" fit invisible?="{{!focused}}" animated?="{{underlineAnimated}}"></div>
+      <div id="focusedUnderline" class="focused-underline" fit invisible?="{{!underlineVisible}}" animated?="{{underlineAnimated}}"></div>
     </div>
 
-    <div class="error" layout horizontal center hidden?="{{!isInvalid}}">
-      <div class="error-text" flex auto role="alert" aria-hidden="{{!isInvalid}}">{{error}}</div>
-      <core-icon class="error-icon" icon="warning"></core-icon>
+    <div class="footer" layout horizontal end-justified>
+      <div class="error" flex layout horizontal center hidden?="{{!isInvalid}}">
+        <div class="error-text" flex auto role="alert" aria-hidden="{{!isInvalid}}">{{error}}</div>
+        <core-icon id="errorIcon" class="error-icon" icon="warning"></core-icon>
+      </div>
+      <div aria-hidden="true">
+        <content select=".counter"></content>
+      </div>
     </div>
 
   </template>
@@ -273,6 +280,17 @@ conflict with this element.
          * @default false
          */
         isInvalid: false,
+
+        /**
+         * Set this property to true to validate the input as the user types.
+         * This will not validate when changing the input programmatically; call
+         * `validate()` instead.
+         *
+         * @attribute autoValidate
+         * @type boolean
+         * @default false
+         */
+        autoValidate: false,
 
         /**
          * The message to display if the input value fails validation. If this
@@ -363,6 +381,30 @@ conflict with this element.
         return true;
       },
 
+      animateUnderline: function(e) {
+        if (this.focused) {
+          var rect = this.$.underline.getBoundingClientRect();
+          var right = e.x - rect.left;
+          this.$.focusedUnderline.style.mozTransformOrigin = right + 'px';
+          this.$.focusedUnderline.style.webkitTransformOrigin = right + 'px ';
+          this.$.focusedUnderline.style.transformOriginX = right + 'px';
+
+          // Animations only run when the user interacts with the input
+          this.underlineAnimated = true;
+        }
+      },
+
+      /**
+       * Validate the input using HTML5 Constraints.
+       *
+       * @method validate
+       * @return {boolean} True if the input is valid.
+       */
+      validate: function() {
+        this.isInvalid = !this.input.validity.valid;
+        return this.input.validity.valid;
+      },
+
       _labelVisibleChanged: function(old) {
         // do not do the animation on first render
         if (old !== undefined) {
@@ -392,12 +434,21 @@ conflict with this element.
 
       focusedChanged: function() {
         this.updateLabelVisibility(this.input && this.input.value);
+        if (this.lastEvent) {
+          this.animateUnderline(this.lastEvent);
+          this.lastEvent = null;
+        }
+        this.underlineVisible = this.focused;
       },
 
       inputChanged: function(old) {
         if (this.input) {
           this.updateLabelVisibility(this.input.value);
           this.updateInputLabel(this.input, this.label);
+
+          if (this.autoValidate) {
+            this.validate();
+          }
         }
         if (old) {
           this.updateInputLabel(old, '');
@@ -408,7 +459,7 @@ conflict with this element.
         this.focused = true;
       },
 
-      blurAction: function(e) {
+      blurAction: function() {
         this.focused = false;
       },
 
@@ -438,11 +489,25 @@ conflict with this element.
         }
       },
 
-      inputAction: function(e) {
-        this.updateLabelVisibility(e.target.value);
+      inputAction: function() {
+        this.updateLabelVisibility(this.input.value);
+        if (this.autoValidate) {
+          this.validate();
+        }
       },
 
       downAction: function(e) {
+        // eat the event and do nothing if already focused
+        if (e.target !== this.input && this.focused) {
+          e.preventDefault();
+          return;
+        }
+        // cache the event here because "down" fires before "focus" when tapping on
+        // the input and the underline animation runs on focus change
+        this.lastEvent = e;
+      },
+
+      tapAction: function(e) {
         if (this.disabled) {
           return;
         }
@@ -455,21 +520,6 @@ conflict with this element.
           this.input.focus();
           e.preventDefault();
         }
-
-        // The underline spills from the tap location
-        var rect = this.$.underline.getBoundingClientRect();
-        var right = e.x - rect.left;
-        this.$.focusedUnderline.style.mozTransformOrigin = right + 'px';
-        this.$.focusedUnderline.style.webkitTransformOrigin = right + 'px ';
-        this.$.focusedUnderline.style.transformOriginX = right + 'px';
-
-        // Animations only run when the user interacts with the input
-        this.underlineAnimated = true;
-
-        // Handle interrupted animation
-        this.async(function() {
-          this.transitionEndAction();
-        }, null, 250);
       },
 
       transitionEndAction: function() {
@@ -478,6 +528,14 @@ conflict with this element.
         if (this._labelVisible) {
           this.input.placeholder = this.label;
         }
+      },
+
+      charCounterErrorAction: function(e) {
+        this.isInvalid = e.detail.hasError;
+
+        // If the allowed characters have been exceeded, show either the error
+        // icon, or the character counter, but not both.
+        this.$.errorIcon.hidden = e.detail.hideErrorIcon;
       }
 
     });

@@ -19,6 +19,7 @@ files_to_generate:
   - paper-fab/paper-fab.html
   - paper-icon-button/paper-icon-button.html
   - paper-input/paper-autogrow-textarea.html
+  - paper-input/paper-char-counter.html
   - paper-input/paper-input.html
   - paper-input/paper-input-decorator.html
   - paper-item/paper-item.html
@@ -83,3 +84,7 @@ deletion_patterns:
   - ^platform$
   - ^polymer$
   - ^webcomponentsjs$
+# Loaded for Element/Mixin definitions but no generated files.
+files_to_load:
+  - core-focusable/core-focusable.html
+  - core-resizable/core-resizable.html

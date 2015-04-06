@@ -1,7 +1,7 @@
 // DO NOT EDIT: auto-generated with `pub run custom_element_apigen:update`
 
 /// Dart API for the polymer element `sampler_scaffold`.
-@HtmlImport('package:paper_elements/sampler_scaffold_nodart.html')
+@HtmlImport('sampler_scaffold_nodart.html')
 library paper_elements.sampler_scaffold;
 
 import 'dart:html';

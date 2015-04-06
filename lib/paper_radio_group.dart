@@ -1,7 +1,7 @@
 // DO NOT EDIT: auto-generated with `pub run custom_element_apigen:update`
 
 /// Dart API for the polymer element `paper_radio_group`.
-@HtmlImport('package:paper_elements/paper_radio_group_nodart.html')
+@HtmlImport('paper_radio_group_nodart.html')
 library paper_elements.paper_radio_group;
 
 import 'dart:html';

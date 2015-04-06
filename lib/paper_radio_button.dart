@@ -1,7 +1,7 @@
 // DO NOT EDIT: auto-generated with `pub run custom_element_apigen:update`
 
 /// Dart API for the polymer element `paper_radio_button`.
-@HtmlImport('package:paper_elements/paper_radio_button_nodart.html')
+@HtmlImport('paper_radio_button_nodart.html')
 library paper_elements.paper_radio_button;
 
 import 'dart:html';
@@ -35,6 +35,10 @@ import 'package:core_elements/core_a11y_keys.dart';
 ///
 ///     paper-radio-button::shadow #onRadio {
 ///       background-color: #4285f4;
+///     }
+///
+///     paper-radio-button[checked]::shadow #offRadio {
+///       border-color: #4285f4;
 ///     }
 ///
 /// To change the ink color for unchecked state:

@@ -1,7 +1,7 @@
 // DO NOT EDIT: auto-generated with `pub run custom_element_apigen:update`
 
 /// Dart API for the polymer element `paper_action_dialog`.
-@HtmlImport('package:paper_elements/paper_action_dialog_nodart.html')
+@HtmlImport('paper_action_dialog_nodart.html')
 library paper_elements.paper_action_dialog;
 
 import 'dart:html';
@@ -13,7 +13,7 @@ import 'paper_shadow.dart';
 
 /// Material Design: <a href="http://www.google.com/design/spec/components/dialogs.html">Dialogs</a>
 ///
-/// `paper-action-dialog` is a `paper-dialog` a row of buttons at the bottom that
+/// `paper-action-dialog` is a `paper-dialog` with a row of buttons at the bottom that
 /// indicate user action. The action buttons do not scroll with the dialog body.
 ///
 /// The buttons should have either the `affirmative` or `dismissive` attribute. See

@@ -1,7 +1,7 @@
 // DO NOT EDIT: auto-generated with `pub run custom_element_apigen:update`
 
 /// Dart API for the polymer element `paper_button_base`.
-@HtmlImport('package:paper_elements/paper_button_base_nodart.html')
+@HtmlImport('paper_button_base_nodart.html')
 library paper_elements.paper_button_base;
 
 import 'dart:html';
