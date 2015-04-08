@@ -1,4 +1,4 @@
-## 0.7.0-dev
+## 0.7.0
   * Update to match js versions 0.5.5.
     * `paper-checkbox`
       * Updated to match material design spec.

@@ -1,5 +1,5 @@
 name: paper_elements
-version: 0.7.0-dev
+version: 0.7.0
 author: Polymer.dart Authors <web-ui-dev@dartlang.org>
 description: Paper elements for Dart
 homepage: https://www.dartlang.org/polymer-dart/
@@ -32,6 +32,3 @@ transformers:
       lib/src/paper-shadow/paper-shadow.css: true
 - $dart2js:
     $include: "**/*.polymer.bootstrap.dart"
-dependency_overrides:
-  core_elements:
-    git: https://github.com/dart-lang/core-elements.git
