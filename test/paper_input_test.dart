@@ -21,21 +21,25 @@ import 'common.dart';
 void main() {
   useHtmlConfiguration();
 
-  test('change event bubbles', () {
-    var node = document.getElementById('default');
-    var listener;
-    listener = node.on['change'].listen((_) => listener.cancel());
+  initPolymer().then((zone) => zone.run(() {
+    return Polymer.onReady.then((_) {
+      test('change event bubbles', () {
+        var node = document.getElementById('default');
+        var listener;
+        listener = node.on['change'].listen((_) => listener.cancel());
 
-    var input = node.shadowRoot.querySelector('input');
-    input.dispatchEvent(new Event('change', canBubble: true));
-  });
+        var input = node.shadowRoot.querySelector('input');
+        input.dispatchEvent(new Event('change', canBubble: true));
+      });
 
-  test('cannot tap on disabled input', () {
-    var node = document.getElementById('disabled');
-    node.dispatchEvent(new MouseEvent('Down'));
-    node.dispatchEvent(new MouseEvent('Up'));
-    return flushLayoutAndRender().then((_) {
-      expect(activeElement(), isNot(node.shadowRoot.querySelector('input')));
+      test('cannot tap on disabled input', () {
+        var node = document.getElementById('disabled');
+        node.dispatchEvent(new MouseEvent('Down'));
+        node.dispatchEvent(new MouseEvent('Up'));
+        return flushLayoutAndRender().then((_) {
+          expect(activeElement(), isNot(node.shadowRoot.querySelector('input')));
+        });
+      });
     });
-  });
+  }));
 }
