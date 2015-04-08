@@ -30,6 +30,8 @@ transformers:
       exclude: lib/src/
     inline_stylesheets:
       lib/src/paper-shadow/paper-shadow.css: true
+- $dart2js:
+    $include: "**/*.polymer.bootstrap.dart"
 dependency_overrides:
   core_elements:
     git: https://github.com/dart-lang/core-elements.git
