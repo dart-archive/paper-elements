@@ -1,7 +1,7 @@
 // DO NOT EDIT: auto-generated with `pub run custom_element_apigen:update`
 
 /// Dart API for the polymer element `paper_tabs`.
-@HtmlImport('package:paper_elements/paper_tabs_nodart.html')
+@HtmlImport('paper_tabs_nodart.html')
 library paper_elements.paper_tabs;
 
 import 'dart:html';
@@ -9,8 +9,8 @@ import 'dart:js' show JsArray, JsObject;
 import 'package:web_components/custom_element_proxy.dart';
 import 'package:web_components/html_import_annotation.dart';
 import 'package:core_elements/core_selector.dart';
-import 'paper_icon_button.dart';
 import 'package:core_elements/core_resizable.dart';
+import 'paper_icon_button.dart';
 import 'paper_tab.dart';
 
 /// `paper-tabs` is a `core-selector` styled to look like tabs. Tabs make it easy to
@@ -79,7 +79,7 @@ import 'paper_tab.dart';
 ///       color: #ff4081;
 ///     }
 @CustomElementProxy('paper-tabs')
-class PaperTabs extends CoreSelector {
+class PaperTabs extends CoreSelector with CoreResizable {
   PaperTabs.created() : super.created();
   factory PaperTabs() => new Element.tag('paper-tabs');
 
@@ -102,6 +102,10 @@ class PaperTabs extends CoreSelector {
   /// If true, scroll buttons (left/right arrow) will be hidden for scrollable tabs.
   bool get hideScrollButton => jsElement[r'hideScrollButton'];
   set hideScrollButton(bool value) { jsElement[r'hideScrollButton'] = value; }
+
+  /// If true, the tabs are aligned to bottom (the selection bar appears at the top).
+  bool get alignBottom => jsElement[r'alignBottom'];
+  set alignBottom(bool value) { jsElement[r'alignBottom'] = value; }
 
   /// If true, dragging on the tabs to scroll is disabled.
   bool get disableDrag => jsElement[r'disableDrag'];

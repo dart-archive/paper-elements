@@ -1,7 +1,7 @@
 // DO NOT EDIT: auto-generated with `pub run custom_element_apigen:update`
 
 /// Dart API for the polymer element `paper_progress`.
-@HtmlImport('package:paper_elements/paper_progress_nodart.html')
+@HtmlImport('paper_progress_nodart.html')
 library paper_elements.paper_progress;
 
 import 'dart:html';
@@ -23,7 +23,7 @@ import 'package:core_elements/core_range.dart';
 ///
 /// Example:
 ///
-///     <paper-progress value="10" secondaryProgesss="30"></paper-progress>
+///     <paper-progress value="10" secondaryProgress="30"></paper-progress>
 ///
 /// Styling progress bar:
 ///

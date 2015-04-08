@@ -7,6 +7,7 @@
 
 library paper_dropdown.basic_test;
 
+import 'dart:async';
 import 'dart:html';
 import 'package:paper_elements/paper_dropdown.dart';
 import 'package:polymer/polymer.dart';
@@ -28,33 +29,35 @@ void main() {
       var d3 = querySelector('#dropdown3') as PaperDropdown;
       var t3 = querySelector('#trigger3');
       d3.relatedTarget = t3;
-      
+
       test('default', () {
         d1.opened = true;
-        return flushLayoutAndRender().then((_) {
+        return flushLayoutAndRender().then((_) => wait(200)).then((_) {
           assertPosition(d1, t1);
         });
       });
-      
+
       test('bottom alignment', () {
         d2.valign = 'bottom';
         d2.opened = true;
-        return flushLayoutAndRender().then((_) {
+        return flushLayoutAndRender().then((_) => wait(200)).then((_) {
           assertPosition(d2, t2);
         });
       });
-      
+
       test('right alignment', () {
         d3.halign = 'right';
         d3.opened = true;
-        return flushLayoutAndRender().then((_) {
+        return flushLayoutAndRender().then((_) => wait(200)).then((_) {
           assertPosition(d3, t3);
         });
       });
-
     });
   }));
 }
+
+Future wait(int milliseconds) =>
+    new Future.delayed(new Duration(milliseconds: milliseconds), () {});
 
 void assertPosition(PaperDropdown dropdown, Element trigger) {
   var dr = dropdown.getBoundingClientRect();

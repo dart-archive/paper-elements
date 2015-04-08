@@ -1,7 +1,7 @@
 // DO NOT EDIT: auto-generated with `pub run custom_element_apigen:update`
 
 /// Dart API for the polymer element `paper_slider`.
-@HtmlImport('package:paper_elements/paper_slider_nodart.html')
+@HtmlImport('paper_slider_nodart.html')
 library paper_elements.paper_slider;
 
 import 'dart:html';
@@ -92,4 +92,16 @@ class PaperSlider extends CoreRange {
   /// is dragging the slider.
   num get immediateValue => jsElement[r'immediateValue'];
   set immediateValue(num value) { jsElement[r'immediateValue'] = value; }
+
+  /// True when the user is dragging the slider.
+  bool get dragging => jsElement[r'dragging'];
+  set dragging(bool value) { jsElement[r'dragging'] = value; }
+
+  /// Increases value by `step` but not above `max`.
+  void increment() =>
+      jsElement.callMethod('increment', []);
+
+  /// Decreases value by `step` but not below `min`.
+  void decrement() =>
+      jsElement.callMethod('decrement', []);
 }

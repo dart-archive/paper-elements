@@ -1,3 +1,23 @@
+## 0.7.0-dev
+  * Update to match js versions 0.5.5.
+    * `paper-checkbox`
+      * Updated to match material design spec.
+      * Use `border-color` and `background-color` to style properly
+
+          paper-checkbox::shadow #checkbox.checked {
+            background-color: #4285f4;
+            border-color: #4285f4;
+          }
+
+    * `paper-toggle-button`
+      * Updated to match material design spec.
+      * No longer uses `paper-radio-button` and the styling api has changed.
+        Please refer to API docs for the updated styling api.
+    * `paper-radio-button`
+      * To style properly, must now set `border-color` on an additional element:
+      
+          paper-radio-button[checked]::shadow #offRadio {border-color: #4285f4;}
+
 ## 0.6.2+3
   * Fix missing semicolon in `paper-ripple`.
 

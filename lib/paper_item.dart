@@ -1,7 +1,7 @@
 // DO NOT EDIT: auto-generated with `pub run custom_element_apigen:update`
 
 /// Dart API for the polymer element `paper_item`.
-@HtmlImport('package:paper_elements/paper_item_nodart.html')
+@HtmlImport('paper_item_nodart.html')
 library paper_elements.paper_item;
 
 import 'dart:html';

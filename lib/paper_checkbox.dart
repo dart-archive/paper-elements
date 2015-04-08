@@ -1,7 +1,7 @@
 // DO NOT EDIT: auto-generated with `pub run custom_element_apigen:update`
 
 /// Dart API for the polymer element `paper_checkbox`.
-@HtmlImport('package:paper_elements/paper_checkbox_nodart.html')
+@HtmlImport('paper_checkbox_nodart.html')
 library paper_elements.paper_checkbox;
 
 import 'dart:html';
@@ -33,6 +33,7 @@ import 'paper_radio_button.dart';
 /// To change the checkbox checked color:
 ///
 ///     paper-checkbox::shadow #checkbox.checked {
+///       background-color: #4285f4;
 ///       border-color: #4285f4;
 ///     }
 ///
@@ -42,7 +43,7 @@ import 'paper_radio_button.dart';
 ///       color: #b5b5b5;
 ///     }
 ///
-/// To change the checbox unchecked color:
+/// To change the checkbox unchecked color:
 ///
 ///     paper-checkbox::shadow #checkbox {
 ///       border-color: #b5b5b5;

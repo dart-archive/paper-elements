@@ -1,7 +1,7 @@
 // DO NOT EDIT: auto-generated with `pub run custom_element_apigen:update`
 
 /// Dart API for the polymer element `paper_autogrow_textarea`.
-@HtmlImport('package:paper_elements/paper_autogrow_textarea_nodart.html')
+@HtmlImport('paper_autogrow_textarea_nodart.html')
 library paper_elements.paper_autogrow_textarea;
 
 import 'dart:html';
@@ -18,7 +18,7 @@ import 'package:custom_element_apigen/src/common.dart' show PolymerProxyMixin, D
 ///
 ///     <paper-autogrow-textarea id="a1">
 ///         <textarea id="t1"></textarea>
-///     <paper-autogrow-textarea>
+///     </paper-autogrow-textarea>
 ///
 /// Because the `textarea`'s `value` property is not observable, if you set the `value` imperatively
 /// you must call `update` to notify this element the value has changed.

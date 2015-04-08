@@ -11,11 +11,6 @@
 */*/*/*/packages/*/*: Skip
 */*/*/*/*/packages/*/*: Skip
 
-[ $runtime == dartium || $runtime == drt ]
-# Add flaky/failing tests here.
-test/paper_dropdown_basic_test: Skip # Issue 78
-build/test/paper_dropdown_basic_test: Skip # Issue 78
-
 [ $compiler == dart2js ]
 test/*: Skip  # raw tests only meant to be run in dartium. Other browsers run
               # the output of pub-build

@@ -1,7 +1,7 @@
 // DO NOT EDIT: auto-generated with `pub run custom_element_apigen:update`
 
 /// Dart API for the polymer element `paper_button`.
-@HtmlImport('package:paper_elements/paper_button_nodart.html')
+@HtmlImport('paper_button_nodart.html')
 library paper_elements.paper_button;
 
 import 'dart:html';
@@ -10,6 +10,7 @@ import 'package:web_components/custom_element_proxy.dart';
 import 'package:web_components/html_import_annotation.dart';
 import 'paper_button_base.dart';
 import 'paper_shadow.dart';
+import 'package:core_elements/core_a11y_keys.dart';
 
 /// Material Design: <a href="http://www.google.com/design/spec/components/buttons.html">Buttons</a>
 ///
@@ -31,8 +32,7 @@ import 'paper_shadow.dart';
 ///       custom button content
 ///     </paper-button>
 ///
-/// Styling
-/// -------
+/// ## Styling
 ///
 /// Style the button with CSS as you would a normal DOM element.
 ///

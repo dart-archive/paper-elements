@@ -8,15 +8,27 @@ Code distributed by Google as part of the polymer project is also
 subject to an additional IP rights grant found at http://polymer.github.io/PATENTS.txt
 -->
 <html>
-  <head>
-    <title>paper-button basic test</title>
+<head>
+  <meta charset="UTF-8">
+  <title>paper-input tests</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
 
-    <script src="packages/unittest/test_controller.js"></script>
-    <link rel='import' href='packages/paper_elements/paper_button.html'>
-  </head>
-  <body unresolved>
-    <div>&nbsp;<br />&nbsp;</div>
-    <paper-button id="button1" disabled>button</paper-button>
-    <script type="application/dart" src="paper_button_basic_test.dart"></script>
-  </body>
+  <link href="packages/paper_elements/paper_input.html" rel="import">
+
+  <style>
+    paper-input {
+      width: 400px;
+    }
+  </style>
+
+</head>
+<body>
+
+  <paper-input id="default"></paper-input>
+
+  <paper-input id="disabled" disabled label="disabled"></paper-input>
+
+  <script type="application/dart" src="paper_input_test.dart"></script>
+
+</body>
 </html>

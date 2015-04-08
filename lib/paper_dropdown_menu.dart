@@ -1,7 +1,7 @@
 // DO NOT EDIT: auto-generated with `pub run custom_element_apigen:update`
 
 /// Dart API for the polymer element `paper_dropdown_menu`.
-@HtmlImport('package:paper_elements/paper_dropdown_menu_nodart.html')
+@HtmlImport('paper_dropdown_menu_nodart.html')
 library paper_elements.paper_dropdown_menu;
 
 import 'dart:html';
@@ -9,8 +9,8 @@ import 'dart:js' show JsArray, JsObject;
 import 'package:web_components/custom_element_proxy.dart';
 import 'package:web_components/html_import_annotation.dart';
 import 'package:core_elements/core_dropdown_base.dart';
-import 'package:core_elements/core_a11y_keys.dart';
 import 'package:core_elements/core_focusable.dart';
+import 'package:core_elements/core_a11y_keys.dart';
 import 'package:core_elements/core_icon.dart';
 import 'package:core_elements/core_icons.dart';
 import 'paper_shadow.dart';
@@ -39,7 +39,7 @@ import 'paper_shadow.dart';
 ///
 /// This example renders a drop-down menu with 4 options.
 @CustomElementProxy('paper-dropdown-menu')
-class PaperDropdownMenu extends CoreDropdownBase {
+class PaperDropdownMenu extends CoreDropdownBase with CoreFocusable {
   PaperDropdownMenu.created() : super.created();
   factory PaperDropdownMenu() => new Element.tag('paper-dropdown-menu');
 

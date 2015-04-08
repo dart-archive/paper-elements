@@ -1,7 +1,7 @@
 // DO NOT EDIT: auto-generated with `pub run custom_element_apigen:update`
 
 /// Dart API for the polymer element `paper_input`.
-@HtmlImport('package:paper_elements/paper_input_nodart.html')
+@HtmlImport('paper_input_nodart.html')
 library paper_elements.paper_input;
 
 import 'dart:html';
@@ -69,4 +69,8 @@ class PaperInput extends HtmlElement with DomProxyMixin, PolymerProxyMixin {
   /// The most recently committed value of the input.
   String get committedValue => jsElement[r'committedValue'];
   set committedValue(String value) { jsElement[r'committedValue'] = value; }
+
+  /// Focuses the `input`.
+  void focus() =>
+      jsElement.callMethod('focus', []);
 }

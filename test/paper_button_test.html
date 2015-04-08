@@ -13,32 +13,17 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
   <title>paper-button basic tests</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
 
-  <script src="../../webcomponentsjs/webcomponents.js"></script>
-  <script src="../../web-component-tester/browser.js"></script>
-
-  <link href="../paper-button.html" rel="import">
-
+  <link rel='import' href='packages/paper_elements/paper_button.html'>
 </head>
-<body>
+<body unresolved>
 
   <paper-button id="button1">button</paper-button>
 
-  <script>
+  <paper-button id="button2">button</paper-button>
 
-    var b1 = document.getElementById('button1');
+  <paper-button id="disabled" disabled>disabled</paper-button>
 
-    test('can set raised imperatively', function(done) {
-      assert.ok(!b1.shadowRoot.querySelector('paper-shadow'));
-      b1.raised = true;
-      flush(function() {
-        var shadow = b1.shadowRoot.querySelector('paper-shadow');
-        assert.ok(shadow);
-        assert.notEqual(getComputedStyle(shadow.$['shadow-top'])['box-shadow'], 'none');
-        done();
-      });
-    });
-
-  </script>
+  <script type="application/dart" src="paper_button_test.dart"></script>
 
 </body>
 </html>
