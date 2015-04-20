@@ -6,9 +6,8 @@ library paper_elements.paper_input;
 
 import 'dart:html';
 import 'dart:js' show JsArray, JsObject;
-import 'package:web_components/custom_element_proxy.dart';
-import 'package:web_components/html_import_annotation.dart';
-import 'package:custom_element_apigen/src/common.dart' show PolymerProxyMixin, DomProxyMixin;
+import 'package:web_components/web_components.dart';
+import 'package:polymer_interop/polymer_interop.dart';
 import 'package:core_elements/core_input.dart';
 import 'paper_input_decorator.dart';
 
@@ -44,7 +43,7 @@ import 'paper_input_decorator.dart';
 ///
 /// Use `paper-input-decorator` if you would like to implement validation.
 @CustomElementProxy('paper-input')
-class PaperInput extends HtmlElement with DomProxyMixin, PolymerProxyMixin {
+class PaperInput extends HtmlElement with CustomElementProxyMixin, PolymerProxyMixin {
   PaperInput.created() : super.created();
   factory PaperInput() => new Element.tag('paper-input');
 

@@ -6,9 +6,8 @@ library paper_elements.paper_input_decorator;
 
 import 'dart:html';
 import 'dart:js' show JsArray, JsObject;
-import 'package:web_components/custom_element_proxy.dart';
-import 'package:web_components/html_import_annotation.dart';
-import 'package:custom_element_apigen/src/common.dart' show PolymerProxyMixin, DomProxyMixin;
+import 'package:web_components/web_components.dart';
+import 'package:polymer_interop/polymer_interop.dart';
 import 'package:core_elements/core_icon.dart';
 import 'package:core_elements/core_icons.dart';
 import 'package:core_elements/core_input.dart';
@@ -124,7 +123,7 @@ import 'package:core_elements/core_style.dart';
 /// to the value of `label`. Do not set the `placeholder` attribute on the nested input, as it will
 /// conflict with this element.
 @CustomElementProxy('paper-input-decorator')
-class PaperInputDecorator extends HtmlElement with DomProxyMixin, PolymerProxyMixin {
+class PaperInputDecorator extends HtmlElement with CustomElementProxyMixin, PolymerProxyMixin {
   PaperInputDecorator.created() : super.created();
   factory PaperInputDecorator() => new Element.tag('paper-input-decorator');
 

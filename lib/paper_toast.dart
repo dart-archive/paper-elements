@@ -6,9 +6,8 @@ library paper_elements.paper_toast;
 
 import 'dart:html';
 import 'dart:js' show JsArray, JsObject;
-import 'package:web_components/custom_element_proxy.dart';
-import 'package:web_components/html_import_annotation.dart';
-import 'package:custom_element_apigen/src/common.dart' show PolymerProxyMixin, DomProxyMixin;
+import 'package:web_components/web_components.dart';
+import 'package:polymer_interop/polymer_interop.dart';
 import 'package:core_elements/core_overlay.dart';
 import 'package:core_elements/core_transition_css.dart';
 import 'package:core_elements/core_media_query.dart';
@@ -67,7 +66,7 @@ import 'package:core_elements/core_media_query.dart';
 /// When the screen size is smaller than the `responsiveWidth` (default to 480px),
 /// the toast will automatically fits at the bottom of the screen.
 @CustomElementProxy('paper-toast')
-class PaperToast extends HtmlElement with DomProxyMixin, PolymerProxyMixin {
+class PaperToast extends HtmlElement with CustomElementProxyMixin, PolymerProxyMixin {
   PaperToast.created() : super.created();
   factory PaperToast() => new Element.tag('paper-toast');
 

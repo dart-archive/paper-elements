@@ -6,9 +6,8 @@ library paper_elements.paper_toggle_button;
 
 import 'dart:html';
 import 'dart:js' show JsArray, JsObject;
-import 'package:web_components/custom_element_proxy.dart';
-import 'package:web_components/html_import_annotation.dart';
-import 'package:custom_element_apigen/src/common.dart' show PolymerProxyMixin, DomProxyMixin;
+import 'package:web_components/web_components.dart';
+import 'package:polymer_interop/polymer_interop.dart';
 import 'paper_radio_button.dart';
 import 'package:core_elements/core_a11y_keys.dart';
 
@@ -55,7 +54,7 @@ import 'package:core_elements/core_a11y_keys.dart';
 ///       background-color: #9c27b0;
 ///     }
 @CustomElementProxy('paper-toggle-button')
-class PaperToggleButton extends HtmlElement with DomProxyMixin, PolymerProxyMixin {
+class PaperToggleButton extends HtmlElement with CustomElementProxyMixin, PolymerProxyMixin {
   PaperToggleButton.created() : super.created();
   factory PaperToggleButton() => new Element.tag('paper-toggle-button');
 

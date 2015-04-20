@@ -6,9 +6,8 @@ library paper_elements.sampler_scaffold;
 
 import 'dart:html';
 import 'dart:js' show JsArray, JsObject;
-import 'package:web_components/custom_element_proxy.dart';
-import 'package:web_components/html_import_annotation.dart';
-import 'package:custom_element_apigen/src/common.dart' show PolymerProxyMixin, DomProxyMixin;
+import 'package:web_components/web_components.dart';
+import 'package:polymer_interop/polymer_interop.dart';
 import 'package:core_elements/core_toolbar.dart';
 import 'package:core_elements/core_drawer_panel.dart';
 import 'package:core_elements/core_header_panel.dart';
@@ -34,7 +33,7 @@ import 'package:core_elements/core_icon_button.dart';
 /// Use `label` to set the sampler label and `responsiveWidth` to change the layout
 /// of the scaffold.
 @CustomElementProxy('sampler-scaffold')
-class SamplerScaffold extends HtmlElement with DomProxyMixin, PolymerProxyMixin {
+class SamplerScaffold extends HtmlElement with CustomElementProxyMixin, PolymerProxyMixin {
   SamplerScaffold.created() : super.created();
   factory SamplerScaffold() => new Element.tag('sampler-scaffold');
 

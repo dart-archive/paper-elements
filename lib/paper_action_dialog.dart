@@ -6,8 +6,8 @@ library paper_elements.paper_action_dialog;
 
 import 'dart:html';
 import 'dart:js' show JsArray, JsObject;
-import 'package:web_components/custom_element_proxy.dart';
-import 'package:web_components/html_import_annotation.dart';
+import 'package:web_components/web_components.dart';
+import 'package:polymer_interop/polymer_interop.dart';
 import 'paper_dialog_base.dart';
 import 'paper_shadow.dart';
 

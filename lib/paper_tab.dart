@@ -6,9 +6,8 @@ library paper_elements.paper_tab;
 
 import 'dart:html';
 import 'dart:js' show JsArray, JsObject;
-import 'package:web_components/custom_element_proxy.dart';
-import 'package:web_components/html_import_annotation.dart';
-import 'package:custom_element_apigen/src/common.dart' show PolymerProxyMixin, DomProxyMixin;
+import 'package:web_components/web_components.dart';
+import 'package:polymer_interop/polymer_interop.dart';
 import 'paper_ripple.dart';
 
 /// `paper-tab` is styled to look like a tab.  It should be used in conjunction with
@@ -30,7 +29,7 @@ import 'paper_ripple.dart';
 ///       color: #ff4081;
 ///     }
 @CustomElementProxy('paper-tab')
-class PaperTab extends HtmlElement with DomProxyMixin, PolymerProxyMixin {
+class PaperTab extends HtmlElement with CustomElementProxyMixin, PolymerProxyMixin {
   PaperTab.created() : super.created();
   factory PaperTab() => new Element.tag('paper-tab');
 

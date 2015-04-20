@@ -6,8 +6,8 @@ library paper_elements.paper_dialog_transition;
 
 import 'dart:html';
 import 'dart:js' show JsArray, JsObject;
-import 'package:web_components/custom_element_proxy.dart';
-import 'package:web_components/html_import_annotation.dart';
+import 'package:web_components/web_components.dart';
+import 'package:polymer_interop/polymer_interop.dart';
 import 'package:core_elements/core_transition_css.dart';
 
 

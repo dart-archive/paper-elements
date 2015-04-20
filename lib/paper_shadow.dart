@@ -6,9 +6,8 @@ library paper_elements.paper_shadow;
 
 import 'dart:html';
 import 'dart:js' show JsArray, JsObject;
-import 'package:web_components/custom_element_proxy.dart';
-import 'package:web_components/html_import_annotation.dart';
-import 'package:custom_element_apigen/src/common.dart' show PolymerProxyMixin, DomProxyMixin;
+import 'package:web_components/web_components.dart';
+import 'package:polymer_interop/polymer_interop.dart';
 
 /// `paper-shadow` is a container that renders two shadows on top of each other to
 /// create the effect of a lifted piece of paper.
@@ -19,7 +18,7 @@ import 'package:custom_element_apigen/src/common.dart' show PolymerProxyMixin, D
 ///       ... card content ...
 ///     </paper-shadow>
 @CustomElementProxy('paper-shadow')
-class PaperShadow extends HtmlElement with DomProxyMixin, PolymerProxyMixin {
+class PaperShadow extends HtmlElement with CustomElementProxyMixin, PolymerProxyMixin {
   PaperShadow.created() : super.created();
   factory PaperShadow() => new Element.tag('paper-shadow');
 

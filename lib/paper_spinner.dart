@@ -6,9 +6,8 @@ library paper_elements.paper_spinner;
 
 import 'dart:html';
 import 'dart:js' show JsArray, JsObject;
-import 'package:web_components/custom_element_proxy.dart';
-import 'package:web_components/html_import_annotation.dart';
-import 'package:custom_element_apigen/src/common.dart' show PolymerProxyMixin, DomProxyMixin;
+import 'package:web_components/web_components.dart';
+import 'package:polymer_interop/polymer_interop.dart';
 
 /// Element providing material design circular spinner.
 ///
@@ -37,7 +36,7 @@ import 'package:custom_element_apigen/src/common.dart' show PolymerProxyMixin, D
 /// ##### Example
 ///   <paper-spinner alt="Loading contacts list" active></paper-spinner>
 @CustomElementProxy('paper-spinner')
-class PaperSpinner extends HtmlElement with DomProxyMixin, PolymerProxyMixin {
+class PaperSpinner extends HtmlElement with CustomElementProxyMixin, PolymerProxyMixin {
   PaperSpinner.created() : super.created();
   factory PaperSpinner() => new Element.tag('paper-spinner');
 

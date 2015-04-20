@@ -1,3 +1,7 @@
+## 0.7.1
+  * Update to new `custom_element_apigen` and use the `polymer_interop` package
+    instead of the `polymer` package for most things.
+
 ## 0.7.0
   * Update to match js versions 0.5.5.
     * `paper-checkbox`

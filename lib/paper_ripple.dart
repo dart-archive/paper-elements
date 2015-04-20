@@ -6,9 +6,8 @@ library paper_elements.paper_ripple;
 
 import 'dart:html';
 import 'dart:js' show JsArray, JsObject;
-import 'package:web_components/custom_element_proxy.dart';
-import 'package:web_components/html_import_annotation.dart';
-import 'package:custom_element_apigen/src/common.dart' show PolymerProxyMixin, DomProxyMixin;
+import 'package:web_components/web_components.dart';
+import 'package:polymer_interop/polymer_interop.dart';
 
 /// `paper-ripple` provides a visual effect that other paper elements can
 /// use to simulate a rippling effect emanating from the point of contact.  The
@@ -55,7 +54,7 @@ import 'package:custom_element_apigen/src/common.dart' show PolymerProxyMixin, D
 ///
 ///     <paper-ripple class="circle"></paper-ripple>
 @CustomElementProxy('paper-ripple')
-class PaperRipple extends HtmlElement with DomProxyMixin, PolymerProxyMixin {
+class PaperRipple extends HtmlElement with CustomElementProxyMixin, PolymerProxyMixin {
   PaperRipple.created() : super.created();
   factory PaperRipple() => new Element.tag('paper-ripple');
 
