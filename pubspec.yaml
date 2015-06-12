@@ -1,5 +1,5 @@
 name: paper_elements
-version: 0.7.1
+version: 0.7.1+1
 author: Polymer.dart Authors <web-ui-dev@dartlang.org>
 description: Paper elements for Dart
 homepage: https://www.dartlang.org/polymer-dart/

@@ -1,3 +1,7 @@
+## 0.7.1+1
+  * Add `textArea` param to `PaperAutogrowTextarea.update`. This fixes
+    https://github.com/dart-lang/paper-elements/issues/79.
+
 ## 0.7.1
   * Update to new `custom_element_apigen` and use the `polymer_interop` package
     instead of the `polymer` package for most things.

@@ -48,6 +48,6 @@ class PaperAutogrowTextarea extends HtmlElement with CustomElementProxyMixin, Po
   /// Sizes this element to fit the input value. This function is automatically called
   /// when the user types in new input, but you must call this function if the value
   /// is updated imperatively.
-  void update() =>
-      jsElement.callMethod('update', []);
+  void update([TextAreaElement textArea]) =>
+      jsElement.callMethod('update', [textArea]);
 }
