@@ -1,5 +1,7 @@
 # Paper elements
 
+**Note:** This package is for polymer.dart < 0.17
+
 This package wraps the Polymer project's paper elements, enabling Dart
 developers to easily use the Polymer implementation of Google's material
 design UI widgets.
