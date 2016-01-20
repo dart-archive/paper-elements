@@ -1,3 +1,6 @@
+## 0.7.1+2
+  * Widen web_components constraint to `<=0.13.0`.
+
 ## 0.7.1+1
   * Add `textArea` param to `PaperAutogrowTextarea.update`. This fixes
     https://github.com/dart-lang/paper-elements/issues/79.
@@ -23,7 +26,7 @@
         Please refer to API docs for the updated styling api.
     * `paper-radio-button`
       * To style properly, must now set `border-color` on an additional element:
-      
+
           paper-radio-button[checked]::shadow #offRadio {border-color: #4285f4;}
 
 ## 0.6.2+3
